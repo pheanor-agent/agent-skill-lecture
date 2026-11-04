@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="360" viewBox="0 0 1000 360" role="img" aria-labelledby="title">
+<title id="title">행동 선택과 도구 실행, 결과 확인을 반복하는 에이전트</title>
+<style>text{font-family:system-ui,"Noto Sans KR",sans-serif;font-size:28px;font-weight:650;text-anchor:middle;fill:#17212c}.small{font-size:20px;font-weight:450}.box{fill:#fff;stroke:#b5bec7;stroke-width:2}.blue{fill:#eaf2ff;stroke:#1858a8}</style>
+<path d="M280 115H720Q830 115 830 210Q830 305 720 305H280Q170 305 170 210Q170 115 280 115" fill="none" stroke="#8a97a3" stroke-width="4" stroke-dasharray="8 7"/>
+<path d="m490 105 20 10-20 10M510 295l-20 10 20 10" fill="none" stroke="#1858a8" stroke-width="4"/>
+<rect x="75" y="155" width="230" height="110" rx="24" class="box"/>
+<text x="190" y="199">행동 선택</text><text x="190" y="233" class="small">에이전트</text>
+<rect x="695" y="155" width="230" height="110" rx="24" class="box blue"/>
+<text x="810" y="199">도구 실행</text><text x="810" y="233" class="small">호스트 · 도구</text>
+<text x="500" y="85" class="small">이름 + 입력</text><text x="500" y="280" class="small">실행 결과를 확인</text>
+</svg>
