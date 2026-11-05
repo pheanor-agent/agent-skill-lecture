@@ -69,6 +69,7 @@ const pollFeedback=['자료 접근은 연결·도구·권한부터 확인합니�
 const choiceFeedback=['범위가 넓습니다. 어떤 보고서인지, 언제 쓰는지 더 구체화하면 좋습니다.','좋습니다. 결과의 형태와 사용 시점이 모두 드러납니다. 비해당 요청도 함께 시험해 보세요.','판단할 수 있는 범위가 없습니다. 한 업무와 한 결과물로 줄여 보세요.'];
 const sortItems=[['날짜는 KST 기준으로 표현한다','agents','프로젝트 전체에 적용하는 공통 기준입니다.'],['이번 주 완료 과제를 조회한다','tool','이름과 입력을 가진 구체적인 실행 요청입니다.'],['앱과 외부 시스템의 연결 규약을 정한다','mcp','기능과 문맥을 주고받는 연결 규약의 역할입니다.'],['수집 → 분류 → 근거 확인 → 보고서 작성','skill','특정 업무의 순서와 확인 기준을 묶은 절차입니다.']];
 function mount(root,slide){
+ if(slide?.staticExposition)return()=>{};
  if(!root)return()=>{}; cleanup(root);
  const scene=root.matches?.('.astra-scene')?root:root.querySelector('.astra-scene'); if(!scene)return()=>{};
  const id=Number(slide?.id||scene.dataset.astraSlide), ac=new AbortController();let timer=null,demoStep=-1,playing=false,sortIndex=0,caseIndex=0,loadIndex=0;
