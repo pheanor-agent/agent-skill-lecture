@@ -1,4 +1,4 @@
-/* Complete explanations are static. Only two bounded process diagrams move once. */
+/* Complete explanations and two bounded process demos. motion-guide.js adds finite reading paths. */
 (() => {
 'use strict';
 const slides=window.ASTRA_SLIDES||[];

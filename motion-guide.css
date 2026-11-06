@@ -1,0 +1,16 @@
+/* A finite reading guide, drawn above the same 1600 × 900 logical canvas. */
+.astra-scene .motion-plane{position:absolute;inset:0;width:1600px;height:900px;pointer-events:none;overflow:visible;z-index:2;contain:strict}
+.astra-scene .motion-cue{color:var(--a-skill)}
+.astra-scene .motion-tool{color:var(--a-tool)}
+.astra-scene .motion-mcp{color:var(--a-mcp)}
+.astra-scene .motion-agents{color:var(--a-agents)}
+.astra-scene .motion-trace{stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.astra-scene .motion-dot{fill:currentColor;stroke:var(--a-paper);stroke-width:2}
+.astra-scene .motion-target{box-shadow:inset 0 0 0 1000px color-mix(in srgb,var(--motion-color,var(--a-skill)) calc(var(--motion-focus,0) * 100%),transparent)}
+.astra-scene [data-motion-line]{box-decoration-break:clone;-webkit-box-decoration-break:clone}
+/* Motion never relies on hiding, moving or replacing the text. */
+@media(prefers-reduced-motion:reduce){.astra-scene .motion-plane{display:none}.astra-scene .motion-target{box-shadow:none}}
+@media print{.astra-scene .motion-plane{display:none!important}.astra-scene .motion-target{box-shadow:none!important}}
+
+/* Replace the old schematic stubs with measured, edge-to-edge connections. */
+.astra-scene-7[data-motion-state] .astra-port:before{display:none}
