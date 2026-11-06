@@ -1,16 +1,18 @@
-# Agent Skill 강의
+# Agent Skill · 실제 강연 자료
 
-기획팀의 주간보고서 사례로 업무 판단을 SKILL.md에 정리하는 한국어 60분 강의입니다. 본편 28장, 44–55분 실습 11분, 55–60분 Q&A 5분을 포함합니다. 시간은 발표 계획입니다.
+한 보고서의 실제 사용에서 반복할 방법을 Skill로 남기고, 프로젝트 규칙·외부 자료·조건 변경을 거쳐 자기 업무를 작성하는 한국어 강의입니다. 31장면, 60분 계획이며 44–55분 실습 11분과 55–60분 Q&A를 포함합니다.
 
-- index.html: 키보드·장 선택·주소 해시를 지원하는 발표 화면
-- read.html: 모바일 기본 경로, JavaScript 없이 읽는 전체 본문·자료·문제·해설
-- notes.html: 전체 본문에 발표자 확장을 더한 정적 문서
-- teacher-demo.html: 실제 명시 파일 사용의 다섯 단계와 초안
-- supplement.html: 작성 틀, 분리된 원자료·검토자 답안, ZIP
-- sources.html: 공식 출처와 라이선스
+- index.html: 네이비 무대의 발표 화면. 핵심 자료·관계·판단을 표시합니다.
+- read.html: 연결된 자습 설명, 모든 정적 자료와 문제·해설. JavaScript 불필요.
+- notes.html: 실제 발화, 조작·기다림, 예상 청중 반응과 전환을 포함한 강사 대본.
+- supplement.html: 작성 틀, 원자료, 별도 검토자 답안.
+- teacher-demo.html: 실제 관측된 다섯 단계와 원본 여덟 파일.
+- sources.html: 공식 출처와 관측 범위, 라이선스.
 
-course-source.json이 28장의 본문·자료·답·노트 정본입니다. `python3 scripts/build.py`로 정적 페이지와 자료 묶음을 생성합니다. 다른 저작 소스나 시연 묶음은 `--source PATH --demo PATH`로 지정합니다. 플레이어는 player.js, 모든 화면 스타일은 lecture.css입니다. 로컬 파일 열기 또는 정적 HTTP 서버로 이용합니다.
+정본은 scene-source.json입니다. screen/reader/speech를 분리해 작성하며 모든 발화를 슬라이드에 복사하지 않습니다. `python3 scripts/build.py`로 정적 페이지와 실습 ZIP을 생성합니다. 다른 소스는 `--source PATH`로 지정합니다. 스타일은 lecture.css, 발표 제어는 player.js입니다.
 
-합성 사례의 기준일은 2026-10-30, 보고 기간은 2026-10-26~30입니다. 시연은 제작 세션에서 이미 본 자료를 명시적으로 다시 읽고 적용한 실제 기록입니다. 새 세션의 자동 선택·블라인드 평가·성능 향상 실험이 아닙니다. trace.json과 run-output.md를 바이트 그대로 제공합니다. 예외 답안은 입력과 별도입니다.
+발표 화면은 좌우키·Home/End·장면 선택·주소 해시·브라우저 뒤로가기를 지원합니다. 상태 버튼은 강사가 수동 조작합니다. 700px 미만 화면은 read.html로 이동합니다. 로컬 file:// 열기 또는 정적 HTTP 서버로 사용할 수 있습니다. 인쇄는 흰 바탕에서 자료·답·노트를 읽도록 구성했습니다.
 
-일반 한글은 Noto Sans CJK KR Regular/Bold 한 계열을 사용합니다. 전체 한국어 글리프를 보존한 WOFF2를 동봉하며 라이선스는 assets/NOTO-CJK-THIRD-PARTY-LICENSE.txt입니다. 코드의 라틴 고정폭 글꼴은 시스템 monospace, 한글은 동일 Noto 글꼴입니다. 프로젝트 코드는 MIT입니다.
+기획팀 원자료는 교육용 합성 자료입니다. 시연은 제작 Codex 세션에서 이미 본 자료의 명시적 사용 순서를 관찰한 기록이며 자동 선택·블라인드 평가·성능 비교가 아닙니다. 외부 서비스·상충·누락 장면은 설명 상황 또는 기대 결과로 구분합니다. 학생 ZIP에 기대 결과를 넣지 않습니다.
+
+일반 한글과 코드 한글은 Noto Sans CJK KR 전체 글꼴을 사용합니다. 라이선스는 assets/NOTO-CJK-THIRD-PARTY-LICENSE.txt, 프로젝트 코드는 MIT입니다. 공개 기록의 원본 파일은 바이트를 보존합니다.
