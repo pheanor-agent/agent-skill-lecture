@@ -21,19 +21,19 @@ MCP의 세 기능, 두 호스트의 전체 경로, 선택적 파일 구성은 `s
 
 ## 발표와 모션
 
-- ← / → / Space: 앞뒤 이동. P: 모션 정지·재개. R: 다시 보기. F: 전체 화면.
+- ← / → / Space: 앞뒤 이동. 5·15·17번에서 P: 모션 정지·재개, R: 다시 보기. F: 전체 화면.
 - 페이지 번호는 목차, ⋯는 재생·노트·보충·출처·인쇄 메뉴입니다.
-- 모든 글과 비교는 진입 순간부터 완결되어 있습니다. 사례의 발전은 장과 장 사이에서 일어납니다. 장 안에서는 선·표시·국소 강조가 관계를 한 번 안내한 뒤 멈춥니다.
+- 모든 글과 비교는 진입 순간부터 완결되어 있습니다. 사례의 발전은 장과 장 사이에서 일어납니다. 23장은 완전 정적입니다. 5번의 자료 전달, 15번의 조회 왕복, 17번의 근거 관계 변화만 한 번 움직인 뒤 멈춥니다. 항목을 순서대로 강조하지 않습니다.
 - 페이지는 자동 이동하지 않습니다. 메뉴·목차·숨겨진 탭에서 모션을 정지하고, 장면 이탈 시 작업을 정리합니다.
 - `prefers-reduced-motion`과 인쇄는 완결된 정지 상태를 보여줍니다. 발표 노트에는 배정 시간·질문·다음 장이 필요한 이유가 있습니다.
 - 발표 캔버스는 1600×900 고정이며 모든 해상도에서 균등하게 확대·축소합니다. 13/16번 관계도는 같은 논리 좌표를 사용합니다.
 
 ## 파일과 계약
 
-- `astra-scenes.js`: 새 26장 원고·장면·노트·모션 계획. `ASTRA_SLIDES`의 `id`, `section`, `seconds`, `startSeconds`, `previousSlides`, `motionPlan`이 기준입니다. 21–25번에는 `workshop`이 있습니다.
+- `astra-scenes.js`: 26장 원고·장면·노트와 세 정보 사건의 모션 계획. `ASTRA_SLIDES`의 `id`, `section`, `seconds`, `startSeconds`, `previousSlides`, `motionPlan`이 기준입니다. 21–25번에는 `workshop`이 있습니다.
 - `astra-scenes.css`, `narrative.css`: 기본 색·글꼴과 서사 장면 레이아웃.
-- `motion-guide.js/css`: 단일 모션 엔진. `DeckMotion.mount(root,slide,{reduced})`는 `cleanup`, `setPaused`, `restart`, `getState`를 제공합니다. 상태에는 `active`, `finished`, `phase`, `elapsed`, `cycle`, `duration`이 있고 자동 반복은 0입니다.
-- 이전 `auto-demo.js`의 특정 ID 콘텐츠 교체·데모 계층은 제거했습니다. 모든 장이 같은 엔진을 사용하며 `DeckMotion.motionIds`는 1~26입니다.
+- `motion-guide.js/css`: 단일 모션 엔진. `DeckMotion.mount(root,slide,{reduced})`는 `cleanup`, `setPaused`, `restart`, `getState`를 제공합니다. 상태에는 `active`, `finished`, `phase`, `elapsed`, `cycle`, `duration`이 있고 자동 반복은 0입니다. 정적·reduced 장면은 `active:false`, `duration:0`이며 모션 DOM·RAF·타이머를 만들지 않습니다. P/R은 활성 장면에서만 표시합니다.
+- 이전 `auto-demo.js`의 특정 ID 콘텐츠 교체·데모 계층은 제거했습니다. `DeckMotion.motionIds`는 `[5,15,17]`입니다. 13/16번 관계도, 실습, 결론을 포함한 다른 장에는 모션 장식이 없습니다.
 - `deck.js`, `ui.css`, `index.html`: 발표 UI·고정 캔버스·인쇄. `notes.html/js`: 진행표. `supplement.html`: 보충·실습 링크.
 - `examples/weekly-brief/`: 실제 SKILL.md와 합성 입력·서식·시험 데이터. 본편과 파일 모두 `assets/report-template.md`를 사용합니다. 예제에 references/scripts 파일은 없으며 보충 페이지에서 선택적 구성으로만 설명합니다.
 

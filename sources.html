@@ -10,6 +10,11 @@
 <li><b>Codex의 Skill 경로와 명시 호출은 Claude Code와 다릅니다.</b><br><a href="https://developers.openai.com/codex/skills/">Codex — Skills</a>: 저장소 `.agents/skills/<name>/SKILL.md`, 사용자 `~/.agents/skills/<name>/SKILL.md`, `$skill-name` 호출 안내.</li>
 <li><b>Claude Code는 `.claude/skills` 경로와 `/skill-name` 호출을 문서화합니다.</b><br><a href="https://code.claude.com/docs/en/skills">Claude Code — Skills</a>: 저장소·사용자 범위의 경로 및 자동/명시 사용.</li>
 </ol>
+<h2>모션 설계 참고 · 2026-11-06</h2><p>대부분의 장은 정적으로 두고, 자료 전달·조회 왕복·근거 비교에만 짧은 모션을 사용했습니다. 아래 사례의 실제 화면과 프레임에서 원리를 참고했으며 자산이나 코드를 가져오지 않았습니다.</p><ul>
+<li><a href="https://m2.material.io/design/motion/the-motion-system.html">Material — Motion system</a>: 같은 객체의 정체성을 유지하는 전환. 5번의 반환 카드가 T-101 근거 태그로 이어지는 데 적용했습니다.</li>
+<li><a href="https://www.ibm.com/design/language/animation/overview/">IBM — Animation overview</a> · <a href="https://www.ibm.com/design/language/animation/tips-and-techniques/">Tips and techniques</a>: 정확한 기하와 정돈된 움직임. 15번의 요청·반환을 다른 형태와 속도로 구분하고, 이동 뒤 읽을 여유를 두었습니다.</li>
+<li><a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3 — A visual introduction to machine learning</a>: 같은 자료를 유지하며 다른 관계를 비교하는 설명. 17번에서 I-08은 고정하고 M-03 일정 근거의 연결만 분리했습니다.</li>
+</ul>
 <h2>디자인 참고 (코드·스타일 복사 없음)</h2><ul>
 <li><a href="https://revealjs.com/auto-animate/">reveal.js Auto-Animate</a> — 장면 사이 같은 요소의 연속성을 주는 원리.</li>
 <li><a href="https://revealjs.com/fragments/">reveal.js Fragments</a> — 발표자 제어 점진 공개.</li>
