@@ -1,0 +1,89 @@
+{
+  "mode": "observed-explicit-file-use",
+  "runtime": "Codex",
+  "recordedAt": "2026-11-06T06:11:08.629684+00:00",
+  "description": "이 강의 제작 세션에서 교육용 합성 자료와 명시된 Skill 파일을 실제로 읽고 분류·보고서 초안을 작성한 기록입니다.",
+  "limits": "같은 세션에서 자료를 이미 본 뒤 명시적 사용 순서를 다시 확인했습니다. 새 세션의 자동 발견·자동 선택, 블라인드 평가, 정확도 향상 실험 또는 화면 녹화가 아닙니다.",
+  "request": "2026-10-30을 기준으로 기획팀의 2026-10-26~2026-10-30 주간업무 보고서 초안을 작성해. weekly-brief/SKILL.md를 읽고 input/tasks.md와 input/meeting-notes.md에 근거해 작성해.",
+  "steps": [
+    {
+      "id": 1,
+      "label": "지침과 시연 요청 읽기",
+      "operation": "명시된 Skill 파일 읽기",
+      "files": [
+        "weekly-brief/SKILL.md",
+        "request.txt"
+      ],
+      "result": "주간보고서 범위·자료 읽기·분류·근거·누락·서식·대조 기준 확인",
+      "observedAt": "2026-11-06T06:09:44.557Z"
+    },
+    {
+      "id": 2,
+      "label": "원자료 읽기",
+      "operation": "실제 파일 읽기",
+      "files": [
+        "input/tasks.md",
+        "input/meeting-notes.md"
+      ],
+      "result": "완료·진행·막힘 각 1건과 11월 5일 검토 예정의 원문 확인",
+      "observedAt": "2026-11-06T06:09:58.138Z"
+    },
+    {
+      "id": 3,
+      "label": "분류와 근거 연결",
+      "operation": "현재 Codex 세션에서 분류 기록 작성",
+      "files": [
+        "classification.json"
+      ],
+      "result": "업무표 세 행과 회의 메모 1항을 결과 주장에 대응",
+      "observedAt": "2026-11-06T06:10:13.377Z"
+    },
+    {
+      "id": 4,
+      "label": "빈 서식 읽기",
+      "operation": "서식 파일 읽기",
+      "files": [
+        "weekly-brief/assets/report-template.md"
+      ],
+      "result": "정답이 없는 서식의 제목·필드·구역 확인",
+      "observedAt": "2026-11-06T06:10:13.377Z"
+    },
+    {
+      "id": 5,
+      "label": "초안 작성과 대조",
+      "operation": "현재 Codex 세션에서 보고서 초안 작성",
+      "files": [
+        "run-output.md"
+      ],
+      "result": "기간·세 업무 상태·검토 일정·근거를 대조하고 오탈자 1곳 수정",
+      "observedAt": "2026-11-06T06:10:30.313Z"
+    }
+  ],
+  "output": "# 주간업무 보고서 초안\n\n대상 팀: 기획팀\n보고 기간: 2026-10-26~2026-10-30\n기준일: 2026-10-30 (KST)\n\n## 완료\n- 온보딩 가이드 개정 — 개정본 공유를 마쳤다. 근거: 업무표 1행.\n\n## 진행\n- 설문 결과 정리 — 응답 분류를 정리하고 있다. 근거: 업무표 2행.\n\n## 막힘\n- 디자인 검토 — 검토 담당자의 회신을 기다리고 있다. 근거: 업무표 3행.\n\n## 다음 확인\n- 디자인 검토는 2026-11-05에 진행할 예정이다. 근거: 2026-10-30 회의 메모 1항.\n- 검토 담당자의 회신 여부를 확인한다. 근거: 업무표 3행의 대기 상태.\n",
+  "files": {
+    "weekly-brief/SKILL.md": {
+      "sha256": "156e5f7820fefa2f515e61f2a8830b3d12e59d0dbee9c8c811c2b62313063b7f",
+      "bytes": 1299
+    },
+    "input/tasks.md": {
+      "sha256": "a52965054931a85cd079125d50d8e54bd597feb3f7b9915e6253f30691e64385",
+      "bytes": 453
+    },
+    "input/meeting-notes.md": {
+      "sha256": "6bb4f2147907105e8836e5a4a335c01c310bb54cce85f769e2c5d10afd59a03a",
+      "bytes": 117
+    },
+    "weekly-brief/assets/report-template.md": {
+      "sha256": "7299fd9666419bef896e0a7ad38b566ae084afdc1dedb19ad2d676f04dfc8c51",
+      "bytes": 344
+    },
+    "classification.json": {
+      "sha256": "473fc163df884b57582ab29a7d0bf3263038e0a577d4159e115a06ea45e8d716",
+      "bytes": 898
+    },
+    "run-output.md": {
+      "sha256": "b2cca9cc5066097472af03c4f8f94356ab5fc627954ce353cf08c669263c342f",
+      "bytes": 639
+    }
+  }
+}

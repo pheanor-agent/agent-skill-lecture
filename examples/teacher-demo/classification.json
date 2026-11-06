@@ -1,0 +1,10 @@
+{
+  "period": {"start": "2026-10-26", "end": "2026-10-30", "asOf": "2026-10-30", "timezone": "KST"},
+  "team": "기획팀",
+  "completed": [{"title": "온보딩 가이드 개정", "fact": "개정본 공유를 마쳤다.", "evidence": "input/tasks.md · 업무표 1행"}],
+  "inProgress": [{"title": "설문 결과 정리", "fact": "응답 분류를 정리하고 있다.", "evidence": "input/tasks.md · 업무표 2행"}],
+  "blocked": [{"title": "디자인 검토", "fact": "검토 담당자의 회신을 기다리고 있다.", "evidence": "input/tasks.md · 업무표 3행"}],
+  "nextCheck": [{"fact": "디자인 검토는 2026-11-05에 진행할 예정이다.", "evidence": "input/meeting-notes.md · 회의 메모 1항"}, {"fact": "검토 담당자의 회신 여부를 확인한다.", "evidence": "input/tasks.md · 업무표 3행의 대기 상태"}],
+  "unconfirmed": [],
+  "conflicting": []
+}
