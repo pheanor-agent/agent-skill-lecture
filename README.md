@@ -1,34 +1,42 @@
-# Agent Skill · 설명과 시선 흐름
+# Agent Skill · 다음 금요일에도 같은 기준으로
 
-[강의 열기](https://pheanor-agent.github.io/agent-skill-lecture/) · [강의 노트](https://pheanor-agent.github.io/agent-skill-lecture/notes.html)
+[강의 열기](https://pheanor-agent.github.io/agent-skill-lecture/) · [강의 노트](https://pheanor-agent.github.io/agent-skill-lecture/notes.html) · [보충 자료](https://pheanor-agent.github.io/agent-skill-lecture/supplement.html)
 
-한국어 36장, 본 강의 55분 + Q&A 5분. 주간보고서 한 사례로 Agent Skill의 유래·사용법과 Tool call, AGENTS.md, MCP의 차이를 설명합니다.
+한국어 본편 26장. 본 강의 55분 + Q&A 5분. 한 장 보고서가 실제 조회로 첫 칸을 채우고, 반복 절차를 Skill로 묶어 정상·예외 결과를 확인하는 과정을 따라갑니다.
 
-## 발표
+## 학습 흐름
 
-- 36장 모두 내용에 맞춘 도입 모션을 한 번 재생한 뒤 멈춥니다. 페이지는 자동 이동하지 않습니다.
-- 설명·비교·코드·경로·예제는 진입 순간부터 모두 보입니다. 글을 숨기거나 자동 교체하지 않습니다.
-- 표에서는 문제에서 대응으로 밑줄이 흐르고, 도식에서는 연결을 따라 선과 자료 표시가 움직입니다. 코드·비교 장은 관련 부분을 짚고, 마무리와 Q&A는 짧은 강조 후 정지합니다.
-- ← / → / Space: 앞뒤 이동. R: 모션 다시 보기. P: 일시정지·이어 보기. F: 전체 화면.
-- 마우스를 움직이면 작은 이동 메뉴가 나타납니다. 페이지 번호는 목차, ⋯는 재생 보조·노트·출처·인쇄 메뉴입니다.
-- 시간배정·장별 시선 경로·발표 노트는 별도 노트에서 확인합니다.
+|시간|내용|장|
+|---|---|---|
+|0–5분|목표 보고서와 완료 기준|1–3|
+|5–10분|실제 조회가 보고서 한 칸을 채움|4–5|
+|10–22분|절차 작성, Skill의 유래·실물·선택 조건|6–10|
+|22–29분|배치·호출·읽기·정상 결과|11–13|
+|29–37분|공통 기준과 외부 연결이 필요한 조건|14–16|
+|37–46분|같은 자료의 누락·비해당·실패 검증|17–20|
+|46–55분|내 업무 네 줄 + 시험 하나 작성·검토|21–25|
+|55–60분|Q&A|26|
 
-## 모션과 배치
+MCP의 세 기능, 두 호스트의 전체 경로, 선택적 파일 구성은 `supplement.html`에 있습니다. [실습 양식](examples/my-first-skill-worksheet.md)을 내려받거나 종이에 작성합니다. 초기 정상 사례에는 아직 설명하지 않은 AGENTS.md/MCP를 넣지 않고, 같은 좌표의 관계도에 필요할 때 추가합니다.
 
-일반 장은 진입 1초 뒤부터 약 6.9~13초 안에 끝나는 시선 유도 경로를 갖습니다. 한 구역을 약 1.9초씩 짚으며, 비교 대상은 함께 강조해 차이와 공통점을 보여줍니다. 순환 도식은 이름·입력의 전송과 결과의 반환을 한 번만 그립니다. 15번의 문맥 읽기 시연은 약 18초, 21번의 보고서 생성 시연은 약 27.5초입니다. 모든 값은 합성 데이터이고 실제 API를 호출하지 않습니다. 누락 비교의 I-08 막힘 1건도 그대로 유지합니다.
+## 발표와 모션
 
-모션은 메뉴·목차·숨겨진 탭에서 정지하고 복귀하면 이어갑니다. 장면 이탈 시 프레임과 효과를 정리합니다. `prefers-reduced-motion`과 인쇄는 모든 설명과 완결된 과정 도식을 보여주며 도입 모션을 실행하지 않습니다. 독자는 애니메이션 완료를 기다릴 필요가 없습니다.
+- ← / → / Space: 앞뒤 이동. P: 모션 정지·재개. R: 다시 보기. F: 전체 화면.
+- 페이지 번호는 목차, ⋯는 재생·노트·보충·출처·인쇄 메뉴입니다.
+- 모든 글과 비교는 진입 순간부터 완결되어 있습니다. 사례의 발전은 장과 장 사이에서 일어납니다. 장 안에서는 선·표시·국소 강조가 관계를 한 번 안내한 뒤 멈춥니다.
+- 페이지는 자동 이동하지 않습니다. 메뉴·목차·숨겨진 탭에서 모션을 정지하고, 장면 이탈 시 작업을 정리합니다.
+- `prefers-reduced-motion`과 인쇄는 완결된 정지 상태를 보여줍니다. 발표 노트에는 배정 시간·질문·다음 장이 필요한 이유가 있습니다.
+- 발표 캔버스는 1600×900 고정이며 모든 해상도에서 균등하게 확대·축소합니다. 13/16번 관계도는 같은 논리 좌표를 사용합니다.
 
-발표 캔버스는 모든 해상도에서 1600×900 좌표를 유지하고 전체를 같은 비율로 확대·축소합니다. 시선 유도선은 실제 요소의 경계를 이 좌표로 변환해 그리며 글·연결선·노드를 별도 재배치하지 않습니다. 휴대폰 세로에서도 구도를 유지하며 긴 설명은 별도 노트에서 읽을 수 있습니다.
+## 파일과 계약
 
-## 자료와 수정
+- `astra-scenes.js`: 새 26장 원고·장면·노트·모션 계획. `ASTRA_SLIDES`의 `id`, `section`, `seconds`, `startSeconds`, `previousSlides`, `motionPlan`이 기준입니다. 21–25번에는 `workshop`이 있습니다.
+- `astra-scenes.css`, `narrative.css`: 기본 색·글꼴과 서사 장면 레이아웃.
+- `motion-guide.js/css`: 단일 모션 엔진. `DeckMotion.mount(root,slide,{reduced})`는 `cleanup`, `setPaused`, `restart`, `getState`를 제공합니다. 상태에는 `active`, `finished`, `phase`, `elapsed`, `cycle`, `duration`이 있고 자동 반복은 0입니다.
+- 이전 `auto-demo.js`의 특정 ID 콘텐츠 교체·데모 계층은 제거했습니다. 모든 장이 같은 엔진을 사용하며 `DeckMotion.motionIds`는 1~26입니다.
+- `deck.js`, `ui.css`, `index.html`: 발표 UI·고정 캔버스·인쇄. `notes.html/js`: 진행표. `supplement.html`: 보충·실습 링크.
+- `examples/weekly-brief/`: 실제 SKILL.md와 합성 입력·서식·시험 데이터. 본편과 파일 모두 `assets/report-template.md`를 사용합니다. 예제에 references/scripts 파일은 없으며 보충 페이지에서 선택적 구성으로만 설명합니다.
 
-- `astra-scenes.js/css`: 36장 기본 장면, 의미 색과 레이아웃. `assets/agent-loop.svg`: 에이전트 순환 도식.
-- `auto-demo.js`: 완결된 비교·설명 콘텐츠와 15/21번 과정 시연. `AutoDemo.demoIds`는 `[15,21]`입니다.
-- `motion-guide.js/css`: Astra가 설계한 34장별 시선 경로, 왕복·분기·밑줄·괄호·테두리 트레이스. 15/21번은 기존 과정 컨트롤러에 위임합니다. `DeckMotion.motionIds`는 1~36입니다.
-- `DeckMotion.mount(root, slide, {reduced})`: `cleanup`, `setPaused`, `restart`, `getState`를 제공합니다. 상태에는 `active`, `finished`, `phase`, `elapsed`, `cycle`, `duration`이 포함됩니다. 자동 반복 횟수는 항상 0입니다. 종료 후 RAF를 예약하지 않습니다.
-- `data-page-text`: 원고 내용. 본문은 완전하게 유지하며, 주변의 국소 강조만 변할 수 있습니다. `data-demo-region`: 15/21번 과정 시연. `.motion-plane`: 청중의 시선을 안내하는 장식 SVG로 포인터·스크린리더 입력을 가로채지 않습니다.
-- `deck.js`, `ui.css`, `index.html`: 최소 인터페이스와 고정 캔버스. `notes.html`: 장별 시간·해설·도입 모션. `sources.html`: 공식 원문·확인 날짜.
-- `examples/weekly-brief/`: SKILL.md·합성 자료·서식·테스트 예제. 자동 설치되지 않습니다.
+합성 예시는 실제 성능 측정이나 API 호출이 아닙니다. M-03이 없더라도 확인된 I-08 막힘 1건은 유지하고, 검토 일정만 미확인으로 남깁니다. 예제는 자동 설치되지 않으며 초안 작성만 다룹니다.
 
-정적 파일만 사용하며 오프라인에서도 `index.html`을 열 수 있습니다. 기존 p-hermes v1/v2와 reveal.js, Slidev, impress.js에서 참고한 원리는 출처 페이지에 있습니다. 자체 코드·원고는 MIT, 로컬 Pretendard는 `assets/PRETENDARD-OFL.txt`를 따릅니다.
+정적 파일만 사용하며 오프라인에서 `index.html`을 열 수 있습니다. 자체 코드·원고는 MIT, 로컬 Pretendard는 `assets/PRETENDARD-OFL.txt`를 따릅니다. 참고 원리는 출처 페이지에 남겨 두었습니다.

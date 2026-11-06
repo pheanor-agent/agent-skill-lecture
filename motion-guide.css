@@ -11,6 +11,3 @@
 /* Motion never relies on hiding, moving or replacing the text. */
 @media(prefers-reduced-motion:reduce){.astra-scene .motion-plane{display:none}.astra-scene .motion-target{box-shadow:none}}
 @media print{.astra-scene .motion-plane{display:none!important}.astra-scene .motion-target{box-shadow:none!important}}
-
-/* Replace the old schematic stubs with measured, edge-to-edge connections. */
-.astra-scene-7[data-motion-state] .astra-port:before{display:none}

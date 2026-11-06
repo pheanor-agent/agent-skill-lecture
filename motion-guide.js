@@ -1,58 +1,12 @@
-/* Astra motion direction. A finite visual reading path; the complete text never changes. */
+/* Finite reading guides for the narrative edition. */
 (() => {
 'use strict';
 const slides=window.ASTRA_SLIDES||[], NS='http://www.w3.org/2000/svg';
-const cue=(target,kind='underline',color='skill',extra={})=>({target,kind,color,...extra});
-const series=(selector,count,kind='underline',color='skill')=>Array.from({length:count},(_,i)=>cue(`${selector}:nth-child(${i+1})`,kind,color));
-const plans={
-1:{name:'매주의 종이에서 반복 가능한 결과로',cues:[cue('.astra-paper-stack>span:nth-child(1)','underline'),cue('.astra-paper-stack>span:nth-child(2)','underline'),cue('.astra-report-row:nth-child(4)','ink'),cue('.astra-report-row:nth-child(5)','ink'),cue('.astra-report-row:nth-child(6)','ink'),cue('.astra-cover-line','underline')]},
-2:{name:'요청 → 원자료 → 결과의 세 구역',cues:[cue('.astra-request','bracket'),cue('.astra-source-strip','underline','tool'),cue('.astra-report-row:nth-child(4)','ink','tool'),cue('.astra-report-row:nth-child(5)','ink','tool'),cue('.astra-report-row:nth-child(6)','ink','tool')]},
-3:{name:'문제와 대응을 한 행씩 연결',cues:series('.rest-row',3,'scan')},
-4:{name:'이름과 입력을 보내고 결과로 돌아오는 한 바퀴',cues:[cue('.astra-loop-image','loop','tool',{hold:5800})]},
-5:{name:'요청 → 이름과 입력 → 반환 결과',cues:[cue('.astra-io-request','bracket','tool'),cue('.astra-io-call','frame','tool',{from:'.astra-io-request'}),cue('.astra-io-result','frame','tool',{from:'.astra-io-call'})]},
-6:{name:'성공과 오류를 각각 다음 행동에 연결',cues:[cue('.rest-panel:first-child .astra-code','underline','tool'),cue('.rest-panel:first-child>p','bracket','tool'),cue('.rest-panel:last-child .astra-code','underline'),cue('.rest-panel:last-child>p','bracket')]},
-7:{name:'하나의 에이전트에서 여러 자료로 갈라지는 연결',cues:['.p1','.p2','.p3'].map(s=>cue(`.astra-port${s}`,'frame','mcp',{from:'.astra-port-center',route:'direct'}))},
-8:{name:'공통 메시지의 왕복과 별도의 내장 경로',cues:[cue('.astra-protocol svg','exchange','mcp',{hold:3400}),cue('.astra-local-route','underline','tool')]},
-9:{name:'기능·데이터·템플릿의 세 종류를 개별 확인',cues:series('.astra-shelf>article',3,'frame','mcp')},
-10:{name:'공통 기준 아래 세 규칙을 읽는 리듬',cues:[cue('.astra-rule-banner','underline','agents'),...series('.astra-rules>div',3,'bracket','agents')]},
-11:{name:'네 문장의 역할을 독립적으로 대응',cues:['agents','tool','mcp','skill'].map((c,i)=>cue(`.rest-row:nth-child(${i+1})`,'scan',c))},
-12:{name:'업무 질문에서 패키지의 필수 파일로',cues:[cue('.astra-statement','bracket'),cue('.astra-folder','frame'),cue('.astra-file','underline')]},
-13:{name:'필수 파일을 먼저, 선택 자료를 뒤에',cues:[cue('.astra-file:not(.astra-file-small)','underline'),...series('.astra-file-legend>div',4,'scan')]},
-14:{name:'description의 결과와 사용 시점에 밑줄',cues:[cue('[data-motion-line="3"], [data-motion-line="4"]','bracket'),cue('.astra-code-annotation:nth-child(2)','underline'),cue('[data-motion-line="5"]','underline'),cue('.astra-code-annotation:nth-child(3)','underline')]},
-16:{name:'공개에서 표준화까지 이어지는 시간선',cues:[cue('.astra-timeline article:first-child','bracket'),cue('.astra-time-line','timeline'),cue('.astra-timeline article:last-child','bracket')]},
-17:{name:'같은 모델은 유지하고 문맥에만 더하기',cues:[cue('.astra-before-after article:first-child>b, .astra-before-after article:last-child>b','underline','tool'),cue('.astra-before-after article:last-child .astra-desk>span:nth-child(2)','frame'),cue('.astra-before-after article:last-child .astra-desk>span:nth-child(3)','frame')]},
-18:{name:'모호함과 넓은 범위를 지나 구체적인 설명에 정착',cues:[cue('.rest-description article:first-child','bracket'),cue('.rest-description article:last-child','bracket'),cue('.rest-recommended','frame')]},
-19:{name:'두 호스트에서 같은 범위끼리 대조',cues:[cue('.rest-hosts .astra-code:nth-of-type(1)','bracket','tool'),cue('.rest-hosts .astra-code:nth-of-type(2)','bracket','agents'),cue('.rest-hosts .rest-panel>p','underline')]},
-20:{name:'명시 호출과 자동 선택이라는 독립 경로',cues:[cue('.astra-invoke article:first-child','frame'),cue('.astra-invoke article:last-child','frame'),cue('.astra-scene-20>.astra-hint','underline')]},
-22:{name:'막힘 1건은 같고, 일정의 근거만 다름',cues:[cue('.rest-evidence>b','underline'),cue('.rest-panel:first-child .rest-result','bracket','tool'),cue('.rest-panel:last-child .rest-result','bracket')]},
-23:{name:'본문의 실행 순서를 따라가고 완료 기준에 닿기',cues:[cue('[data-motion-line="2"], [data-motion-line="3"]','bracket'),cue('[data-motion-line="4"], [data-motion-line="5"], [data-motion-line="6"]','bracket'),cue('[data-motion-line="8"]','underline'),...[2,3,4].map(i=>cue(`.astra-checklist>p:nth-child(${i})`,'underline'))]},
-24:{name:'핵심 절차에서 필요한 자료로 분기',cues:[cue('.astra-reference-core','bracket'),...Array.from({length:3},(_,i)=>cue(`.astra-reference-leaf:nth-child(${i+2})`,'frame','skill',{from:'.astra-reference-core'}))]},
-25:{name:'넓은 공통 범위와 좁은 업무 범위를 각각 묶기',cues:[cue('.rest-panel:first-child','frame','agents'),cue('.rest-panel:last-child','frame'),cue('.rest-result','underline')]},
-26:{name:'입력 상황 → 기대 동작 → 확인 기준',cues:[2,3,4].map(i=>cue(`.astra-eval>div:nth-child(${i})`,'scan','mcp'))},
-27:{name:'옮길 절차와 다시 확인할 환경 구분',cues:[cue('.astra-portability .astra-folder','frame'),cue('.astra-workbench','bracket','tool'),cue('.astra-four-checks','scan','tool'),cue('.astra-lead','underline')]},
-28:{name:'공통 기준·업무 절차·외부 연결·별도 경로의 관계',cues:[cue('.astra-map-rule','underline','agents'),cue('.astra-map-skill','frame'),cue('.astra-map-connection','map','mcp',{hold:3000}),cue('.astra-map-local','underline','tool'),cue('.astra-role-legend','scan')]},
-29:{name:'결핍에서 필요한 역할로 읽기',cues:series('.astra-decision>div',4,'scan')},
-30:{name:'발견부터 결과 대조까지 진단 위치를 좁히기',cues:series('.rest-diagnosis>article',4,'frame')},
-31:{name:'증상 → 먼저 확인할 위치 → 이유',cues:series('.rest-row',3,'scan')},
-32:{name:'문서·환경·요청 범위를 각각 분리해 확인',cues:[1,3,5].map(i=>cue(`.astra-authority>article:nth-child(${i})`,'bracket','agents')).concat(cue('.astra-lead','underline'))},
-33:{name:'넓은 범위를 한 결과물로 좁히고 네 조건 확인',cues:[cue('.astra-scope-wide','bracket'),cue('.astra-scope-small','scope'),cue('.astra-four-checks','scan')]},
-34:{name:'언제 → 입력 → 순서 → 완료 기준의 네 줄',cues:series('.rest-example>article',4,'bracket')},
-35:{name:'세 동사를 회수하고 실제 결과물에 정착',cues:[...series('.astra-closing-line',3,'underline'),cue('.astra-closing-folder','frame')]},
-36:{name:'세 질문을 건넨 뒤 대화를 위한 정지',cues:series('.astra-qa>div>p',3,'underline','mcp')}
-};
-for(const slide of slides){
- slide.motion=true;
- const p=plans[slide.id];
- if(p){slide.motionDescription=p.name;slide.motionDuration=1000+p.cues.reduce((n,c)=>n+(c.hold||1900),0)+600;}
- else {slide.motionDescription='구획된 과정 시연을 한 번 재생한 뒤 완결된 상태 유지';slide.motionDuration=slide.id===15?18000:27500;}
- // Keep old presenter commentary accurate after adding the finite reading guide.
- slide.notes=slide.notes.replace('자동 강조가 없으므로','설명은 그대로 유지되므로').replace('타이머가 다른 단계로 강조를 옮기지 않습니다.','도입 강조가 끝나면 발표자가 필요한 단계에서 충분히 설명합니다.').replace('정적인 비교만으로','나란히 놓인 비교로').replace('모두 보이는 정적 대응표','모두 보이는 대응표');
- slide.notes+=` 도입 모션: ${slide.motionDescription}. 약 ${Math.round(slide.motionDuration/1000)}초 뒤 멈추며, 읽는 내용은 처음부터 모두 표시됩니다. P로 멈추고 R로 다시 볼 수 있습니다.`;
-}
+const plans=Object.fromEntries(slides.map(s=>[s.id,s.motionPlan]));
+for(const s of slides){s.motionDuration=1600+s.motionPlan.cues.reduce((n,c)=>n+(c.hold||1900),0);s.motionDescription=s.motionPlan.name;}
 function mount(root,slide,{reduced=false}={}){
- if(slide.demo)return window.AutoDemo.mount(root,slide,{reduced});
  const scene=root.querySelector('.astra-scene'),plan=plans[slide.id];
- if(!scene||!plan)return window.AutoDemo.mount(root,slide,{reduced});
+ if(!scene||!plan)throw new Error('Missing narrative motion plan');
  if(reduced)return{cleanup(){},setPaused(){},restart(){},getState(){return{id:slide.id,active:true,reduced:true,elapsed:slide.motionDuration,phase:plan.cues.length,finished:true,paused:true,cycle:0,duration:slide.motionDuration};}};
  let dead=false,paused=false,finished=reduced,elapsed=reduced?slide.motionDuration:0,last=null,raf=0;
  const touched=new Set(),graphics=[];
@@ -86,10 +40,10 @@ function mount(root,slide,{reduced=false}={}){
      add(`M${X(280)} ${Y(115)}H${X(720)}Q${X(720+control)} ${Y(115)} ${X(right)} ${Y(155)}`,{route:true});
      add(`M${X(right)} ${Y(265)}Q${X(720+control)} ${Y(305)} ${X(720)} ${Y(305)}H${X(280)}Q${X(280-control)} ${Y(305)} ${X(left)} ${Y(265)}`,{route:true,second:true});
     }else if(item.kind==='exchange'){
-     add(`M${b.x+5} ${b.y+b.h*.3}H${b.x+b.w-10}`,{route:true});add(`M${b.x+b.w-5} ${b.y+b.h*.75}H${b.x+10}`,{route:true,second:true});
-    }else if(item.kind==='map'){
-     const bridge=box(el.querySelector('.astra-bridge'));add(`M${bridge.x} ${bridge.y+1}H${bridge.x+bridge.w}`,{route:true});
-     add(`M${bridge.x+bridge.w} ${bridge.y+bridge.h-1}H${bridge.x}`,{route:true,second:true});
+     add(`M${b.x+5} ${b.y+1}H${b.x+b.w-10}`,{route:true});add(`M${b.x+b.w-5} ${b.y+b.h-1}H${b.x+10}`,{route:true,second:true});
+    }else if(item.kind==='borderExchange'){
+     add(`M${b.x} ${b.y+1}H${b.x+b.w}`,{route:true});
+     add(`M${b.x+b.w} ${b.y+b.h-1}H${b.x}`,{route:true,second:true});
     }else if(item.kind==='timeline')add(`M${b.x} ${b.y+b.h/2}H${b.x+b.w}`,{route:true});
     else if(item.kind==='ink')el.querySelectorAll('.astra-blank').forEach(blank=>{const q=box(blank);add(`M${q.x} ${q.y+q.h/2}H${q.x+q.w}`,{ink:true,dot:false});});
     else add(outline(b,item.kind),{dot:item.kind==='scan'});
@@ -110,7 +64,7 @@ function mount(root,slide,{reduced=false}={}){
     p.dot.style.opacity=active&&progress>0&&progress<1?'1':'0';
     if(progress>0&&progress<1){const point=p.path.getPointAtLength(progress*p.len);p.dot.setAttribute('cx',point.x);p.dot.setAttribute('cy',point.y);}
    }
-   g.targets.forEach(el=>el.style.setProperty('--motion-focus',active&&!['loop','exchange','map','timeline','ink'].includes(g.item.kind)?String(Math.sin(Math.PI*t)*.075):'0'));
+   g.targets.forEach(el=>el.style.setProperty('--motion-focus',active&&!['loop','exchange','borderExchange','timeline','ink'].includes(g.item.kind)?String(Math.sin(Math.PI*t)*.075):'0'));
   }
  }
  function frame(now){raf=0;if(dead||paused||finished)return;if(last!==null)elapsed=Math.min(slide.motionDuration,elapsed+now-last);last=now;paint(elapsed);if(elapsed>=slide.motionDuration){finished=true;scene.dispatchEvent(new CustomEvent('motioncomplete',{bubbles:true}));}else raf=requestAnimationFrame(frame);}
@@ -121,5 +75,5 @@ function mount(root,slide,{reduced=false}={}){
  build();document.fonts?.ready.then(()=>{if(!dead)build();});if(!reduced)schedule();
  return{cleanup,setPaused,restart,getState(){return{id:slide.id,active:true,reduced,elapsed,phase:graphics.filter(g=>elapsed>=g.start).length,finished,paused,cycle:0,duration:slide.motionDuration};}};
 }
-window.DeckMotion={mount,plans,version:'1.0',motionIds:slides.map(s=>s.id)};
+window.DeckMotion={mount,plans,version:'narrative-1',motionIds:slides.map(s=>s.id)};
 })();

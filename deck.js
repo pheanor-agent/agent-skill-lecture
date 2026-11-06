@@ -1,7 +1,7 @@
 (() => {
 'use strict';
 const slides=window.ASTRA_SLIDES,deck=document.querySelector('#deck');
-if(!slides?.length||!window.AstraScenes||!window.AutoDemo||!window.DeckMotion){deck.textContent='강의 파일을 불러오지 못했습니다.';return;}
+if(!slides?.length||!window.AstraScenes||!window.DeckMotion){deck.textContent='강의 파일을 불러오지 못했습니다.';return;}
 let index=0,controller=null,hideTimer=null,printing=null,userPaused=false;
 const menu=document.querySelector('#menu'),toc=document.querySelector('#toc'),controls=document.querySelector('.controls');
 const media=matchMedia('(prefers-reduced-motion: reduce)');
