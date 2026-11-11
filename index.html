@@ -1,65 +1,768 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Skill: 다음에도 맡길 방법을 남기기</title><link rel="stylesheet" href="lecture.css"></head><body class="presentation"><nav class="site-nav"><a href="index.html">발표</a><a href="read.html">읽기</a><a href="notes.html">강사 대본</a><a href="supplement.html">실습</a><a href="teacher-demo.html">실제 시연</a><a href="sources.html">출처</a></nav><noscript><p class="notice">발표 제어에는 JavaScript를 사용합니다. <a href="read.html">전체 읽기 문서</a>와 <a href="notes.html">강사 대본</a>는 JavaScript 없이 읽을 수 있습니다.</p></noscript><main id="deck"><article class="scene slide scene--opening" id="scene-1" data-scene="1"><header class="scene-meta"><span>AGENT SKILL · 맡겨 보는 일</span><span>1 / 31</span></header><h2 class="scene-title">이 보고서를<br>다음 주에도 <em>맡긴다면</em></h2><div class="screen-caption">Agent Skill · 한 번의 요청에서 다시 쓸 작성법으로</div><div class="canvas"><div class="hero-visual"><section class="paper cover-report"><div class="paper-label">기획팀 · 기준일 2026-10-30</div><h3 class="cover-report-title">주간업무 보고서 초안</h3><p class="cover-period">2026-10-26 — 2026-10-30</p><div class="cover-report-row"><span>완료</span><div><h4>온보딩 가이드 개정</h4><p>개정본 공유를 마쳤다. · 업무표 1행</p></div></div><div class="cover-report-row"><span>진행</span><div><h4>설문 결과 정리</h4><p>응답 분류를 정리하고 있다. · 업무표 2행</p></div></div><div class="cover-report-row"><span>막힘</span><div><h4>디자인 검토</h4><p>검토 담당자의 회신을 기다리고 있다. · 업무표 3행</p></div></div><div class="cover-next"><span>다음 확인</span><h4>11월 5일 검토 예정</h4><p class="">2026-10-30 회의 메모 1항</p></div></section><p class="hero-takeaway">내 업무의 SKILL.md 초안 + 시험 입력·기대 결과 한 쌍</p></div></div></article><article class="scene slide scene--request" id="scene-2" data-scene="2"><header class="scene-meta"><span>맡겨 보는 일</span><span>2 / 31</span></header><h2 class="scene-title">보고서 초안까지 맡깁니다</h2><div class="screen-caption">강의용 합성 자료 · 기준일 2026-10-30</div><div class="canvas"><div class="request-visual"><blockquote>2026-10-30을 기준으로 기획팀의 2026-10-26~2026-10-30 주간업무 보고서 초안을 작성해. weekly-brief/SKILL.md를 읽고 input/tasks.md와 input/meeting-notes.md에 근거해 작성해.</blockquote><div class="source-stack"><section class="paper "><div class="paper-label">input/tasks.md</div><h3>기획팀 업무표</h3><p class="">보고 기간: 2026-10-26~2026-10-30</p><p class="">기준일: 2026-10-30 (KST)</p><p class="">행 번호는 아래 자료의 항목 위치입니다.</p><table><thead><tr><th>행</th><th>업무</th><th>상태</th><th>확인한 내용</th></tr></thead><tbody><tr><td>1</td><td>온보딩 가이드 개정</td><td>완료</td><td>개정본 공유를 마쳤다.</td></tr><tr><td>2</td><td>설문 결과 정리</td><td>진행 중</td><td>응답 분류를 정리하고 있다.</td></tr><tr><td>3</td><td>디자인 검토</td><td>막힘</td><td>검토 담당자의 회신을 기다리고 있다.</td></tr></tbody></table></section><section class="paper "><div class="paper-label">input/meeting-notes.md</div><h3>기획팀 회의 메모</h3><p class="">작성일: 2026-10-30 (KST)</p><p class="">1. 디자인 검토는 2026-11-05에 진행할 예정이다.</p></section></div></div></div></article><article class="scene slide scene--read-and-return" id="scene-3" data-scene="3"><header class="scene-meta"><span>맡겨 보는 일</span><span>3 / 31</span></header><h2 class="scene-title">파일을 읽고, 돌아온 내용으로 다음 행동을 정합니다</h2><div class="screen-caption">실제 기록 재생 · 제작 Codex 세션에서 명시한 파일 사용</div><div class="canvas"><div class="states"><div class="state-pane selected" data-state="0"><div class="action-flow"><div class="action-actor"><span class="tag ">지금 일어나는 일</span><h3>지침 읽기</h3><p class="term">Tool call: 도구에 구체적인 행동을 요청하는 호출</p></div><div class="verb">읽기 요청 →</div><section class="paper "><div class="paper-label">weekly-brief/SKILL.md</div><p class="quote">1. 보고 기간과 기준일을 확인하고 지정한 자료를 읽는다.</p></section><div class="next-action"><span class="tag ">그다음 판단</span><p class="">지정된 원자료를 읽을 차례입니다.</p></div></div></div><div class="state-pane" data-state="1"><div class="action-flow"><div class="action-actor"><span class="tag ">지금 일어나는 일</span><h3>자료 읽기 요청</h3><p class="term">Tool call: 도구에 구체적인 행동을 요청하는 호출</p></div><div class="verb">요청 →</div><section class="paper pending"><div class="paper-label">읽기 요청의 대상</div><pre>input/tasks.md + input/meeting-notes.md</pre><p class="near-caption">내용은 아직 반환되지 않았습니다.</p></section><div class="next-action"><span class="tag ">그다음 판단</span><p class="">Codex의 모델 → 앱이 제공하는 파일 접근 도구</p></div></div></div><div class="state-pane" data-state="2"><div class="action-flow"><div class="action-actor"><span class="tag ">지금 일어나는 일</span><h3>원문 반환</h3><p class="term">Tool call: 도구에 구체적인 행동을 요청하는 호출</p></div><div class="verb">← 원문 반환</div><section class="paper "><div class="paper-label">업무표 3행 · 실제 반환 발췌</div><p class="subject">디자인 검토</p><p class="status">막힘</p><p class="quote">검토 담당자의 회신을 기다리고 있다.</p></section><div class="next-action"><span class="tag ">그다음 판단</span><p class="">돌아온 내용을 보고 막힘으로 분류합니다.</p></div></div></div></div><nav class="state-nav" aria-label="장면 단계"><button data-set-state="0" aria-pressed="true">지침 읽기</button><button data-set-state="1" aria-pressed="false">자료 읽기 요청</button><button data-set-state="2" aria-pressed="false">원문 반환</button></nav><p class="micro-note">동작 설명도: 실제 기록의 파일 읽기를 요청·반환으로 풀어 설명함. 원시 호출 페이로드 재현 아님.</p></div></article><article class="scene slide scene--draft-from-evidence" id="scene-4" data-scene="4"><header class="scene-meta"><span>맡겨 보는 일</span><span>4 / 31</span></header><h2 class="scene-title">현재 상태와 다음 일정을 구분해 썼습니다</h2><div class="screen-caption">실제 기록 재생 · run-output.md 발췌</div><div class="canvas"><div class="two-docs evidence-pair"><section class="paper "><div class="paper-label">읽은 원자료</div><div class="evidence-row"><span class="tag ">업무표 3행</span><p class="">디자인 검토 | 막힘 | 검토 담당자의 회신을 기다리고 있다.</p></div><div class="evidence-row"><span class="tag ">2026-10-30 회의 메모 1항</span><p class="">디자인 검토는 2026-11-05에 진행할 예정이다.</p></div></section><div class="between">→</div><section class="paper "><div class="paper-label">실제 보고서 초안</div><div class="evidence-row"><span class="tag ">막힘</span><p class="">디자인 검토 — 검토 담당자의 회신을 기다리고 있다. 근거: 업무표 3행.</p></div><div class="evidence-row"><span class="tag ">다음 확인</span><p class="">디자인 검토는 2026-11-05에 진행할 예정이다. 근거: 2026-10-30 회의 메모 1항.</p></div></section></div></div></article><article class="scene slide scene--next-week" id="scene-5" data-scene="5"><header class="scene-meta"><span>맡겨 보는 일</span><span>5 / 31</span></header><h2 class="scene-title">다음 주에 바뀌는 것 / 그대로 쓸 방법</h2><div class="screen-caption">같은 결과를 복사하는 것과 같은 방법을 쓰는 것은 다릅니다</div><div class="canvas"><div class="fact-method"><div><span class="label">다음 주에 바뀔 사실</span><div class="facts"><p class="">디자인 검토는 2026-11-05에 진행할 예정이다.</p><p class="">설문 결과 정리 — 진행 중</p></div></div><div><span class="label">다음에도 쓸 방법</span><div class="methods"><p class="">지정한 자료를 읽는다.</p><p class="">상태를 확인하고 주장 옆에 근거 위치를 남긴다.</p><p class="">일정은 메모에서 다시 확인한다.</p></div></div></div><p class="question-line">이 보고서를 다음 주에 다시 맡길 때, 무엇을 남기고 싶으세요?</p></div></article><article class="scene slide scene--save-the-method compact-title" id="scene-6" data-scene="6"><header class="scene-meta"><span>방법을 파일로 남기기</span><span>6 / 31</span></header><h2 class="scene-title">날짜 대신, 날짜를 확인하는 방법을 남깁니다</h2><div class="screen-caption">교사용 지침 비교 예</div><div class="canvas"><div class="method-transform" data-transform="0"><div class="method-fact"><span class="tag ">이번 주 원자료</span><p class="quote">디자인 검토는 2026-11-05에 진행할 예정이다.</p><div class="bad-example"><span class="tag ">이렇게 굳히면 다음 주에 틀릴 수 있습니다</span><p class="">메모가 있으면 11월 5일을 쓴다.</p></div></div><section class="paper skill-destination"><div class="paper-label">weekly-brief/SKILL.md · 절차</div><span class="tag ">실제 지침의 해당 부분</span><pre>1. 보고 기간과 기준일을 확인하고 지정한 자료를 읽는다.
-3. 각 주장 옆에 자료 이름과 행 또는 문단 위치를 남긴다.</pre><div class="destination-slot"></div></section><div class="moving-method" data-object="method"><span class="tag ">반복할 판단 기준</span><p class="">메모를 읽고 확인된 일정과 근거를 쓴다.</p></div></div><nav class="state-nav"><button data-transform-to="0" aria-pressed="true">자료와 방법</button><button data-transform-to="1" aria-pressed="false">지침에 남기기 →</button></nav></div></article><article class="scene slide scene--skill-file compact-title" id="scene-7" data-scene="7"><header class="scene-meta"><span>방법을 파일로 남기기</span><span>7 / 31</span></header><h2 class="scene-title">업무 지침과 필요한 파일을 묶은 Skill</h2><div class="screen-caption">weekly-brief/ · 실제 시연에 사용한 두 파일</div><div class="canvas"><div class="file-spread"><section class="paper "><div class="paper-label">SKILL.md · 앞부분</div><pre>---
-name: weekly-brief
-description: &gt;-
-  지정된 업무표와 회의 메모를 읽고 완료·진행·막힘 및 다음 확인 사항을
-  정리한 주간업무 보고서 초안을 만든다. 주간보고서 초안 요청에 사용한다.
----</pre><h3>주간업무 보고서 초안</h3><p class="">다른 종류의 요청에 이 분류·서식을 강제로 적용하지 않는다.</p><h3>입력</h3><p class="">사용자가 지정한 보고 기간과 기준일, 업무표, 관련 회의 메모.</p></section><section class="paper "><div class="paper-label">같은 파일 · 이어서</div><h3>절차</h3><p class="">1. 보고 기간과 기준일을 확인하고 지정한 자료를 읽는다.</p><p class="">2. 업무표에서 확인한 상태를 완료·진행·막힘으로 분류한다.</p><p class="">3. 각 주장 옆에 자료 이름과 행 또는 문단 위치를 남긴다.</p><p class="">4. 자료가 없으면 해당 정보만 미확인으로 남긴다. 확인한 사실은 유지한다.</p><p class="">5. 상태가 상충하면 두 근거와 확인할 사항을 남기고 한 상태로 확정 집계하지 않는다.</p><p class="">6. 분류·근거 확인 후 assets/report-template.md의 빈 서식을 읽고 초안을 작성한다.</p><p class="">7. 기간·상태·근거·누락 표시를 원자료와 대조해 초안을 제시한다.</p><h3>완료 기준</h3><p class="">완료·진행·막힘 및 다음 확인 항목이 있다. 각 업무 주장에 근거가 있고,</p><p class="">확인하지 않은 상태나 일정을 만들어 넣지 않았다.</p></section></div><p class="folder-caption">weekly-brief/
-  SKILL.md
-  assets/
-    report-template.md</p></div></article><article class="scene slide scene--format-origin compact-title" id="scene-8" data-scene="8"><header class="scene-meta"><span>방법을 파일로 남기기</span><span>8 / 31</span></header><h2 class="scene-title">같은 형식으로 작성하고, 사용하는 앱에 맞춰 불러옵니다</h2><div class="screen-caption">여러 앱에서 업무 지침을 공유하는 공통 형식</div><div class="canvas"><div class="file-history"><section class="paper "><div class="paper-label">weekly-brief/SKILL.md</div><div class="format-name">SKILL.md</div><p class="file-line">이름·사용 조건</p><p class="file-line">수행 방법·완료 기준</p></section><div class="history-notes"><div><span class="tag ">2025-10-16</span><h3>Anthropic, Agent Skills 공개</h3></div><div><span class="tag ">2025-12-18</span><h3>열린 표준 공개 발표</h3></div><p class="near-caption">공통 파일 형식 ≠ 모든 앱의 설치 경로·도구·권한이 같음</p></div></div></div></article><article class="scene slide scene--description compact-title" id="scene-9" data-scene="9"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>9 / 31</span></header><h2 class="scene-title">업무표·회의 메모 → 주간보고서 초안</h2><div class="screen-caption">name은 식별 이름 · description은 무엇을 언제 할지</div><div class="canvas"><div class="metadata-match"><div class="request-fragment"><span class="tag ">이번 요청</span><blockquote>기획팀 주간보고서 초안을 작성해.</blockquote><p class="near-caption">“문서를 잘 쓴다.”만으로는 사용 범위를 알기 어렵습니다.</p></div><section class="paper "><div class="paper-label">SKILL.md · 메타정보</div><pre>---
-name: weekly-brief
-description: &gt;-
-  지정된 업무표와 회의 메모를 읽고 완료·진행·막힘 및 다음 확인 사항을
-  정리한 주간업무 보고서 초안을 만든다. 주간보고서 초안 요청에 사용한다.
----</pre></section></div><p class="micro-note">앱이 설명을 바탕으로 선택할 수 있음. 자동 선택을 보장하지 않음.</p></div></article><article class="scene slide scene--body-judgment compact-title" id="scene-10" data-scene="10"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>10 / 31</span></header><h2 class="scene-title">확인한 것은 유지하고,<br>모르는 것만 남깁니다</h2><div class="screen-caption">SKILL.md · 절차 3–5와 완료 기준</div><div class="canvas"><div class="judgment-closeup"><div><span class="tag ">구체적인 판단 기준</span><div class="numbered-rules"><p class="">3. 각 주장 옆에 자료 이름과 행 또는 문단 위치를 남긴다.</p><p class="">4. 자료가 없으면 해당 정보만 미확인으로 남긴다. 확인한 사실은 유지한다.</p><p class="">5. 상태가 상충하면 두 근거와 확인할 사항을 남기고 한 상태로 확정 집계하지 않는다.</p></div></div><aside><span class="tag ">결과에서 확인할 것</span><p class="quote">각 업무 주장에 근거가 있고, 확인하지 않은 상태나 일정을 만들어 넣지 않았다.</p><div class="word-change"><p class="">정확하게 써 줘.</p><span>↓</span><p class="">각 업무 주장에 자료 이름과 위치를 남긴다.</p></div></aside></div></div></article><article class="scene slide scene--support-template compact-title" id="scene-11" data-scene="11"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>11 / 31</span></header><h2 class="scene-title">판단을 마친 뒤, 빈 자리를 채웁니다</h2><div class="screen-caption">SKILL.md 절차 6 → assets/report-template.md</div><div class="canvas"><div class="template-link"><div><span class="tag ">SKILL.md · 절차 6</span><p class="quote">6. 분류·근거 확인 후 assets/report-template.md의 빈 서식을 읽고 초안을 작성한다.</p><div class="down-label">서식을 읽습니다 →</div><p class="near-caption">재사용할 빈 서식은 Skill 안 / 이번 주 원자료는 input/ / 시험 기대 결과는 검토자용으로 별도</p></div><section class="paper blank-template"><div class="paper-label">weekly-brief/assets/report-template.md</div><h3>주간업무 보고서 초안</h3><p class="">대상 팀: {{팀}}</p><p class="">보고 기간: {{시작일}}~{{종료일}}</p><p class="">기준일: {{기준일}}</p><h3>완료</h3><p class="">{{확인된 완료 업무와 근거}}</p><h3>진행</h3><p class="">{{확인된 진행 업무와 근거}}</p><h3>막힘</h3><p class="">{{확인된 막힘 업무와 근거}}</p><h3>다음 확인</h3><p class="">{{일정·누락·상충 및 확인할 자료와 근거}}</p></section></div></div></article><article class="scene slide scene--place-skill compact-title" id="scene-12" data-scene="12"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>12 / 31</span></header><h2 class="scene-title">프로젝트 안 .agents/skills/weekly-brief/</h2><div class="screen-caption">공식 Codex 배치 예 · 시작용 프로젝트로 따라 하기</div><div class="canvas"><div class="folder-layout"><section class="paper "><div class="paper-label">프로젝트의 파일 배치 예</div><pre>my-project/
-  .agents/
-    skills/
-      weekly-brief/
-        SKILL.md
-        assets/
-          report-template.md
-  input/
-    tasks.md
-    meeting-notes.md</pre></section><div class="placement-actions"><div><span>1</span><p class="">시작용 프로젝트 ZIP을 내려받아 압축을 푼다.</p></div><div><span>2</span><p class="">풀린 my-project 폴더를 Codex에서 연다.</p></div><div><span>3</span><p class="">Skill 선택 목록에서 weekly-brief를 확인한다.</p></div><p class="near-caption">목록에 없으면 현재 프로젝트·경로·name을 확인하고 Codex를 재시작해 확인한다.</p><a class="download-link" href="examples/starter-project.zip">시작용 프로젝트 ZIP ↓</a></div></div></div></article><article class="scene slide scene--invoke-skill compact-title" id="scene-13" data-scene="13"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>13 / 31</span></header><h2 class="scene-title">방법은 $weekly-brief, 사실은 이번 입력에서</h2><div class="screen-caption">공식 Codex 명시 호출 예</div><div class="canvas"><div class="states"><div class="state-pane selected" data-state="0"><div class="prompt-composer"><section class="paper "><div class="paper-label">Codex에 보낼 요청 · 셸 명령 아님</div><pre>$weekly-brief</pre><span class="caret"></span></section><div class="prompt-meaning"><span class="tag ">이번에 덧붙인 것</span><p class="quote">쓸 Skill을 명시한다.</p><p class="near-caption">$weekly-brief</p></div></div></div><div class="state-pane" data-state="1"><div class="prompt-composer"><section class="paper "><div class="paper-label">Codex에 보낼 요청 · 셸 명령 아님</div><pre>$weekly-brief
-2026-10-30을 기준으로 기획팀의 2026-10-26~2026-10-30 주간업무 보고서 초안을 작성해.</pre><span class="caret"></span></section><div class="prompt-meaning"><span class="tag ">이번에 덧붙인 것</span><p class="quote">이번 작업의 조건을 준다.</p><p class="near-caption">2026-10-30 / 2026-10-26~2026-10-30 / 기획팀</p></div></div></div><div class="state-pane" data-state="2"><div class="prompt-composer"><section class="paper "><div class="paper-label">Codex에 보낼 요청 · 셸 명령 아님</div><pre>$weekly-brief
-2026-10-30을 기준으로 기획팀의 2026-10-26~2026-10-30 주간업무 보고서 초안을 작성해.
-input/tasks.md와 input/meeting-notes.md를 사용해.</pre><span class="caret"></span></section><div class="prompt-meaning"><span class="tag ">이번에 덧붙인 것</span><p class="quote">읽을 원자료를 지정한다.</p><p class="near-caption">input/tasks.md + input/meeting-notes.md</p></div></div></div></div><nav class="state-nav" aria-label="장면 단계"><button data-set-state="0" aria-pressed="true">Skill 지정</button><button data-set-state="1" aria-pressed="false">이번 조건</button><button data-set-state="2" aria-pressed="false">원자료 지정</button></nav><p class="question-line">비교해 보세요: $weekly-brief 보고서 써 줘.</p></div></article><article class="scene slide scene--use-and-review compact-title" id="scene-14" data-scene="14"><header class="scene-meta"><span>파일을 골라 사용하기</span><span>14 / 31</span></header><h2 class="scene-title">요청한 자료를 읽었는지, 결과가 그 자료와 맞는지</h2><div class="screen-caption">실제 기록의 초안으로 확인 순서를 연습합니다</div><div class="canvas"><div class="review-result"><div class="review-path"><span class="tag ">실제 기록에서 읽은 파일</span><div><p class="verb-line">지침 읽기</p><pre>weekly-brief/SKILL.md</pre></div><div><p class="verb-line">원자료 읽기</p><pre>input/tasks.md + input/meeting-notes.md</pre></div><div><p class="verb-line">서식 읽기</p><pre>weekly-brief/assets/report-template.md</pre></div><h3>초안에서 확인</h3><div class="lines"><p class="">보고 기간·기준일</p><p class="">업무표 3행 ↔ 막힘 문장</p><p class="">회의 메모 1항 ↔ 2026-11-05 예정</p></div></div><section class="paper full-report"><div class="paper-label">run-output.md · 실제 초안 발췌</div><h3>주간업무 보고서 초안</h3><p class="">대상 팀: 기획팀</p><p class="">보고 기간: 2026-10-26~2026-10-30</p><p class="">기준일: 2026-10-30 (KST)</p><h3>막힘</h3><p class="">디자인 검토 — 검토 담당자의 회신을 기다리고 있다. 근거: 업무표 3행.</p><h3>다음 확인</h3><p class="">디자인 검토는 2026-11-05에 진행할 예정이다. 근거: 2026-10-30 회의 메모 1항.</p><p class="">검토 담당자의 회신 여부를 확인한다. 근거: 업무표 3행의 대기 상태.</p><a class="output-link" href="examples/teacher-demo/run-output.md">전체 실제 결과 보기 →</a></section></div></div></article><article class="scene slide scene--more-work" id="scene-15" data-scene="15"><header class="scene-meta"><span>업무가 넓어질 때</span><span>15 / 31</span></header><h2 class="scene-title">세 문서에 같은 날짜 표기를 쓰려면</h2><div class="screen-caption">가정 상황 · 보고서에서 회의록·제안서로 업무 확대</div><div class="canvas"><div class="states"><div class="state-pane selected" data-state="0"><div class="project-scope mixed"><div class="project-rule"><span class="tag ">프로젝트 공통 규칙</span><h3>이 프로젝트의 날짜는 YYYY-MM-DD로 표기한다.</h3></div><div class="branch-lines"><i></i><i></i><i></i></div><div class="project-documents"><div class="project-document"><h3>주간보고서</h3><p class="date-value">기준일: 2026-10-30</p></div><div class="project-document"><h3>회의록</h3><p class="date-value">회의일: 10월 30일</p></div><div class="project-document"><h3>제안서</h3><p class="date-value">작성일: 2026.10.30</p></div></div><div class="task-only"><span class="tag ">주간보고서에만</span><p class="">업무표의 상태를 완료·진행·막힘으로 분류한다.</p></div></div></div><div class="state-pane" data-state="1"><div class="project-scope normalized"><div class="project-rule"><span class="tag ">프로젝트 공통 규칙</span><h3>이 프로젝트의 날짜는 YYYY-MM-DD로 표기한다.</h3></div><div class="branch-lines"><i></i><i></i><i></i></div><div class="project-documents"><div class="project-document"><h3>주간보고서</h3><p class="date-value">기준일: 2026-10-30</p></div><div class="project-document"><h3>회의록</h3><p class="date-value">회의일: 2026-10-30</p></div><div class="project-document"><h3>제안서</h3><p class="date-value">작성일: 2026-10-30</p></div></div><div class="task-only"><span class="tag ">주간보고서에만</span><p class="">업무표의 상태를 완료·진행·막힘으로 분류한다.</p></div></div></div></div><nav class="state-nav" aria-label="장면 단계"><button data-set-state="0" aria-pressed="true">서로 다른 날짜 표기</button><button data-set-state="1" aria-pressed="false">공통 규칙 적용</button></nav></div></article><article class="scene slide scene--agents-scope compact-title" id="scene-16" data-scene="16"><header class="scene-meta"><span>업무가 넓어질 때</span><span>16 / 31</span></header><h2 class="scene-title">공통 규칙은 프로젝트에, 수행 방법은 업무에</h2><div class="screen-caption">Codex의 프로젝트 지침 예</div><div class="canvas"><div class="scope-placement"><section class="paper "><div class="paper-label">프로젝트 파일</div><pre>my-project/
-  AGENTS.md
-  .agents/skills/
-    weekly-brief/SKILL.md
-  reports/
-  meeting-notes/
-  proposals/</pre></section><div class="scope-rules"><div class="common-bracket"><span class="tag ">AGENTS.md · 여러 업무에 적용</span><h3>프로젝트 문서 규칙</h3><p class="">날짜는 YYYY-MM-DD로 표기한다.</p></div><div class="task-bracket"><span class="tag ">weekly-brief/SKILL.md · 해당 업무</span><p class="quote">업무표에서 확인한 상태를 완료·진행·막힘으로 분류한다.</p></div><p class="near-caption">실제 발견 범위·우선순위는 앱과 작업 위치에 따른다.</p></div></div></div></article><article class="scene slide scene--where-to-put" id="scene-17" data-scene="17"><header class="scene-meta"><span>업무가 넓어질 때</span><span>17 / 31</span></header><h2 class="scene-title">이번만 / 이 업무마다 / 이 프로젝트에서</h2><div class="screen-caption">하나의 요청을 세 위치에 나눠 놓는 판단 연습</div><div class="canvas"><div class="placement-lines"><div><span class="tag ">이번 요청</span><p class="">이번 보고서는 기획팀, 기준일은 2026-10-30</p></div><div><span class="tag ">weekly-brief/SKILL.md</span><p class="">주간보고서의 각 주장에 원자료 위치를 붙인다.</p></div><div><span class="tag ">AGENTS.md</span><p class="">프로젝트 문서 날짜는 YYYY-MM-DD로 쓴다.</p></div></div><p class="question-line">“이번 보고서는 두 문단으로만 써 줘”는 우선 어디에 둘까요?</p></div></article><article class="scene slide scene--source-moved" id="scene-18" data-scene="18"><header class="scene-meta"><span>자료가 옮겨졌을 때</span><span>18 / 31</span></header><h2 class="scene-title">방법은 그대로, 읽는 경로는 달라졌습니다</h2><div class="screen-caption">가정 상황 · 업무표가 외부 서비스로 이동</div><div class="canvas"><div class="states"><div class="state-pane selected" data-state="0"><div class="source-move"><div class="fixed-method"><span class="tag ">수행 방법은 유지</span><p class="quote">weekly-brief · 상태 확인·근거·누락·서식</p></div><div class="acting-app"><span class="tag ">작업의 주체</span><h3>Codex 앱</h3><p class="">업무표 읽기 요청</p></div><div class="connection-edge ">파일 읽기 →</div><div class="data-place"><span class="tag ">입력 자료</span><p class="quote">내 폴더의 input/tasks.md</p></div></div></div><div class="state-pane" data-state="1"><div class="source-move"><div class="fixed-method"><span class="tag ">수행 방법은 유지</span><p class="quote">weekly-brief · 상태 확인·근거·누락·서식</p></div><div class="acting-app"><span class="tag ">작업의 주체</span><h3>Codex 앱</h3><p class="">업무표 읽기 요청</p></div><div class="connection-edge broken">연결·권한 미확인</div><div class="data-place"><span class="tag ">입력 자료</span><p class="quote">회사 업무 서비스의 기획팀 업무표</p></div></div></div></div><nav class="state-nav" aria-label="장면 단계"><button data-set-state="0" aria-pressed="true">내 폴더의 자료</button><button data-set-state="1" aria-pressed="false">회사 서비스로 이동</button></nav><p class="micro-note">사용 가능한 조회 도구와 접근 권한을 아직 확인하지 않음</p></div></article><article class="scene slide scene--mcp-connection compact-title" id="scene-19" data-scene="19"><header class="scene-meta"><span>자료가 옮겨졌을 때</span><span>19 / 31</span></header><h2 class="scene-title">MCP는 서버와 기능·자료를 주고받는 표준 경로입니다</h2><div class="screen-caption">내장 도구·기존 커넥터를 사용할 수도 있습니다</div><div class="canvas"><div class="mcp-route"><div class="mcp-node app-node"><span class="tag ">작업하는 앱</span><h3>Codex</h3><p class="">MCP 클라이언트</p></div><div class="protocol"><strong>MCP</strong><p class="">연결 표준 규약</p><span>조회 요청 →<br>← 조회 결과</span></div><div class="mcp-node server-node"><h3>MCP 서버</h3><p class="">허용된 기능 제공</p></div><div class="service-arrow">조회 →<br>← 반환</div><div class="mcp-node service-node"><h3>회사 업무<br>서비스</h3><p class="">허용된 자료</p></div></div><div class="mcp-foundation"><div class="rule"><p class="">Skill: 조회한 자료를 어떻게 보고서로 만들지 안내</p></div><p class="">도구 제공과 계정 접근 권한은 별도 준비</p><p class="near-caption">이미 있는 내장 도구·커넥터로도 조회 가능</p></div></div></article><article class="scene slide scene--whole-map" id="scene-20" data-scene="20"><header class="scene-meta"><span>자료가 옮겨졌을 때</span><span>20 / 31</span></header><h2 class="scene-title">규칙의 범위와 실행 경로를 함께 봅니다</h2><div class="screen-caption">앞에서 해결한 문제를 한 작업에 겹쳐 놓은 지도</div><div class="canvas"><div class="whole-map"><div class="map-guidance"><div><span class="tag ">AGENTS.md</span><p class="">프로젝트 문서의 날짜 표기</p></div><div><span class="tag ">Skill</span><p class="">주간보고서의 입력·판단·서식·확인</p></div></div><div class="map-arrow">기준 제공 →</div><div class="map-app"><h3>에이전트 앱</h3><p class="">업무표 조회를 요청하는 행동</p><span class="tag ">Tool call</span></div><div class="map-io"><div><span class="tag ">MCP — 선택적 경로</span><p class="">서버가 제공하는 기능·자료와 통신</p></div><div class="roundtrip">요청 → 도구<br>← 반환된 업무표</div><div class="map-output">주간보고서 초안</div></div></div></div></article><article class="scene slide scene--missing-predict" id="scene-21" data-scene="21"><header class="scene-meta"><span>조건을 바꿔 판단하기</span><span>21 / 31</span></header><h2 class="scene-title">회의 메모만 없애면, 어느 문장을 바꿔야 할까요?</h2><div class="screen-caption">조건 변경 연습 · 오른쪽은 비교할 이전 출력</div><div class="canvas"><div class="missing-pair"><div class="source-stack"><section class="paper "><div class="paper-label">업무표 3행 · 남아 있는 자료</div><h3>디자인 검토 <em>막힘</em></h3><p class="">검토 담당자의 회신을 기다리고 있다.</p></section><section class="paper excluded"><div class="paper-label">회의 메모 1항 · 이번 입력에 없음</div><p class="">디자인 검토는 2026-11-05에 진행할 예정이다.</p></section></div><div class="evidence-bridges"><span></span><span class="broken"></span></div><section class="paper "><div class="paper-label">이전 출력의 해당 부분</div><div class="evidence-row"><span class="tag ">막힘</span><p class="">디자인 검토 — 검토 담당자의 회신을 기다리고 있다. 근거: 업무표 3행.</p></div><div class="evidence-row "><span class="tag ">다음 확인</span><p class="">디자인 검토는 2026-11-05에 진행할 예정이다. 근거: 2026-10-30 회의 메모 1항.</p></div></section></div><div class="question-only"><p class="">회의 메모만 없으면 어느 문장을 바꿔야 할까요?</p><small>다음 장면에서 확인합니다.</small></div></div></article><article class="scene slide scene--missing-reveal" id="scene-22" data-scene="22"><header class="scene-meta"><span>조건을 바꿔 판단하기</span><span>22 / 31</span></header><h2 class="scene-title">일정만 미확인. 확인한 막힘은 유지.</h2><div class="screen-caption">조건 변경의 기대 결과 · 검토자용</div><div class="canvas"><div class="missing-pair"><div class="source-stack"><section class="paper "><div class="paper-label">업무표 3행 · 남아 있는 자료</div><h3>디자인 검토 <em>막힘</em></h3><p class="">검토 담당자의 회신을 기다리고 있다.</p></section><section class="paper excluded"><div class="paper-label">회의 메모 1항 · 이번 입력에 없음</div><p class="">디자인 검토는 2026-11-05에 진행할 예정이다.</p></section></div><div class="evidence-bridges"><span></span><span class="broken"></span></div><section class="paper "><div class="paper-label">조건 변경 후 기대 결과</div><div class="evidence-row"><span class="tag ">막힘 · 유지</span><p class="">막힘: 디자인 검토 — 검토 담당자의 회신을 기다리고 있다. 근거: 업무표 3행.</p></div><div class="evidence-row replaced"><span class="tag ">다음 확인 · 수정</span><p class="">디자인 검토 일정은 미확인 — 회의 메모 또는 담당자 확인이 필요하다.</p></div></section></div><div class="rule"><p class="">4. 자료가 없으면 해당 정보만 미확인으로 남긴다. 확인한 사실은 유지한다.</p></div></div></article><article class="scene slide scene--conflict" id="scene-23" data-scene="23"><header class="scene-meta"><span>조건을 바꿔 판단하기</span><span>23 / 31</span></header><h2 class="scene-title">업무표는 막힘,<br>추가 알림은 완료라면?</h2><div class="screen-caption">교사용 상충 입력과 기대 결과</div><div class="canvas"><div class="conflict-inputs"><section class="paper "><div class="paper-label">기존 업무표 3행</div><p class="quote">디자인 검토 | 막힘 | 검토 담당자의 회신을 기다리고 있다.</p></section><section class="paper "><div class="paper-label">추가 알림 · 교사용 가정</div><p class="quote">디자인 검토를 완료했다.</p><p class="near-caption">적용 기준일과 우선순위를 판단할 정보 없음</p></section></div><p class="question-line">완료와 막힘 중 하나로 확정해도 될까요?</p><details class="answer"><summary>완료와 막힘 중 하나로 확정해도 될까요? <span>답과 이유 보기</span></summary><div><p class="answer-text">두 근거를 남기고 기준일의 최종 상태를 확인한다.</p><p class="">이 입력에는 시점·우선순위 근거가 없고 Skill은 상충 상태의 확정 집계를 보류하도록 정했다.</p></div></details></div></article><article class="scene slide scene--nonmatch" id="scene-24" data-scene="24"><header class="scene-meta"><span>조건을 바꿔 판단하기</span><span>24 / 31</span></header><h2 class="scene-title">디자인 검토 회의 초대문에는<br>이 보고서 서식을 쓰지 않습니다</h2><div class="screen-caption">사용 조건을 확인하는 연습</div><div class="canvas"><div class="boundary-request"><blockquote>디자인 검토 회의 초대문을 작성해.</blockquote><div class="boundary-match"><span class="tag ">Skill의 사용 조건</span><p class="quote">주간보고서 초안 요청에 사용한다.</p></div></div><div class="wrong-format"><span class="tag ">이 요청에 강제할 서식이 아님</span><div class="format-labels"><p class="">완료</p><p class="">진행</p><p class="">막힘</p><p class="">다음 확인</p></div></div><details class="answer"><summary>같은 디자인 검토가 등장하면 같은 Skill을 써야 할까요? <span>답과 이유 보기</span></summary><div><p class="answer-text">아니요. 요청한 결과가 회의 초대문이므로 주간보고서 분류·서식을 강제하지 않습니다.</p><p class="">사용 조건은 업무명만이 아니라 수행할 업무와 결과를 기준으로 정합니다.</p></div></details></div></article><article class="scene slide scene--read-denied" id="scene-25" data-scene="25"><header class="scene-meta"><span>조건을 바꿔 판단하기</span><span>25 / 31</span></header><h2 class="scene-title">읽지 못했다면, 없다고 결론 내리지 않습니다</h2><div class="screen-caption">가정 상황 · 업무표 조회 거부</div><div class="canvas"><div class="denied-layout"><div><span class="tag ">가정한 도구 반환</span><blockquote>업무표 조회 거부: 이 자료에 접근할 수 없음</blockquote><div class="struck">이번 주 업무 없음</div></div><div><span class="tag ">확인할 자리: 도구·연결·권한</span><p class="quote">업무표를 읽지 못해 상태 확인이 불가하다. 접근 권한 또는 허용된 자료 제공이 필요하다.</p><p class="near-caption">이미 읽은 다른 자료가 있다면 그 자료로 확인한 사실은 유지한다.</p></div></div></div></article><article class="scene slide scene--transfer-example" id="scene-26" data-scene="26"><header class="scene-meta"><span>내 업무로 옮기기</span><span>26 / 31</span></header><h2 class="scene-title">“준호가 FAQ 초안을 작성하기로 했다.”</h2><div class="screen-caption">함께 설계할 별도 예 · 원문에 기한은 없음</div><div class="canvas"><div class="transfer-table"><section class="paper "><div class="paper-label">회의 메모의 원문</div><p class="quote">준호가 FAQ 초안을 작성하기로 했다.</p></section><table><thead><tr><th>확인할 항목</th><th>원문에서 찾은 내용</th></tr></thead><tbody><tr><td>할 일</td><td>FAQ 초안 작성</td></tr><tr><td>담당자</td><td>준호</td></tr><tr><td>기한</td><td>어떻게 남길까요?</td></tr></tbody></table></div><details class="answer"><summary>준호의 FAQ 초안 기한을 정할 수 있나요? <span>답과 이유 보기</span></summary><div><p class="answer-text">기한은 미확인으로 두고 확인할 대상을 적습니다.</p><p class="">담당자와 할 일은 있지만 기한은 원문에 없습니다.</p></div></details></div></article><article class="scene slide scene--transfer-to-skill compact-title" id="scene-27" data-scene="27"><header class="scene-meta"><span>내 업무로 옮기기</span><span>27 / 31</span></header><h2 class="scene-title">입력 → 판단 → 결과 확인</h2><div class="screen-caption">44분부터 직접 작성합니다</div><div class="canvas"><div class="transfer-draft"><div><div class="transfer-connection"><p class="">준호가 FAQ 초안을 작성하기로 했다.</p><span>↓ 확인할 항목으로 바꾼다</span><p class="mint">담당자와 기한을 각각 확인한다.</p></div><div class="transfer-connection"><p class="">기한이 없음</p><span>↓ 반복할 판단 기준으로 바꾼다</span><p class="mint">원문에 없는 항목은 미확인으로 남긴다.</p></div></div><section class="paper "><div class="paper-label">meeting-actions/SKILL.md · 작성 예</div><pre>---
-name: meeting-actions
-description: 회의 메모에서 결정된 후속 할 일·담당자·기한을 정리할 때 사용한다.
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Skill — 같은 설명을 두 번 하지 않는 법</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="에이전트를 처음 쓰는 분부터 써 본 분까지를 위한 60분 Agent Skill 강의">
+<style>
+@font-face{font-family:"NSK";src:url(assets/NotoSansKR-Regular.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"NSK";src:url(assets/NotoSansKR-Bold.woff2) format("woff2");font-weight:700}
+:root{
+  --paper:#F5F3EE;--paper2:#ECE8DF;--ink:#111318;--ink2:#3A3D45;--mute:#7A7D85;--line:#DCD7CB;--card:#FFFFFF;--dark:#0E1014;
+  --tool:#2D6BEF;--mcp:#7048E8;--agents:#C98A00;--skill:#F0532D;
+  --tool-bg:#E5EDFE;--mcp-bg:#EEE9FD;--agents-bg:#FBF0D2;--skill-bg:#FDE7E0;
+  --mono:"DejaVu Sans Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#08090b;overflow:hidden}
+body{font-family:"NSK","Noto Sans CJK KR",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
+#deck{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+.slide{position:absolute;inset:0;background:var(--paper);padding:60px 100px 128px;display:none;flex-direction:column;overflow:hidden}
+.slide.on{display:flex}
+.slide.on>header{animation:rise .6s var(--ease) both}
+.slide.on>.stage{animation:fade .5s .12s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.slide.dark{background:var(--dark);color:#EEECE6}
+/* header */
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding-bottom:26px;border-bottom:1.5px solid var(--line)}
+.dark header{border-color:#262931}
+.eyebrow{font-size:21px;font-weight:700;letter-spacing:.04em;color:var(--mute);margin-bottom:14px;font-variant-numeric:tabular-nums}
+.eyebrow b{color:var(--ink);margin-right:10px}.dark .eyebrow b{color:#EEECE6}
+h2{font-size:54px;line-height:1.22;font-weight:700;letter-spacing:-.028em;max-width:1460px}
+.stage{flex:1;position:relative;margin-top:44px;min-height:0}
+.src{position:absolute;left:100px;bottom:86px;font-size:17px;color:var(--mute);letter-spacing:.01em}
+.src a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+/* footer */
+footer{position:absolute;left:100px;right:100px;bottom:40px;display:flex;align-items:center;gap:8px;font-size:17px;color:var(--mute)}
+footer .brand{font-weight:700;color:var(--ink2);margin-right:22px;white-space:nowrap}
+.dark footer .brand{color:#9a9ca3}
+footer .seg{height:4px;border-radius:2px;background:var(--line);position:relative}
+footer .seg b{position:absolute;left:0;top:0;bottom:0;border-radius:2px;background:var(--ink);transition:width .5s var(--ease)}
+footer .num{margin-left:22px;font-variant-numeric:tabular-nums;min-width:64px;text-align:right}
+.dark footer .seg{background:#262931}.dark footer .seg b{background:#EEECE6}
+/* motion primitives */
+.f{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .6s var(--ease)}
+.f.in{opacity:1;transform:none}
+.slide.stepping .f.in:not(.cur):not(.wire):not(.keep){opacity:.3}
+.f.in{transition:opacity .45s ease,transform .55s var(--ease)}
+footer .pz{display:none;margin-left:16px;font-weight:700;color:var(--skill)}body.paused footer .pz{display:inline}
+.f.only{opacity:0!important;transition:opacity .35s}.f.only.cur{opacity:1!important}
+.wire.f{opacity:1;transform:none}
+.axis.f{opacity:1;transform:scaleX(0);transition:transform 1.1s var(--ease)}.axis.v.f{transform:scaleY(0)}.axis.f.in{transform:none}
+.wire{display:block;overflow:visible}
+.wire path{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.dark .wire path{stroke:#EEECE6}
+.wire .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .75s var(--ease)}
+.wire.in .ln{stroke-dashoffset:0}
+.wire .hd{opacity:0;transition:opacity .2s .62s}.wire.in .hd{opacity:1}
+.hl{--c:rgba(240,83,45,.28);background:linear-gradient(var(--c),var(--c)) no-repeat 0 88%/0% 42%;transition:background-size .8s var(--ease) .15s;padding:0 2px}
+.hl.f{opacity:1;transform:none}.hl.in{background-size:100% 42%}
+.hl.blue{--c:rgba(45,107,239,.3)}
+.hl.full{background-position:0 0;background-size:0% 100%;border-radius:4px}.hl.full.in{background-size:100% 100%}
+.stagger>*{opacity:0;transform:translateY(10px)}
+.stagger.in>*{animation:rise .5s var(--ease) both;animation-delay:calc(var(--i)*110ms)}
+.grow{transform-origin:bottom}
+.ring.in{animation:ring 1.2s ease .5s 1}
+@keyframes ring{0%{box-shadow:0 0 0 0 rgba(240,83,45,.5)}100%{box-shadow:0 0 0 22px rgba(240,83,45,0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* components */
+.card{background:var(--card);border-radius:16px;border:1px solid #E6E1D6;box-shadow:0 1px 2px rgba(17,19,24,.04),0 14px 34px -20px rgba(17,19,24,.28);padding:28px 32px}
+.dark .card{border-color:transparent}
+.mono{font-family:var(--mono)}
+.muted{color:var(--mute)}
+.label{font-size:19px;font-weight:700;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:20px;font-weight:700;padding:5px 14px;border-radius:8px;white-space:nowrap}
+.c-tool{background:var(--tool-bg);color:var(--tool)}.c-mcp{background:var(--mcp-bg);color:var(--mcp)}
+.c-agents{background:var(--agents-bg);color:#94660a}.c-skill{background:var(--skill-bg);color:#C63C1A}
+.c-gray{background:var(--paper2);color:#5d5f66}
+.xl{font-size:40px;line-height:1.35;letter-spacing:-.015em}
+.big{font-size:34px;line-height:1.45;letter-spacing:-.01em}
+.mid{font-size:29px;line-height:1.5}
+.small{font-size:24px;line-height:1.5}
+.center{display:flex;align-items:center;justify-content:center}
+.orange{color:var(--skill)}.blue{color:var(--tool)}.violet{color:var(--mcp)}.amber{color:var(--agents)}
+.instr{background:var(--skill-bg);border-left:5px solid var(--skill);border-radius:6px;padding:14px 18px;font-size:22px;line-height:1.6;color:#8a2c14}
+/* window frames */
+.win{background:#fff;border-radius:14px;border:1px solid #E1DCD0;box-shadow:0 18px 40px -22px rgba(17,19,24,.35);overflow:hidden}
+.win .bar{height:44px;background:#F1EEE7;border-bottom:1px solid #E1DCD0;display:flex;align-items:center;gap:8px;padding:0 16px;font-size:17px;color:var(--mute)}
+.win .bar i{width:11px;height:11px;border-radius:50%;background:#D6D1C5;display:inline-block}
+.win .bar span{margin-left:10px;font-family:var(--mono)}
+.win .body{padding:22px 24px}
+.win.term{background:#16181E;border-color:#23262e}.win.term .bar{background:#1E2128;border-color:#2a2d35;color:#8b8e96}.win.term .bar i{background:#3a3d46}
+.bubble{background:var(--ink);color:#F5F3EE;border-radius:18px 18px 18px 4px;padding:18px 24px;font-size:27px;line-height:1.45;display:inline-block}
+code.blk{display:block;font-family:var(--mono);font-size:27px;line-height:1.65;white-space:pre;color:#E6E4DD}
+.k{color:#8FB0FF}.s{color:#FFB39F}.cm{color:#6F737D}.a{color:#FFD166}
+.icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em}
+/* minimap */
+.minimap{display:flex;gap:6px}
+.minimap span{font-size:17px;font-weight:700;padding:7px 12px;border-radius:8px;background:var(--paper2);color:#a3a29c}
+.minimap span.on.t{background:var(--tool);color:#fff}.minimap span.on.m{background:var(--mcp);color:#fff}
+.minimap span.on.a{background:var(--agents);color:#fff}.minimap span.on.s{background:var(--skill);color:#fff}
+/* concept template */
+.concept{display:grid;grid-template-columns:440px 1fr;gap:72px;height:100%;max-height:680px;align-self:center}
+.ctile{border-radius:20px;display:flex;flex-direction:column;justify-content:space-between;padding:44px;color:#fff;position:relative;overflow:hidden}
+.ctile::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.08)}
+.ctile .icon{width:110px;height:110px;stroke-width:1.6}
+.ctile .meta{font-size:66px;font-weight:700;letter-spacing:-.035em;line-height:1.05}
+.ctile .meta small{display:block;font-size:25px;font-weight:400;opacity:.88;margin-top:16px;letter-spacing:0;line-height:1.5}
+.cright{display:flex;flex-direction:column;gap:30px;min-width:0;justify-content:center}
+.example{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;font-size:30px;line-height:1.5;border-top:1.5px solid var(--line);padding-top:24px}
+.example .label{font-size:18px}
+table.t{border-collapse:collapse;width:100%}
+table.t td{padding:9px 0;border-top:1.5px solid var(--line)}
+table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-weight:700;letter-spacing:.04em}
+.node{transition:fill .4s,color .4s}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+  <symbol id="i-plug" viewBox="0 0 24 24"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8z"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5z"/><path d="M15 3v6h6M7 13h8M7 17h5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+</svg>
+<div id="deck">
+
+<!-- 1 cover -->
+<section class="slide dark" data-act="0">
+  <div class="stage" style="margin-top:0;display:grid;grid-template-columns:1fr 700px;align-items:center">
+    <div>
+      <div class="eyebrow"><b style="color:var(--skill)">●</b>60분 · 에이전트를 처음 쓰는 분부터 써 본 분까지</div>
+      <h1 style="font-size:168px;line-height:.95;letter-spacing:-.055em;font-weight:700;margin:26px 0 44px">Agent<br>Skill</h1>
+      <p style="font-size:48px;line-height:1.3;font-weight:700;letter-spacing:-.025em">같은 설명을<br><span class="orange">두 번 하지 않는 법</span></p>
+    </div>
+    <div style="position:relative;height:620px">
+      <div class="f keep" data-s="1" style="position:absolute;left:150px;top:40px;width:380px;transform:rotate(-5deg)">
+        <div class="win" style="transform:rotate(0)"><div class="bar"><i></i><i></i><i></i><span>SKILL.md</span></div>
+          <div class="body mono" style="font-size:20px;line-height:1.7;color:#333">---<br><span style="color:#2D6BEF">name:</span> meeting-notes<br><span style="color:#2D6BEF">description:</span> <span style="color:#C63C1A">회의 메모를<br>팀 회의록으로 정리한다</span><br>---<br><span style="color:#999">1. 결정된 것만 뽑는다<br>2. 할 일은 표로 …</span></div></div>
+      </div>
+      <svg viewBox="0 0 24 24" style="position:absolute;left:40px;top:250px;width:560px;height:400px" preserveAspectRatio="none"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5l2 2h9a2 2 0 0 1 2 2z" fill="#F0532D"/></svg>
+      <div class="mono" style="position:absolute;left:90px;top:560px;font-size:30px;font-weight:700;color:#fff">meeting-notes/</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 loop -->
+<section class="slide" data-act="0" data-focus>
+  <header><div><div class="eyebrow"><b>01</b>왜 필요한가</div>
+  <h2>에이전트는 스스로 읽고, 도구를 쓰고, 결과를 확인하며 일한다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:700px 1fr;gap:80px;align-items:center">
+    <svg viewBox="0 0 700 620" width="700" height="620" style="overflow:visible">
+      <circle cx="350" cy="320" r="225" fill="none" stroke="#DCD7CB" stroke-width="2" stroke-dasharray="4 10"/>
+      <g class="wire f" data-s="1"><path class="ln" pathLength="1" d="M440 115 A225 225 0 0 1 560 395"/><path class="hd" d="M548 380 L561 398 L572 377"/></g>
+      <g class="wire f" data-s="2"><path class="ln" pathLength="1" d="M490 495 A225 225 0 0 1 210 495"/><path class="hd" d="M228 486 L208 495 L226 508"/></g>
+      <g class="wire f" data-s="3"><path class="ln" pathLength="1" d="M140 395 A225 225 0 0 1 260 115"/><path class="hd" d="M242 112 L262 114 L254 133"/></g>
+      <g font-family="NSK" font-weight="700" text-anchor="middle">
+        <rect x="262" y="262" width="176" height="116" rx="58" fill="#111318"/><text x="350" y="332" font-size="32" fill="#F5F3EE">에이전트</text>
+        <circle cx="350" cy="95" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
+        <text x="350" y="106" font-size="32" fill="#111318">읽는다</text>
+        <g class="f only" data-s="1"><circle cx="350" cy="95" r="72" fill="#111318"/><text x="350" y="106" font-size="32" fill="#fff">읽는다</text></g>
+        <circle cx="545" cy="455" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
+        <text x="545" y="447" font-size="29" fill="#111318">도구를</text><text x="545" y="484" font-size="29" fill="#111318">쓴다</text>
+        <g class="f only" data-s="2"><circle cx="545" cy="455" r="72" fill="#2D6BEF"/><text x="545" y="447" font-size="29" fill="#fff">도구를</text><text x="545" y="484" font-size="29" fill="#fff">쓴다</text></g>
+        <circle cx="155" cy="455" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
+        <text x="155" y="466" font-size="29" fill="#111318">확인한다</text>
+        <g class="f only" data-s="3"><circle cx="155" cy="455" r="72" fill="#111318"/><text x="155" y="466" font-size="29" fill="#fff">확인한다</text></g>
+      </g>
+    </svg>
+    <div style="display:flex;flex-direction:column;gap:30px">
+      <div><div class="label" style="margin-bottom:12px">요청</div><div class="bubble">어제 회의 메모, 정리해 줘</div></div>
+      <div class="f mid" data-s="1" style="display:grid;grid-template-columns:150px 1fr"><b>읽는다</b><span class="muted">메모 파일을 열어 내용을 파악한다</span></div>
+      <div class="f mid" data-s="2" style="display:grid;grid-template-columns:150px 1fr"><b class="blue">도구를 쓴다</b><span class="muted">새 문서를 만들고 내용을 쓴다</span></div>
+      <div class="f mid" data-s="3" style="display:grid;grid-template-columns:150px 1fr"><b>확인한다</b><span class="muted">빠진 내용이 없는지 다시 본다</span></div>
+      <div class="f big" data-s="4" style="border-top:1.5px solid var(--line);padding-top:26px">대답만 하는 챗봇과 달리, <b>일이 끝날 때까지</b> 이 순환을 스스로 반복한다.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide" data-act="0" data-focus>
+  <header><div><div class="eyebrow"><b>01</b>왜 필요한가</div>
+  <h2>하지만 우리 팀이 일하는 방식은 모른다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+    <div class="f" data-s="1">
+      <div class="label" style="margin-bottom:14px">에이전트가 쓴 회의록</div>
+      <div class="win"><div class="bar"><i></i><i></i><i></i><span>회의록.md</span></div>
+      <div class="body mid" style="line-height:1.75;padding:28px 32px">오늘 회의에서는 출시 일정에 대해 논의했습니다. 디자인 쪽은 <span class="hl f" data-s="3">다음 주쯤</span> 시안을 준비하기로 했고, QA 계획도 <span class="hl f" data-s="3">누군가</span> 정리하기로 했습니다. 출시는 <span class="hl f" data-s="3">12월 초가 좋겠다는 의견</span>이 많았습니다…</div></div>
+    </div>
+    <div class="f" data-s="2">
+      <div class="label" style="margin-bottom:14px;color:var(--skill)">우리 팀이 원하는 회의록</div>
+      <div class="win" style="border-color:var(--skill);box-shadow:0 0 0 2px var(--skill),0 18px 40px -22px rgba(17,19,24,.35)"><div class="bar"><i></i><i></i><i></i><span>회의록_1110.md</span></div>
+      <div class="body small" style="padding:26px 32px;display:flex;flex-direction:column;gap:14px">
+        <div><b>결정</b> &nbsp;출시일 12/03 확정</div>
+        <table class="t small"><tr><td>할 일</td><td>담당</td><td>기한</td></tr>
+          <tr><td>시안 3종</td><td class="orange">@민지</td><td>11/18</td></tr>
+          <tr><td>QA 계획</td><td class="orange">@도윤</td><td>11/20</td></tr></table>
+        <div><b>다음 회의</b> &nbsp;11/19 (화) 10:00</div></div></div>
+    </div>
+    <div class="f mid" data-s="3" style="grid-column:1/3;display:flex;gap:40px;align-items:center;justify-content:center">
+      <span class="muted">일반적인 회의록은 잘 쓴다. 그러나</span><b>결정이 흐릿하고 · 담당자가 없고 · 기한이 모호하다</b>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="slide" data-act="0" data-focus>
+  <header><div><div class="eyebrow"><b>01</b>왜 필요한가</div>
+  <h2>그래서 매번 같은 설명을 붙여 넣게 된다</h2></div></header>
+  <div class="stage" style="display:flex;flex-direction:column;gap:40px;justify-content:center">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:36px;align-items:start">
+      <div class="win f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>월요일 · 새 대화</span></div><div class="body">
+        <div class="instr">회의록은 결정 → 할 일 → 다음 회의 순서로. 할 일은 표로, 담당자는 @이름. 기한은 MM/DD.</div>
+        <p class="small" style="margin-top:14px">그리고 이 메모 정리해 줘.</p></div></div>
+      <div class="win f" data-s="2" style="margin-top:44px"><div class="bar"><i></i><i></i><i></i><span>수요일 · 새 대화</span></div><div class="body">
+        <div class="instr">회의록은 결정 → 할 일 → 다음 회의 순서로. 할 일은 표로, 담당자는 @이름. 기한은 MM/DD.</div>
+        <p class="small" style="margin-top:14px">이번 주 회의도 부탁해.</p></div></div>
+      <div class="win f" data-s="3" style="margin-top:88px"><div class="bar"><i></i><i></i><i></i><span>금요일 · 새 대화</span></div><div class="body">
+        <div class="instr">회의록은 결정 → 할 일 → 다음 회의 순서로. 할 일은 표로, 담당자는 @이름. <s style="opacity:.6">기한은 MM/DD.</s></div>
+        <p class="small" style="margin-top:14px">이것도 정리해 줘. <span class="chip c-gray" style="font-size:17px">기한 형식을 깜빡함</span></p></div></div>
+    </div>
+    <div class="f" data-s="4" style="display:flex;align-items:baseline;gap:28px">
+      <span style="font-size:104px;font-weight:700;letter-spacing:-.05em;line-height:1" class="orange">×3</span>
+      <span class="big">같은 설명을 세 번. <b>하루라도 빠뜨리면 결과가 달라진다.</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide" data-act="0" data-focus>
+  <header><div><div class="eyebrow"><b>01</b>왜 필요한가</div>
+  <h2>그 설명을 파일로 꺼내 둔 것이 Skill이다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 140px 1fr;align-items:center;align-content:center;row-gap:70px">
+    <div class="f keep" data-s="0"><div class="label" style="margin-bottom:14px">대화창에 붙여 넣던 설명</div>
+      <div class="instr" style="font-size:27px;padding:22px 26px">회의록은 결정 → 할 일 → 다음 회의 순서로.<br>할 일은 표로, 담당자는 @이름.<br>기한은 MM/DD.</div></div>
+    <svg class="wire f" data-s="1" viewBox="0 0 140 30" width="140" height="30"><path class="ln" pathLength="1" d="M10 15H126"/><path class="hd" d="M116 6L128 15L116 24"/></svg>
+    <div class="f" data-s="1">
+      <div class="label" style="margin-bottom:14px;color:var(--skill)">파일로 꺼내 둔 설명</div>
+      <div class="win" style="box-shadow:0 0 0 2px var(--skill),0 18px 40px -22px rgba(17,19,24,.35)"><div class="bar" style="background:var(--skill);color:#fff;border:0"><svg class="icon" style="width:20px;height:20px"><use href="#i-folder"/></svg><span style="color:#fff;margin-left:4px">meeting-notes/SKILL.md</span></div>
+      <div class="body" style="font-size:27px;line-height:1.6;color:#8a2c14;padding:22px 26px">회의록은 결정 → 할 일 → 다음 회의 순서로.<br>할 일은 표로, 담당자는 @이름.<br>기한은 MM/DD.</div></div>
+    </div>
+    <div class="f" data-s="2" style="grid-column:1/4;display:flex;align-items:center;gap:30px;border-top:1.5px solid var(--line);padding-top:40px">
+      <span class="label">그다음부터</span>
+      <div class="bubble">어제 회의 메모, 정리해 줘</div>
+      <svg class="wire f" data-s="2" viewBox="0 0 90 30" width="90" height="30"><path class="ln" pathLength="1" d="M8 15H76"/><path class="hd" d="M66 6L78 15L66 24"/></svg>
+      <span class="chip c-skill" style="font-size:24px;padding:10px 18px">meeting-notes를 꺼내 읽고 일한다</span>
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="slide" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b>02</b>어떻게 움직이나</div>
+  <h2>Skill은 폴더 하나다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:680px 1fr;gap:80px;align-items:center">
+    <div class="win"><div class="bar"><i></i><i></i><i></i><span>~/.skills</span></div>
+      <div class="body mono" style="font-size:36px;line-height:2.1;padding:34px 44px">
+      <div class="orange" style="font-weight:700"><svg class="icon"><use href="#i-folder"/></svg> meeting-notes/</div>
+      <div class="f" data-s="1">├─ <b>SKILL.md</b></div>
+      <div class="f" data-s="2">├─ template.md</div>
+      <div class="f" data-s="3">└─ scripts/find_todos.py</div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:44px">
+      <div class="f" data-s="1" style="display:grid;grid-template-columns:70px 1fr;gap:10px"><svg class="icon orange" style="width:52px;height:52px"><use href="#i-file"/></svg><div><div class="big"><b>SKILL.md</b> <span class="chip c-skill">필수</span></div><p class="mid muted">이름, 언제 쓰는지, 일하는 순서</p></div></div>
+      <div class="f" data-s="2" style="display:grid;grid-template-columns:70px 1fr;gap:10px"><svg class="icon" style="width:52px;height:52px"><use href="#i-book"/></svg><div><div class="big"><b>참고 자료</b> <span class="chip c-gray">선택</span></div><p class="mid muted">양식, 예시, 용어집</p></div></div>
+      <div class="f" data-s="3" style="display:grid;grid-template-columns:70px 1fr;gap:10px"><svg class="icon" style="width:52px;height:52px"><use href="#i-code"/></svg><div><div class="big"><b>스크립트</b> <span class="chip c-gray">선택</span></div><p class="mid muted">매번 똑같이 돌려야 하는 작업</p></div></div>
+    </div>
+  </div>
+  <div class="src">형식 기준 · <a>agentskills.io/specification</a></div>
+</section>
+
+<!-- 7 -->
+<section class="slide" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b>02</b>어떻게 움직이나</div>
+  <h2>평소에는 이름과 설명 한 줄만 보인다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 120px 1fr;align-items:center">
+    <div class="win term"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md</span></div>
+      <div class="body" style="padding:26px 30px">
+        <code class="blk ring f keep" data-s="1" style="font-size:25px;border-radius:10px;outline:2px solid rgba(240,83,45,.9);outline-offset:8px">---
+<span class="k">name:</span> meeting-notes
+<span class="k">description:</span> <span class="s">회의 메모를 팀 회의록
+  양식으로 정리한다. ‘회의록’,
+  ‘회의 정리’를 요청할 때 쓴다.</span>
+---</code>
+        <div style="position:relative;margin-top:26px">
+          <div style="filter:blur(4px);opacity:.5"><code class="blk" style="font-size:22px">1. 녹취에서 결정된 것만 뽑는다
+2. 할 일은 표로 정리한다
+3. 담당자가 없으면 '미정'
+4. template.md 양식에 맞춘다</code></div>
+          <div class="chip" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#2a2d35;color:#c9c7c0"><svg class="icon"><use href="#i-eye"/></svg>본문은 아직 읽지 않음</div>
+        </div>
+      </div></div>
+    <svg class="wire f" data-s="2" viewBox="0 0 120 30" width="120" height="30" style="margin:0 auto"><path class="ln" pathLength="1" d="M8 15H106"/><path class="hd" d="M96 6L108 15L96 24"/></svg>
+    <div class="f" data-s="2">
+      <div class="label" style="margin-bottom:14px">에이전트가 늘 들고 있는 목록</div>
+      <div class="card stagger f keep" data-s="2" style="padding:6px 30px">
+        <div class="mid" style="padding:15px 0;border-bottom:1.5px solid var(--line)"><b class="orange">meeting-notes</b><br><span class="muted small">회의 메모를 팀 회의록으로 정리한다</span></div>
+        <div class="mid" style="padding:15px 0;border-bottom:1.5px solid var(--line)"><b>expense-report</b><br><span class="muted small">영수증을 경비 양식으로 옮긴다</span></div>
+        <div class="mid" style="padding:15px 0;border-bottom:1.5px solid var(--line)"><b>brand-guide</b><br><span class="muted small">발표 자료에 회사 색과 글꼴을 입힌다</span></div>
+        <div class="mid" style="padding:15px 0"><b>release-notes</b><br><span class="muted small">변경 기록을 공지문으로 바꾼다</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b>02</b>어떻게 움직이나</div>
+  <h2>하려는 일과 맞으면 본문을 펼쳐 읽는다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:380px 100px 440px 100px 1fr;align-items:center">
+    <div><div class="label" style="margin-bottom:12px">요청</div>
+      <div class="bubble" style="font-size:29px">어제 <span class="hl f keep" data-s="1">회의</span> 녹취, 팀 양식으로 <span class="hl f keep" data-s="1">정리</span>해 줘</div></div>
+    <svg class="wire f" data-s="2" viewBox="0 0 100 30" width="100" height="30"><path class="ln" pathLength="1" d="M10 15H86"/><path class="hd" d="M76 6L88 15L76 24"/></svg>
+    <div class="card f" data-s="2" style="padding:6px 0">
+      <div class="mid" style="padding:16px 28px;border-bottom:1.5px solid var(--line);background:var(--skill-bg)"><b class="orange">meeting-notes</b><br><span class="small">“<span class="hl f keep" data-s="2">회의</span> 메모를 … <span class="hl f keep" data-s="2">정리</span>한다”</span></div>
+      <div class="mid muted" style="padding:16px 28px;border-bottom:1.5px solid var(--line)">expense-report</div>
+      <div class="mid muted" style="padding:16px 28px;border-bottom:1.5px solid var(--line)">brand-guide</div>
+      <div class="mid muted" style="padding:16px 28px">release-notes</div>
+    </div>
+    <svg class="wire f" data-s="3" viewBox="0 0 100 30" width="100" height="30"><path class="ln" pathLength="1" d="M10 15H86"/><path class="hd" d="M76 6L88 15L76 24"/></svg>
+    <div class="win f" data-s="3" style="box-shadow:0 0 0 2px var(--skill),0 18px 40px -22px rgba(17,19,24,.35)"><div class="bar"><i></i><i></i><i></i><span>SKILL.md 본문</span></div>
+      <ol class="body small stagger f keep" data-s="3" style="padding:24px 28px 24px 56px;line-height:1.8">
+        <li>녹취에서 결정된 것만 뽑는다</li><li>할 일은 표로: 할 일 · 담당 · 기한</li><li>담당자가 없으면 ‘미정’</li><li>template.md 양식에 맞춘다</li></ol></div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b>02</b>어떻게 움직이나</div>
+  <h2>더 필요할 때만 딸린 자료와 스크립트를 연다</h2></div></header>
+  <div class="stage" style="display:flex;flex-direction:column;gap:26px;justify-content:center">
+    <div class="f" data-s="1" style="display:grid;grid-template-columns:90px 1fr 380px;align-items:center;gap:30px">
+      <div style="font-size:60px;font-weight:700;font-variant-numeric:tabular-nums" class="orange">1</div>
+      <div class="card big" style="background:var(--skill);color:#fff;border:0"><b>이름 · 설명 한 줄</b></div>
+      <div class="mid"><b>늘</b> <span class="muted">목록에 올라 있다</span></div></div>
+    <div class="f" data-s="2" style="display:grid;grid-template-columns:90px 1fr 380px;align-items:center;gap:30px">
+      <div style="font-size:60px;font-weight:700" class="orange">2</div>
+      <div class="card big" style="margin-left:70px;background:var(--skill-bg);border-color:#F6CBBE"><b>SKILL.md 본문</b> <span class="muted mid">일하는 순서와 기준</span></div>
+      <div class="mid"><b>일이 맞을 때</b> <span class="muted">펼친다</span></div></div>
+    <div class="f" data-s="3" style="display:grid;grid-template-columns:90px 1fr 380px;align-items:center;gap:30px">
+      <div style="font-size:60px;font-weight:700" class="orange">3</div>
+      <div class="card big" style="margin-left:140px;border:2px dashed var(--skill);box-shadow:none;background:transparent"><span class="mono" style="font-size:30px">template.md</span> <span class="muted">·</span> <span class="mono" style="font-size:30px">find_todos.py</span></div>
+      <div class="mid"><b>필요할 때만</b> <span class="muted">열거나 실행한다</span></div></div>
+    <p class="f big" data-s="4" style="margin-top:24px;border-top:1.5px solid var(--line);padding-top:28px">책을 통째로 외우지 않고, <b>목차를 보고 필요한 장만 펴는 것</b>과 같다.</p>
+  </div>
+  <div class="src">이 방식을 ‘progressive disclosure’라 부른다 · <a>anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills</a></div>
+</section>
+
+<!-- 10 -->
+<section class="slide" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b>02</b>어떻게 움직이나</div>
+  <h2>그래서 Skill을 여러 개 깔아도 에이전트가 무거워지지 않는다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:90px">
+    <div class="f keep" data-s="1" style="display:flex;flex-direction:column;gap:18px">
+      <div class="mid"><b>설명을 모두 대화에 넣으면</b></div>
+      <div style="position:relative;flex:1;border:2.5px solid var(--ink);border-radius:16px;padding:14px;display:flex;flex-direction:column-reverse;gap:10px">
+        <div class="label" style="position:absolute;left:18px;top:-14px;background:var(--paper);padding:0 8px">에이전트가 한 번에 읽는 양</div>
+        <div class="stagger f keep" data-s="1" style="flex:1;display:flex;flex-direction:column-reverse;gap:10px">
+          <div style="flex:1;background:var(--skill);border-radius:8px"></div>
+          <div style="flex:1;background:var(--tool);border-radius:8px;opacity:.8"></div>
+          <div style="flex:1;background:var(--mcp);border-radius:8px;opacity:.8"></div>
+          <div style="flex:1;background:var(--agents);border-radius:8px;opacity:.85"></div>
+          <div style="flex:1;background:#8b8a85;border-radius:8px;opacity:.7"></div>
+        </div>
+        <div class="chip f keep" data-s="1" style="position:absolute;right:-18px;top:-20px;background:#B3261E;color:#fff;font-size:22px;padding:8px 16px;transition-delay:.7s">실제 일 할 자리가 없다</div>
+      </div>
+    </div>
+    <div class="f" data-s="2" style="display:flex;flex-direction:column;gap:18px">
+      <div class="mid"><b>Skill로 두면</b></div>
+      <div style="position:relative;flex:1;border:2.5px solid var(--ink);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px">
+        <div class="label" style="position:absolute;left:18px;top:-14px;background:var(--paper);padding:0 8px">에이전트가 한 번에 읽는 양</div>
+        <div class="stagger f keep" data-s="2" style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
+          <div style="height:12px;background:var(--skill);border-radius:6px"></div>
+          <div style="height:12px;background:var(--tool);border-radius:6px;opacity:.8"></div>
+          <div style="height:12px;background:var(--mcp);border-radius:6px;opacity:.8"></div>
+          <div style="height:12px;background:var(--agents);border-radius:6px;opacity:.85"></div>
+          <div style="height:12px;background:#8b8a85;border-radius:6px;opacity:.7"></div>
+        </div>
+        <div class="f" data-s="3" style="height:120px;background:var(--skill);border-radius:8px;margin-top:8px;color:#fff;font-size:24px;font-weight:700;padding:16px 20px">meeting-notes 본문만 펼침</div>
+        <div style="flex:1;border:2px dashed var(--line);border-radius:8px;margin-top:8px" class="center mid muted">실제 일 할 자리</div>
+      </div>
+    </div>
+  </div>
+  <div class="src">막대 길이는 비율을 보여 주기 위한 그림이며 실측값이 아니다.</div>
+</section>
+
+<!-- 11 demo -->
+<section class="slide dark" data-act="1" data-focus>
+  <header><div><div class="eyebrow"><b style="color:var(--skill)">02</b>어떻게 움직이나 · 시연</div>
+  <h2>회의록 Skill이 실제로 움직이는 장면</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 640px;gap:56px;align-items:center">
+    <div class="win term"><div class="bar"><i></i><i></i><i></i><span>agent — ~/team</span></div>
+      <div class="body mono" style="display:flex;flex-direction:column;gap:22px;font-size:26px;color:#E6E4DD;padding:30px 32px">
+      <div style="color:#9a9ca3">&gt; <span class="type" data-text="어제 회의 녹취, 팀 양식으로 정리해 줘">어제 회의 녹취, 팀 양식으로 정리해 줘</span></div>
+      <div class="f" data-s="1"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> meeting-notes 선택 <span class="cm">설명이 요청과 맞음</span></div>
+      <div class="f" data-s="2"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> SKILL.md 본문 읽기</div>
+      <div class="f" data-s="3"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> read_file("녹취_1110.txt")</div>
+      <div class="f" data-s="4"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> run("find_todos.py") <span class="cm">할 일 3건</span></div>
+      <div class="f" data-s="5"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> template.md 열어 양식 맞춤</div>
+      <div class="f" data-s="6" style="color:#8EDB9C"><svg class="icon"><use href="#i-check"/></svg> 회의록_1110.md 작성 · 담당 없는 1건 ‘미정’</div>
+      </div></div>
+    <div class="win f" data-s="6" style="color:var(--ink)"><div class="bar"><i></i><i></i><i></i><span>회의록_1110.md</span></div>
+      <div class="body small stagger f keep" data-s="6" style="display:flex;flex-direction:column;gap:12px;padding:26px 30px">
+        <div><b>결정</b> &nbsp;출시일 12/03 확정 · 베타는 사내만</div>
+        <table class="t small"><tr><td>할 일</td><td>담당</td><td>기한</td></tr>
+          <tr><td>시안 3종</td><td class="orange">@민지</td><td>11/18</td></tr>
+          <tr><td>QA 계획</td><td class="orange">@도윤</td><td>11/20</td></tr>
+          <tr><td>공지 초안</td><td style="color:#B3261E;font-weight:700">미정</td><td>11/21</td></tr></table>
+        <div><b>다음 회의</b> &nbsp;11/19 (화) 10:00</div></div></div>
+  </div>
+</section>
+
+<!-- 12 history -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b>03</b>무엇과 다른가</div>
+  <h2>에이전트에게 일을 가르치는 방법은 하나씩 늘어 왔다</h2></div></header>
+  <div class="stage" style="display:flex;flex-direction:column;justify-content:center">
+    <div style="position:relative;height:60px;margin:0 2% 0 1%">
+      <div class="axis f keep" data-s="0" style="position:absolute;left:0;right:0;top:29px;height:2px;background:#BDB7A9;transform-origin:left"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:-50px">
+      <div class="keep" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:#9a9890;margin-left:4px"></span>
+        <div class="small muted">처음부터</div><div style="font-size:46px;font-weight:700">프롬프트</div><p class="big">그때그때 말로 설명한다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>매번 다시 말해야 한다</p></div>
+      <div class="f" data-s="1" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--tool);margin-left:4px"></span>
+        <div class="small muted">2023</div><div style="font-size:46px;font-weight:700" class="blue">Tool call</div><p class="big">말만 하던 모델에 <b>손</b>이 생긴다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결 방식이 앱마다 제각각</p></div>
+      <div class="f" data-s="2" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--mcp);margin-left:4px"></span>
+        <div class="small muted">2024.11</div><div style="font-size:46px;font-weight:700" class="violet">MCP</div><p class="big">바깥 시스템과 <b>같은 방식으로 연결</b>한다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결돼도 일하는 법은 모른다</p></div>
+      <div class="f" data-s="3" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--agents);margin-left:4px"></span>
+        <div class="small muted">2025</div><div style="font-size:46px;font-weight:700" class="amber">AGENTS.md</div><p class="big">프로젝트 규칙을 <b>파일로 늘 펴 둔다</b></p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>늘 읽으니 길어질수록 무겁다</p></div>
+      <div class="f" data-s="4" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span class="ring f keep" data-s="4" style="width:22px;height:22px;border-radius:50%;background:var(--skill);margin-left:4px"></span>
+        <div class="small muted">2025.10</div><div style="font-size:46px;font-weight:700" class="orange">Skill</div><p class="big">일하는 법을 <b>필요할 때만 펼친다</b></p><p class="mid" style="border-top:1.5px solid var(--skill);padding-top:12px;color:#C63C1A">다음 장부터<br>넷을 하나씩 본다</p></div>
+    </div>
+  </div>
+  <div class="src">MCP · <a>modelcontextprotocol.io</a> &nbsp;·&nbsp; AGENTS.md · <a>learn.chatgpt.com/docs/agent-configuration/agents-md</a> &nbsp;·&nbsp; Skill · <a>anthropic.com/research/equipping-agents…</a></div>
+</section>
+
+<!-- 13 Tool -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b style="color:var(--tool)">03</b>무엇과 다른가 · 1/4</div>
+  <h2>Tool call은 에이전트의 손이다</h2></div>
+  <div class="minimap"><span class="on t">Tool call</span><span class="m">MCP</span><span class="a">AGENTS.md</span><span class="s">Skill</span></div></header>
+  <div class="stage concept">
+    <div class="ctile" style="background:var(--tool)">
+      <svg class="icon"><use href="#i-tool"/></svg>
+      <div class="meta">손<small>파일을 열고, 명령을 실행하고, 검색하는 동작 하나하나</small></div>
+    </div>
+    <div class="cright">
+      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>tool call</span></div><div class="body" style="padding:26px 32px">
+      <code class="blk"><span class="cm">// 모델 → 앱</span>
+{ <span class="k">"tool"</span>: <span class="s">"read_file"</span>, <span class="k">"path"</span>: <span class="s">"녹취_1110.txt"</span> }
+<span class="cm">// 앱 → 모델</span>
+<span class="a">"민지: 시안은 18일까지 세 개로…"</span></code></div></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>녹취 파일을 여는 것, 스크립트를 돌리는 것.<br><span class="muted">무엇을 할지가 아니라 <b style="color:var(--ink)">어떻게 손을 움직일지</b>다.</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 MCP -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b style="color:var(--mcp)">03</b>무엇과 다른가 · 2/4</div>
+  <h2>MCP는 바깥 시스템까지 손이 닿게 하는 연결 규격이다</h2></div>
+  <div class="minimap"><span class="t">Tool call</span><span class="on m">MCP</span><span class="a">AGENTS.md</span><span class="s">Skill</span></div></header>
+  <div class="stage concept">
+    <div class="ctile" style="background:var(--mcp)">
+      <svg class="icon"><use href="#i-plug"/></svg>
+      <div class="meta">콘센트<small>규격이 같으면 어떤 앱이든 같은 방법으로 꽂는다</small></div>
+    </div>
+    <div class="cright">
+      <div style="display:grid;grid-template-columns:1fr 70px 1fr 70px 1fr;align-items:center">
+        <div class="card center f keep" data-s="0" style="flex-direction:column;padding:30px 16px;text-align:center"><b class="mid">에이전트 앱</b><span class="small muted">Claude, Codex…</span></div>
+        <svg class="wire f" data-s="1" viewBox="0 0 70 40" width="70" height="40"><path class="ln" pathLength="1" d="M6 13H60M64 27H10" /><path class="hd" d="M52 6L62 13L52 20M18 20L8 27L18 34"/></svg>
+        <div class="card center f" data-s="1" style="flex-direction:column;padding:30px 16px;background:var(--mcp);color:#fff;text-align:center;border:0"><b class="mid">MCP 서버</b><span class="small" style="opacity:.85">쓸 수 있는 도구를 알려 줌</span></div>
+        <svg class="wire f" data-s="2" viewBox="0 0 70 40" width="70" height="40"><path class="ln" pathLength="1" d="M6 13H60M64 27H10"/><path class="hd" d="M52 6L62 13L52 20M18 20L8 27L18 34"/></svg>
+        <div class="card center f" data-s="2" style="flex-direction:column;padding:30px 16px;text-align:center"><b class="mid">Notion</b><span class="small muted">Slack, DB…</span></div>
+      </div>
+      <div class="f mono" data-s="2" style="background:var(--mcp-bg);border-radius:12px;padding:20px 26px;color:#4b2bb0;font-size:23px">서버가 알려 주는 도구 → search_pages · create_page · add_comment</div>
+      <div class="example f" data-s="3"><span class="label">회의록 예에서는</span><span>완성한 회의록을 팀 Notion에 올린다.<br><span class="muted">손이 닿는 범위를 넓힐 뿐, <b style="color:var(--ink)">회의록을 어떻게 쓰는지는 모른다.</b></span></span></div>
+    </div>
+  </div>
+  <div class="src">구조 · <a>modelcontextprotocol.io/docs/learn/architecture</a></div>
+</section>
+
+<!-- 15 AGENTS -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b style="color:var(--agents)">03</b>무엇과 다른가 · 3/4</div>
+  <h2>AGENTS.md는 이 프로젝트에서 늘 펴 두는 메모다</h2></div>
+  <div class="minimap"><span class="t">Tool call</span><span class="m">MCP</span><span class="on a">AGENTS.md</span><span class="s">Skill</span></div></header>
+  <div class="stage concept">
+    <div class="ctile" style="background:var(--agents)">
+      <svg class="icon"><use href="#i-note"/></svg>
+      <div class="meta">모니터 옆 메모<small>무슨 일을 하든, 대화를 시작할 때마다 읽는다</small></div>
+    </div>
+    <div class="cright">
+      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>~/team/AGENTS.md</span><span style="margin-left:auto;color:#FFD166;font-family:NSK">매 대화마다 읽음</span></div><div class="body" style="padding:26px 32px">
+      <code class="blk"><span class="a"># 이 저장소에서 일할 때</span>
+- 답과 문서는 한국어로
+- 날짜는 2026-11-10 형식
+- 외부 공유 전에는 먼저 물어볼 것</code></div></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>회의록이든 경비 보고든 날짜 형식은 같다.<br><span class="muted">모든 일에 맞는 규칙만 둔다. 길어지면 <b style="color:var(--ink)">매번 그만큼 무겁다.</b></span></span></div>
+    </div>
+  </div>
+  <div class="src">형식 · <a>learn.chatgpt.com/docs/agent-configuration/agents-md</a></div>
+</section>
+
+<!-- 16 Skill -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b style="color:var(--skill)">03</b>무엇과 다른가 · 4/4</div>
+  <h2>Skill은 특정한 일을 할 때만 펼치는 설명서다</h2></div>
+  <div class="minimap"><span class="t">Tool call</span><span class="m">MCP</span><span class="a">AGENTS.md</span><span class="on s">Skill</span></div></header>
+  <div class="stage concept">
+    <div class="ctile" style="background:var(--skill)">
+      <svg class="icon"><use href="#i-book"/></svg>
+      <div class="meta">업무 설명서<small>목차만 보고 있다가, 그 일을 할 때 펼친다</small></div>
+    </div>
+    <div class="cright">
+      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md</span><span style="margin-left:auto;color:#FFB39F;font-family:NSK">회의록 쓸 때만 읽음</span></div><div class="body" style="padding:26px 32px">
+      <code class="blk">---
+<span class="k">name:</span> meeting-notes
+<span class="k">description:</span> <span class="s">회의 메모를 팀 회의록 양식으로 정리한다.</span>
 ---
+1. 결정된 것만 뽑는다
+2. 할 일은 표로: 할 일 · 담당 · 기한 <span class="cm">…</span></code></div></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>Tool call과 MCP가 손이라면,<br>Skill은 <b>그 손으로 무엇을, 어떤 순서로 할지</b>다.</span></div>
+    </div>
+  </div>
+  <div class="src">명세 · <a>agentskills.io/specification</a></div>
+</section>
 
-## 입력
-사용자가 지정한 회의 메모.
+<!-- 17 together -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b>03</b>무엇과 다른가</div>
+  <h2>한 번의 요청 안에서 넷은 함께 일한다</h2></div>
+  <div class="minimap"><span class="on t">Tool call</span><span class="on m">MCP</span><span class="on a">AGENTS.md</span><span class="on s">Skill</span></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:330px 90px 360px 90px 1fr;align-items:center">
+    <div><div class="label" style="margin-bottom:12px">요청</div><div class="bubble">회의록 정리해서 Notion에 올려 줘</div></div>
+    <svg class="wire f keep" data-s="0" viewBox="0 0 90 30" width="90" height="30"><path class="ln" pathLength="1" d="M8 15H76"/><path class="hd" d="M66 6L78 15L66 24"/></svg>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <div class="f" data-s="1" style="background:var(--agents);color:#fff;border-radius:14px 14px 0 0;padding:16px 22px;font-size:22px;font-weight:700">AGENTS.md · 늘 붙어 있음<br><span style="font-weight:400;font-size:20px;opacity:.9">한국어 · 날짜 형식</span></div>
+      <div class="center" style="height:170px;font-size:40px;font-weight:700;background:var(--ink);color:#fff;border-radius:0 0 14px 14px">에이전트</div>
+    </div>
+    <svg class="wire f" data-s="2" viewBox="0 0 90 260" width="90" height="260"><path class="ln" pathLength="1" d="M6 130 C40 130 40 30 78 30 M6 130 H78 M6 130 C40 130 40 230 78 230"/><path class="hd" d="M68 22L80 30L68 38M68 122L80 130L68 138M68 222L80 230L68 238"/></svg>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div class="f card" data-s="2" style="border-left:8px solid var(--skill);padding:20px 26px;display:flex;gap:16px;align-items:center"><span class="chip c-skill">Skill</span><span class="mid">meeting-notes를 펼쳐 순서를 안다</span></div>
+      <div class="f card" data-s="3" style="border-left:8px solid var(--tool);padding:20px 26px;display:flex;gap:16px;align-items:center"><span class="chip c-tool">Tool call</span><span class="mid">녹취를 읽고 스크립트를 돌린다</span></div>
+      <div class="f card" data-s="4" style="border-left:8px solid var(--mcp);padding:20px 26px;display:flex;gap:16px;align-items:center"><span class="chip c-mcp">MCP</span><span class="mid">Notion 서버로 페이지를 만든다</span></div>
+      <div class="f big" data-s="5" style="padding-left:8px"><svg class="icon" style="color:#2E7D32"><use href="#i-check"/></svg> <b>회의록이 팀 Notion에 올라간다</b></div>
+    </div>
+  </div>
+</section>
 
-## 절차
-1. 결정된 후속 할 일을 찾고 원문 위치를 남긴다.
-2. 각 할 일의 담당자와 기한을 원문에서 각각 확인한다.
-3. 원문에 없는 항목은 추측하지 않고 미확인과 확인할 대상을 적는다.
+<!-- 18 decide -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b>03</b>무엇과 다른가</div>
+  <h2>무엇을 쓸지는 ‘언제 필요한가’로 고른다</h2></div></header>
+  <div class="stage" style="display:flex;flex-direction:column;gap:22px;justify-content:center">
+    <div class="label" style="margin-bottom:4px">이 내용은 언제 필요한가?</div>
+    <div class="f" data-s="1" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
+      <div class="card big" style="border-left:8px solid var(--agents)"><b>매번, 무슨 일을 하든</b></div>
+      <svg class="wire f keep" data-s="1" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
+      <span class="chip c-agents" style="font-size:30px;padding:10px 20px;justify-self:start">AGENTS.md</span><span class="mid muted">“날짜는 2026-11-10 형식”</span></div>
+    <div class="f" data-s="2" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
+      <div class="card big" style="border-left:8px solid var(--skill)"><b>특정한 일을 할 때</b></div>
+      <svg class="wire f keep" data-s="2" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
+      <span class="chip c-skill" style="font-size:30px;padding:10px 20px;justify-self:start">Skill</span><span class="mid muted">“회의록은 결정 → 할 일 → 다음 회의”</span></div>
+    <div class="f" data-s="3" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
+      <div class="card big" style="border-left:8px solid var(--mcp)"><b>바깥 시스템이 필요할 때</b></div>
+      <svg class="wire f keep" data-s="3" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
+      <span class="chip c-mcp" style="font-size:30px;padding:10px 20px;justify-self:start">MCP</span><span class="mid muted">“Notion에 올리기” — 도구는 Tool call로</span></div>
+    <div class="f" data-s="4" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
+      <div class="card big" style="background:transparent;box-shadow:none;border:2px dashed #C9C3B5"><b>이번 한 번만</b></div>
+      <svg class="wire f keep" data-s="4" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
+      <span class="chip c-gray" style="font-size:30px;padding:10px 20px;justify-self:start">요청에 적기</span><span class="mid muted">“이번 회의록은 영어로”</span></div>
+  </div>
+</section>
 
-## 완료 기준
-할 일·담당자·기한과 각 근거 또는 미확인 표시가 있다.</pre></section></div></div></article><article class="scene slide scene--workshop-write compact-title" id="scene-28" data-scene="28"><header class="scene-meta"><span>실습</span><span>28 / 31</span></header><h2 class="scene-title">지금: 내 업무의 SKILL.md 초안 작성</h2><div class="screen-caption">44:00–50:00 · 6분 작성 · 설치 없이 문서로 작성 가능</div><div class="canvas"><div class="workshop"><div class="workshop-clock"><strong>6</strong><span>분 · 작성</span><p class="quote">SKILL.md 초안 한 개</p><span class="tag ">업무가 떠오르지 않으면</span><p class="near-caption">회의 메모에서 할 일·담당자·기한을 정리하는 Skill</p><p class="practice-input">결정: 안내문을 개정한다. 기한: 11월 12일.</p><a href="examples/my-skill-template.md">작성 틀 받기 →</a></div><section class="paper "><div class="paper-label">내 업무로 채울 자리</div><pre>---
-name: [영문 소문자·숫자·하이픈 이름]
-description: [무엇을 만들며, 어떤 요청에 쓰는가]
+<!-- 19 standard -->
+<section class="slide" data-act="2" data-focus>
+  <header><div><div class="eyebrow"><b>03</b>무엇과 다른가</div>
+  <h2>Skill은 이제 여러 앱이 함께 읽는 형식이다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center">
+    <div style="position:relative;padding-left:48px;display:flex;flex-direction:column;gap:56px">
+      <div class="axis v f keep" data-s="0" style="position:absolute;left:20px;top:22px;bottom:22px;width:2px;background:#BDB7A9;transform-origin:top"></div>
+      <div style="position:relative"><span style="position:absolute;left:-48px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--skill)"></span><div class="small muted">2025.10</div><div class="big"><b>Anthropic이 Agent Skills를 소개</b></div></div>
+      <div class="f" data-s="1" style="position:relative"><span style="position:absolute;left:-48px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--skill)"></span><div class="small muted">2025.12</div><div class="big"><b>다른 앱도 쓸 수 있는 열린 형식으로 공개</b></div></div>
+      <div class="f" data-s="2" style="position:relative"><span style="position:absolute;left:-48px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--skill)"></span><div class="small muted">2026.10</div><div class="big"><b>Agentic AI Foundation에 기증 발표</b></div></div>
+    </div>
+    <div class="f" data-s="3" style="display:flex;flex-direction:column;align-items:center;gap:0">
+      <div style="background:var(--skill);color:#fff;border-radius:14px;padding:22px 40px;display:flex;gap:14px;align-items:center" class="mono big"><svg class="icon"><use href="#i-folder"/></svg><b>meeting-notes/</b></div>
+      <svg class="wire f keep" data-s="3" viewBox="0 0 600 120" width="600" height="120"><path class="ln" pathLength="1" d="M300 6 C300 60 100 50 100 108 M300 6 V108 M300 6 C300 60 500 50 500 108"/><path class="hd" d="M92 98L100 110L108 98M292 98L300 110L308 98M492 98L500 110L508 98"/></svg>
+      <div style="display:grid;grid-template-columns:repeat(3,190px);gap:16px">
+        <div class="card center big" style="padding:22px 0"><b>Claude</b></div><div class="card center big" style="padding:22px 0"><b>Codex</b></div><div class="card center mid muted" style="padding:26px 0">그 밖의 앱</div></div>
+      <p class="mid muted" style="text-align:center;margin-top:30px">폴더 형식은 같고, 설치 위치와 고르는 방법은 앱마다 다르다.</p>
+    </div>
+  </div>
+  <div class="src"><a>anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills</a> &nbsp;·&nbsp; <a>agentskills.io</a> &nbsp;·&nbsp; <a>learn.chatgpt.com/docs/build-skills</a></div>
+</section>
+
+<!-- 20 description -->
+<section class="slide" data-act="3" data-focus>
+  <header><div><div class="eyebrow"><b>04</b>직접 만들기</div>
+  <h2>좋은 Skill은 설명 한 줄에서 갈린다</h2></div></header>
+  <div class="stage" style="display:flex;flex-direction:column;gap:30px;justify-content:center">
+    <div class="f" data-s="1" style="display:grid;grid-template-columns:96px 1fr;align-items:center;gap:22px">
+      <div class="center" style="width:80px;height:80px;border-radius:50%;background:#F6DAD7;color:#B3261E"><svg class="icon" style="width:44px;height:44px;stroke-width:2.6"><use href="#i-x"/></svg></div>
+      <div class="win term"><div class="body" style="padding:24px 32px"><code class="blk"><span class="k">description:</span> <span class="s">회의록 도우미</span>   <span class="cm">← 언제 꺼내야 할지 알 수 없다</span></code></div></div>
+    </div>
+    <div class="f" data-s="2" style="display:grid;grid-template-columns:96px 1fr;align-items:center;gap:22px">
+      <div class="center" style="width:80px;height:80px;border-radius:50%;background:#D9EEDB;color:#2E7D32"><svg class="icon" style="width:44px;height:44px;stroke-width:2.6"><use href="#i-check"/></svg></div>
+      <div class="win term"><div class="body" style="padding:24px 32px"><code class="blk" style="white-space:pre-wrap"><span class="k">description:</span> <span class="hl full f keep" data-s="3" style="color:#fff;--c:rgba(240,83,45,.55)">회의 녹취나 메모를 팀 회의록 양식(결정·할 일·담당·기한)으로 정리한다.</span>
+<span class="hl full blue f keep" data-s="4" style="color:#fff;--c:rgba(45,107,239,.6)">‘회의록’, ‘회의 정리’, ‘액션 아이템’을 요청할 때 쓴다.</span></code></div></div>
+    </div>
+    <div style="margin-left:118px;display:flex;gap:44px;align-items:center">
+      <span class="f chip c-skill" data-s="3" style="font-size:26px;padding:10px 18px">무엇을 하는지</span>
+      <span class="f chip c-tool" data-s="4" style="font-size:26px;padding:10px 18px">언제 꺼내야 하는지</span>
+      <span class="f mid muted" data-s="4">에이전트는 이 한 줄만 보고 펼칠지 정한다</span>
+    </div>
+  </div>
+</section>
+
+<!-- 21 body -->
+<section class="slide" data-act="3" data-focus>
+  <header><div><div class="eyebrow"><b>04</b>직접 만들기</div>
+  <h2>본문에는 순서, 판단 기준, 예시를 쓴다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 500px;gap:72px;align-items:center">
+    <div class="win"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md — 본문</span></div>
+      <div class="body" style="padding:30px 36px;display:flex;flex-direction:column;gap:26px">
+      <div class="f" data-s="1" style="border-left:6px solid var(--skill);padding-left:24px"><span class="chip c-skill">순서</span>
+        <ol class="mid" style="padding-left:32px;margin-top:10px"><li>결정된 것만 뽑는다</li><li>할 일을 표로 정리한다</li><li>template.md 양식에 맞춘다</li></ol></div>
+      <div class="f" data-s="2" style="border-left:6px solid var(--tool);padding-left:24px"><span class="chip c-tool">판단 기준</span>
+        <p class="mid" style="margin-top:10px">‘~하자’가 아니라 ‘~하기로 함’일 때만 결정으로 본다. 담당이 없으면 ‘미정’.</p></div>
+      <div class="f" data-s="3" style="border-left:6px solid var(--mcp);padding-left:24px"><span class="chip c-mcp">예시</span>
+        <p class="mono" style="margin-top:10px;font-size:25px">“민지: 시안은 18일까지” → | 시안 | @민지 | 11/18 |</p></div>
+      </div></div>
+    <div class="f" data-s="4" style="display:flex;flex-direction:column;gap:24px">
+      <p class="xl"><b>새로 온 동료에게<br>인수인계하듯</b> 쓴다.</p>
+      <p class="mid muted">길어지면 양식과 예시는 따로 파일로 빼고, 본문에는 “필요하면 template.md를 볼 것”이라고만 적는다.</p>
+    </div>
+  </div>
+  <div class="src">작성 지침 · <a>agentskills.io/specification</a> &nbsp;·&nbsp; <a>learn.chatgpt.com/docs/build-skills</a></div>
+</section>
+
+<!-- 22 practice -->
+<section class="slide" data-act="3" data-focus>
+  <header><div><div class="eyebrow"><b>04</b>직접 만들기 · 실습 10분</div>
+  <h2>실습 — 내 반복 업무 하나를 Skill로 만든다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 640px;gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div class="card f" data-s="1" style="display:grid;grid-template-columns:76px 1fr auto;align-items:center"><b style="font-size:52px" class="orange">1</b><span class="big">요즘 두 번 이상 한 설명 고르기</span><span class="chip c-gray"><svg class="icon"><use href="#i-clock"/></svg>2분</span></div>
+      <div class="card f" data-s="2" style="display:grid;grid-template-columns:76px 1fr auto;align-items:center"><b style="font-size:52px" class="orange">2</b><span class="big">이름과 설명 한 줄 쓰기</span><span class="chip c-gray"><svg class="icon"><use href="#i-clock"/></svg>3분</span></div>
+      <div class="card f" data-s="3" style="display:grid;grid-template-columns:76px 1fr auto;align-items:center"><b style="font-size:52px" class="orange">3</b><span class="big">순서·기준·예시 쓰고 한 번 시켜 보기</span><span class="chip c-gray"><svg class="icon"><use href="#i-clock"/></svg>5분</span></div>
+    </div>
+    <div class="win term keep"><div class="bar"><i></i><i></i><i></i><span>my-skill/SKILL.md</span></div><div class="body" style="padding:28px 34px">
+    <code class="blk" style="font-size:27px;line-height:1.85">---
+<span class="k">name:</span> <span class="cm">________</span>
+<span class="k">description:</span> <span class="s">____을 ____으로</span>
+  <span class="s">정리한다. ‘____’을</span>
+  <span class="s">요청할 때 쓴다.</span>
 ---
+1. <span class="cm">________</span>
+2. <span class="cm">________</span>
+<span class="cm">애매하면 ________</span></code></div></div>
+  </div>
+</section>
 
-## 입력
-[읽을 자료와 이번 요청에서 필요한 조건]
+<!-- 23 wrap -->
+<section class="slide dark" data-act="3">
+  <header><div><div class="eyebrow"><b style="color:var(--skill)">정리</b>질의응답</div>
+  <h2>반복하는 설명은 꺼내 두고, 필요할 때 읽게 한다</h2></div></header>
+  <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:44px 64px;align-content:center">
+    <div class="f" data-s="1" style="border-top:3px solid #EEECE6;padding-top:24px"><div class="small" style="color:#8b8e96">01 왜 필요한가</div><p class="big">에이전트는 일을 해내지만, <b>우리 방식</b>은 모른다</p></div>
+    <div class="f" data-s="2" style="border-top:3px solid var(--skill);padding-top:24px"><div class="small" style="color:#8b8e96">02 어떻게 움직이나</div><p class="big">Skill은 평소엔 <b>한 줄</b>, 필요할 때 <b>펼친다</b></p></div>
+    <div class="f" data-s="3" style="border-top:3px solid var(--mcp);padding-top:24px"><div class="small" style="color:#8b8e96">03 무엇과 다른가</div><p class="big"><span style="color:#F2C14E">늘</span>은 AGENTS.md, <span style="color:#FF8A6B">이 일</span>은 Skill, <span style="color:#A98BFF">바깥</span>은 MCP</p></div>
+    <div class="f" data-s="4" style="border-top:3px solid var(--tool);padding-top:24px"><div class="small" style="color:#8b8e96">04 직접 만들기</div><p class="big">좋은 Skill은 <b>설명 한 줄</b>에서 시작한다</p></div>
+  </div>
+</section>
 
-## 절차
-1. [무엇을 확인하는가]
-2. [판단이 갈릴 때 무엇을 기준으로 하는가]
-3. [무엇이 없으면 어떻게 남기는가]
-
-## 완료 기준
-[결과의 무엇을 원자료와 대조하는가]</pre></section></div></div></article><article class="scene slide scene--workshop-test compact-title" id="scene-29" data-scene="29"><header class="scene-meta"><span>실습</span><span>29 / 31</span></header><h2 class="scene-title">지금: 입력 하나와 기대 결과를 비교</h2><div class="screen-caption">50:00–53:00 · 3분 시험</div><div class="canvas"><div class="workshop"><div class="workshop-clock"><strong>3</strong><span>분 · 시험</span><ol><li>작은 정상 입력에서 기대 결과를 먼저 적는다.</li><li>입력의 조건 하나를 바꾼다: 누락·상충·비해당 중 선택.</li><li>앱이 있으면 지침과 입력으로 실행하고, 없으면 지침을 따라 손으로 결과를 만든다.</li><li>별도로 적은 기대 결과와 달라진 한 곳을 표시한다.</li></ol></div><section class="paper "><div class="paper-label">기대 결과는 별도로 보관</div><pre>시험 입력:
-바꾼 조건:
-검토자 기대 결과:
-실제 실행 결과 또는 수기 적용 결과:
-차이:</pre><p class="near-caption">제공 과제 사용자는 담당자가 있는 경우와 없는 경우를 비교할 수 있다. 기대 결과는 먼저 직접 작성한다.</p></section></div></div></article><article class="scene slide scene--workshop-review compact-title" id="scene-30" data-scene="30"><header class="scene-meta"><span>실습</span><span>30 / 31</span></header><h2 class="scene-title">지금: 결과의 한 문장을 원문까지 따라가기</h2><div class="screen-caption">53:00–55:00 · 2분 검토</div><div class="canvas"><div class="workshop-review"><div class="review-clock"><strong>2</strong><span>분 · 검토</span></div><div class="review-instruction"><p class="quote">결과의 한 항목을 골라, 원문 근거와 지침의 판단 문장까지 연결해 보세요.</p><div class="pair-timing"><div>45초: A의 입력·지침·결과를 B가 확인</div><div>45초: 역할을 바꿔 B의 결과를 A가 확인</div><div>30초: 고칠 문장 한 줄 또는 남은 질문 기록</div></div><p class="near-caption">혼자라면 같은 순서로 자기 결과 한 항목을 확인한다.</p><div class="rule"><p class="">지침 수정 한 줄 또는 구체적인 질문 한 개</p></div></div></div></div></article><article class="scene slide scene--questions" id="scene-31" data-scene="31"><header class="scene-meta"><span>질문</span><span>31 / 31</span></header><h2 class="scene-title">어느 입력에서, 어떤 판단이 막혔나요?</h2><div class="screen-caption">55:00–60:00 · 실습 질문 5분</div><div class="canvas"><div class="qa-layout"><div class="qa-input"><div><span>01</span><p class="">맡긴 일</p></div><div><span>02</span><p class="">사용한 입력</p></div><div><span>03</span><p class="">기대와 달랐던 결과 한 곳</p></div></div><div class="qa-directions"><div><p class="">사용할 때가 불분명</p><span>→ description과 요청 범위</span></div><div><p class="">판단 기준이 빠짐</p><span>→ Skill 본문</span></div><div><p class="">여러 업무의 공통 규칙</p><span>→ 적용 범위와 AGENTS.md</span></div><div><p class="">자료를 읽지 못함</p><span>→ 도구·연결·권한</span></div></div></div><p class="closing-artifact">내 업무의 지침 + 시험 한 쌍 + 다음에 고칠 한 줄</p></div></article></main><footer class="controls"><button id="prev">← 이전</button><label>장면 <select id="jump"><option value="1">1. 이 보고서를 다음 주에도 맡긴다면</option><option value="2">2. 무엇을 맡기고 무엇을 건네는가</option><option value="3">3. 요청, 도구의 실행, 돌아온 원문</option><option value="4">4. 돌아온 자료로 초안을 만든다</option><option value="5">5. 다음 주에도 가져갈 것은 무엇인가</option><option value="6">6. 사실을 지침으로 굳히지 않는다</option><option value="7">7. 이제 이름을 붙입니다: Skill</option><option value="8">8. 함께 쓰는 형식, 앱마다 다른 사용 위치</option><option value="9">9. 이 지침을 고를 단서</option><option value="10">10. 정확하게 대신 판단 조건을 쓴다</option><option value="11">11. 서식은 작성 단계에서 읽는다</option><option value="12">12. Codex가 찾을 위치에 놓는다</option><option value="13">13. 이 Skill로 이번 보고서를 요청한다</option><option value="14">14. 받은 초안을 어디부터 보는가</option><option value="15">15. 보고서 밖에도 같은 규칙이 필요해졌다</option><option value="16">16. 공통 규칙의 자리: AGENTS.md</option><option value="17">17. 일회성 조건과 반복 규칙을 배치한다</option><option value="18">18. 같은 업무표가 외부 서비스로 옮겨졌다</option><option value="19">19. 필요한 기능과 자료를 연결한다</option><option value="20">20. 고칠 자리를 구분할 수 있다</option><option value="21">21. 회의 메모를 빼면 어디를 바꿀까</option><option value="22">22. 확인한 사실은 남긴다</option><option value="23">23. 둘 다 있는데 서로 다르다</option><option value="24">24. 같은 소재여도 다른 업무다</option><option value="25">25. 조회 거부는 빈 업무표가 아니다</option><option value="26">26. 준호의 FAQ 초안에서 시작한다</option><option value="27">27. 내가 하던 판단을 지침의 자리로</option><option value="28">28. 6분: 내 업무의 첫 지침</option><option value="29">29. 3분: 조건 하나를 바꿔 시험</option><option value="30">30. 2분: 어디를 고칠지 한 줄</option><option value="31">31. 실제 막힌 부분으로 마무리한다</option></select></label><button id="next">다음 →</button><button id="fullscreen">전체 화면</button><a href="read.html">읽기 모드</a><span>60분 · 실습 11분 · Q&A 5분</span></footer><script src="player.js"></script></body></html>
+</div>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const acts=['왜 필요한가','어떻게 움직이나','무엇과 다른가','직접 만들기'];
+const actCount=[0,0,0,0];slides.forEach(s=>actCount[+s.dataset.act]++);
+const params=new URLSearchParams(location.search);
+const showAll=params.has('all');
+let cur=0;
+const BUILD=1000, FOCUS=2000, HOLD=3000, FIRST=500;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const sOf=e=>e.dataset.s===undefined?1:+e.dataset.s;
+const maxStep=s=>Math.max(0,...[...s.querySelectorAll('.f')].map(sOf));
+let shown=0, focus=0, phase='build', timer=null, paused=false;
+slides.forEach((s,i)=>{
+  s.querySelectorAll('.stagger').forEach(g=>[...g.children].forEach((c,k)=>c.style.setProperty('--i',k)));
+  if(i===0)return;
+  const f=document.createElement('footer');
+  f.innerHTML='<span class="brand">Agent Skill</span>';
+  acts.forEach((a,k)=>{
+    const seg=document.createElement('div');seg.className='seg';seg.style.flex=actCount[k];
+    const done=slides.slice(0,i+1).filter(x=>+x.dataset.act===k).length;
+    seg.innerHTML=`<b style="width:${done/actCount[k]*100}%"></b>`;seg.title=a;
+    f.appendChild(seg);
+  });
+  const n=document.createElement('span');n.className='num';n.textContent=`${String(i+1).padStart(2,'0')} / ${slides.length}`;f.appendChild(n);
+  const pz=document.createElement('span');pz.className='pz';pz.textContent='❚❚ 일시정지';f.appendChild(pz);
+  s.appendChild(f);
+});
+let typeTimer;
+function typeIn(s){
+  clearInterval(typeTimer);
+  s.querySelectorAll('.type').forEach(el=>{
+    const t=el.dataset.text; if(showAll||reduce){el.textContent=t;return}
+    el.textContent='';let k=0;typeTimer=setInterval(()=>{el.textContent=t.slice(0,++k);if(k>=t.length)clearInterval(typeTimer)},40);
+  });
+}
+function paint(){
+  const s=slides[cur],m=maxStep(s);
+  s.querySelectorAll('.f').forEach(e=>{const v=sOf(e);e.classList.toggle('in',v<=shown);e.classList.toggle('cur',v===focus)});
+  s.classList.toggle('stepping',s.hasAttribute('data-focus')&&focus>0&&(phase==='cycle'||focus<m));
+  document.body.classList.toggle('paused',paused);
+}
+function schedule(ms){clearTimeout(timer);if(!paused)timer=setTimeout(tick,ms)}
+function tick(){
+  const s=slides[cur],m=maxStep(s);
+  if(m===0)return;
+  if(phase==='build'){
+    if(shown<m){shown++;focus=shown;paint();schedule(shown<m?BUILD:HOLD);return}
+    // build finished: start focus cycle only on focus slides with 2+ steps
+    if(!s.hasAttribute('data-focus')||m<2){focus=0;paint();return}
+    phase='cycle';focus=0;
+  }
+  if(phase==='cycle'){
+    focus=focus<m?focus+1:0;           // 0 = everything bright (rest)
+    paint();schedule(focus===0?HOLD:FOCUS);
+  }
+}
+function enter(i){
+  cur=Math.max(0,Math.min(slides.length-1,i));
+  slides.forEach((s,k)=>s.classList.toggle('on',k===cur));
+  const m=maxStep(slides[cur]);
+  phase='build';
+  if(showAll||reduce){shown=m;focus=0;phase='done';paint();typeIn(slides[cur]);history.replaceState(null,'','#'+(cur+1));return}
+  shown=0;focus=0;paint();typeIn(slides[cur]);
+  history.replaceState(null,'','#'+(cur+1));
+  schedule(FIRST);
+}
+function togglePause(){paused=!paused;if(paused)clearTimeout(timer);else schedule(300);paint()}
+addEventListener('keydown',e=>{
+  if(['ArrowRight','PageDown','Enter','ArrowDown'].includes(e.key)){e.preventDefault();enter(cur+1)}
+  else if(['ArrowLeft','PageUp','ArrowUp','Backspace'].includes(e.key)){e.preventDefault();enter(cur-1)}
+  else if(e.key===' '||e.key==='p'||e.key==='P'){e.preventDefault();togglePause()}
+  else if(e.key==='r'||e.key==='R'){enter(cur)}
+  else if(e.key==='Home')enter(0); else if(e.key==='End')enter(slides.length-1);
+  else if(e.key==='f')document.documentElement.requestFullscreen?.();
+});
+addEventListener('click',e=>{enter(cur+(e.clientX<innerWidth/3?-1:1))});
+function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById('deck').style.transform=`translate(-50%,-50%) scale(${k})`}
+addEventListener('resize',fit);fit();
+enter(parseInt(params.get('s')||location.hash.slice(1)||'1')-1);
+</script>
+</body>
+</html>
