@@ -3,22 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Agent Skill — 같은 설명을 두 번 하지 않는 법</title>
+<title>Agent Skill · 우리 팀의 일하는 방식을 에이전트에게 가르치기</title>
 <link rel="icon" href="data:,">
 <meta name="description" content="에이전트를 처음 쓰는 분부터 써 본 분까지를 위한 60분 Agent Skill 강의">
 <style>
-@font-face{font-family:"NSK";src:url(assets/NotoSansKR-Regular.woff2) format("woff2");font-weight:400}
-@font-face{font-family:"NSK";src:url(assets/NotoSansKR-Bold.woff2) format("woff2");font-weight:700}
+@font-face{font-family:"Pretendard";src:url(assets/PretendardVariable.woff2) format("woff2-variations");font-weight:100 900;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(assets/jetbrains-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url(assets/jetbrains-mono-latin-500-normal.woff2) format("woff2");font-weight:500 700;font-display:swap}
 :root{
   --paper:#F5F3EE;--paper2:#ECE8DF;--ink:#111318;--ink2:#3A3D45;--mute:#7A7D85;--line:#DCD7CB;--card:#FFFFFF;--dark:#0E1014;
   --tool:#2D6BEF;--mcp:#7048E8;--agents:#C98A00;--skill:#F0532D;
   --tool-bg:#E5EDFE;--mcp-bg:#EEE9FD;--agents-bg:#FBF0D2;--skill-bg:#FDE7E0;
-  --mono:"DejaVu Sans Mono",ui-monospace,Menlo,monospace;
+  --mono:"JetBrains Mono","Pretendard",ui-monospace,Menlo,monospace;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#08090b;overflow:hidden}
-body{font-family:"NSK","Noto Sans CJK KR",sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
+body{font-family:"Pretendard","Noto Sans CJK KR",sans-serif;font-feature-settings:"tnum" 0,"ss06";color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
 #deck{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
 .slide{position:absolute;inset:0;background:var(--paper);padding:60px 100px 128px;display:none;flex-direction:column;overflow:hidden}
 .slide.on{display:flex}
@@ -47,7 +48,16 @@ footer .num{margin-left:22px;font-variant-numeric:tabular-nums;min-width:64px;te
 /* motion primitives */
 .f{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .6s var(--ease)}
 .f.in{opacity:1;transform:none}
-.slide.stepping .f.in:not(.cur):not(.wire):not(.keep){opacity:.3}
+/* guide: subtle plate/ring on the current item, flowing dash on its arrow — no dimming */
+.f{--plate:rgba(240,83,45,.07);--ring:rgba(240,83,45,.38)}
+.dark .f{--plate:rgba(255,255,255,.06);--ring:rgba(255,138,107,.5)}
+.slide .f:not(.wire):not(.hl):not(.only):not(.axis){transition:opacity .45s ease,transform .55s var(--ease),background-color .6s ease,box-shadow .6s ease}
+.slide.guiding .f.cur:not(.wire):not(.hl):not(.only):not(.axis):not(.card):not(.win){background-color:var(--plate);box-shadow:0 0 0 12px var(--plate);border-radius:10px}
+.slide.guiding .f.cur.card,.slide.guiding .f.cur.win{box-shadow:0 0 0 3px var(--ring),0 14px 34px -20px rgba(17,19,24,.28)}
+.slide.guiding .f.cur .f.cur{background-color:transparent!important;box-shadow:none}
+.slide.guiding .wire.cur path{stroke:var(--skill)}
+.slide.guiding.cycling .wire.cur .ln{stroke-dasharray:.07 .05;animation:flow 1.6s linear infinite}
+@keyframes flow{from{stroke-dashoffset:.24}to{stroke-dashoffset:0}}
 .f.in{transition:opacity .45s ease,transform .55s var(--ease)}
 footer .pz{display:none;margin-left:16px;font-weight:700;color:var(--skill)}body.paused footer .pz{display:inline}
 .f.only{opacity:0!important;transition:opacity .35s}.f.only.cur{opacity:1!important}
@@ -68,9 +78,9 @@ footer .pz{display:none;margin-left:16px;font-weight:700;color:var(--skill)}body
 .grow{transform-origin:bottom}
 .ring.in{animation:ring 1.2s ease .5s 1}
 @keyframes ring{0%{box-shadow:0 0 0 0 rgba(240,83,45,.5)}100%{box-shadow:0 0 0 22px rgba(240,83,45,0)}}
-#notes{display:none;position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:rgba(14,16,20,.94);color:#EEECE6;font:400 18px/1.6 "NSK",sans-serif;padding:16px 28px;z-index:10}
+#notes{display:none;position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:rgba(14,16,20,.94);color:#EEECE6;font:400 18px/1.6 "Pretendard",sans-serif;padding:16px 28px;z-index:10}
 #notes b{color:#FF8A6B;margin-right:10px}body.shownotes #notes{display:block}
-#presenter{min-height:100vh;background:#0E1014;color:#EEECE6;padding:36px 48px;font-family:"NSK",sans-serif;display:flex;flex-direction:column;gap:22px}
+#presenter{min-height:100vh;background:#0E1014;color:#EEECE6;padding:36px 48px;font-family:"Pretendard",sans-serif;display:flex;flex-direction:column;gap:22px}
 #presenter .ph{display:flex;justify-content:space-between;color:#9a9ca3;font-size:20px}#presenter .ph b{color:#fff;font-size:26px}
 #presenter h1{font-size:34px;line-height:1.3;letter-spacing:-.02em}#presenter .pnote{font-size:30px;line-height:1.7;color:#F5F3EE;flex:1}
 #presenter .pnext{font-size:20px;color:#FF8A6B;border-top:1px solid #2a2d35;padding-top:16px}#presenter .phelp{font-size:15px;color:#6f737d}
@@ -146,7 +156,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
     <div>
       <div class="eyebrow"><b style="color:var(--skill)">●</b>60분 · 에이전트를 처음 쓰는 분부터 써 본 분까지</div>
       <h1 style="font-size:168px;line-height:.95;letter-spacing:-.055em;font-weight:700;margin:26px 0 44px">Agent<br>Skill</h1>
-      <p style="font-size:48px;line-height:1.3;font-weight:700;letter-spacing:-.025em">같은 설명을<br><span class="orange">두 번 하지 않는 법</span></p>
+      <p style="font-size:48px;line-height:1.3;font-weight:700;letter-spacing:-.025em">우리 팀의 일하는 방식을<br><span class="orange">에이전트에게 가르치기</span></p>
     </div>
     <div style="position:relative;height:620px">
       <div class="f keep" data-s="1" style="position:absolute;left:150px;top:40px;width:380px;transform:rotate(-5deg)">
@@ -169,17 +179,17 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <g class="wire f" data-s="1"><path class="ln" pathLength="1" d="M440 115 A225 225 0 0 1 560 395"/><path class="hd" d="M548 380 L561 398 L572 377"/></g>
       <g class="wire f" data-s="2"><path class="ln" pathLength="1" d="M490 495 A225 225 0 0 1 210 495"/><path class="hd" d="M228 486 L208 495 L226 508"/></g>
       <g class="wire f" data-s="3"><path class="ln" pathLength="1" d="M140 395 A225 225 0 0 1 260 115"/><path class="hd" d="M242 112 L262 114 L254 133"/></g>
-      <g font-family="NSK" font-weight="700" text-anchor="middle">
+      <g font-family="Pretendard" font-weight="700" text-anchor="middle">
         <rect x="262" y="262" width="176" height="116" rx="58" fill="#111318"/><text x="350" y="332" font-size="32" fill="#F5F3EE">에이전트</text>
         <circle cx="350" cy="95" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
         <text x="350" y="106" font-size="32" fill="#111318">읽는다</text>
-        <g class="f only" data-s="1"><circle cx="350" cy="95" r="72" fill="#111318"/><text x="350" y="106" font-size="32" fill="#fff">읽는다</text></g>
+        <g class="f only" data-s="1"><circle cx="350" cy="95" r="80" fill="none" stroke="#F0532D" stroke-width="3"/></g>
         <circle cx="545" cy="455" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
         <text x="545" y="447" font-size="29" fill="#111318">도구를</text><text x="545" y="484" font-size="29" fill="#111318">쓴다</text>
-        <g class="f only" data-s="2"><circle cx="545" cy="455" r="72" fill="#2D6BEF"/><text x="545" y="447" font-size="29" fill="#fff">도구를</text><text x="545" y="484" font-size="29" fill="#fff">쓴다</text></g>
+        <g class="f only" data-s="2"><circle cx="545" cy="455" r="80" fill="none" stroke="#2D6BEF" stroke-width="3"/></g>
         <circle cx="155" cy="455" r="72" fill="#fff" stroke="#111318" stroke-width="2.5"/>
         <text x="155" y="466" font-size="29" fill="#111318">확인한다</text>
-        <g class="f only" data-s="3"><circle cx="155" cy="455" r="72" fill="#111318"/><text x="155" y="466" font-size="29" fill="#fff">확인한다</text></g>
+        <g class="f only" data-s="3"><circle cx="155" cy="455" r="80" fill="none" stroke="#F0532D" stroke-width="3"/></g>
       </g>
     </svg>
     <div style="display:flex;flex-direction:column;gap:30px">
@@ -187,7 +197,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="f mid" data-s="1" style="display:grid;grid-template-columns:150px 1fr"><b>읽는다</b><span class="muted">메모 파일을 열어 내용을 파악한다</span></div>
       <div class="f mid" data-s="2" style="display:grid;grid-template-columns:150px 1fr"><b class="blue">도구를 쓴다</b><span class="muted">새 문서를 만들고 내용을 쓴다</span></div>
       <div class="f mid" data-s="3" style="display:grid;grid-template-columns:150px 1fr"><b>확인한다</b><span class="muted">빠진 내용이 없는지 다시 본다</span></div>
-      <div class="f big" data-s="4" style="border-top:1.5px solid var(--line);padding-top:26px">대답만 하는 챗봇과 달리, <b>일이 끝날 때까지</b> 이 순환을 스스로 반복한다.</div>
+      <div class="f big" data-s="4" style="border-top:1.5px solid var(--line);padding-top:26px">요청 한 번에 이 순환을 여러 번 돌고, 일이 끝나면 멈춘다.</div>
     </div>
   </div>
 </section>
@@ -213,7 +223,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
         <div><b>다음 회의</b> &nbsp;11/17 (화) 10:00</div></div></div>
     </div>
     <div class="f mid" data-s="3" style="grid-column:1/3;display:flex;gap:40px;align-items:center;justify-content:center">
-      <span class="muted">일반적인 회의록은 잘 쓴다. 그러나</span><b>결정이 흐릿하고 · 담당자가 없고 · 기한이 모호하다</b>
+      <span class="muted">회의록 모양은 갖췄지만</span><span>결정과 논의가 섞여 있고, 할 일에 담당자와 기한이 없다</span>
     </div>
   </div>
 </section>
@@ -236,7 +246,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
     </div>
     <div class="f" data-s="4" style="display:flex;align-items:baseline;gap:28px">
       <span style="font-size:104px;font-weight:700;letter-spacing:-.05em;line-height:1" class="orange">×3</span>
-      <span class="big">같은 설명을 세 번. <b>하루라도 빠뜨리면 결과가 달라진다.</b></span>
+      <span class="big">같은 설명을 세 번 붙여 넣었고, 금요일에는 기한 형식이 빠졌다.</span>
     </div>
   </div>
 </section>
@@ -356,7 +366,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div style="font-size:60px;font-weight:700" class="orange">3</div>
       <div class="card big" style="margin-left:140px;border:2px dashed var(--skill);box-shadow:none;background:transparent"><span class="mono" style="font-size:30px">template.md</span> <span class="muted">·</span> <span class="mono" style="font-size:30px">find_todos.py</span></div>
       <div class="mid"><b>필요할 때만</b> <span class="muted">열거나 실행한다</span></div></div>
-    <p class="f big" data-s="4" style="margin-top:24px;border-top:1.5px solid var(--line);padding-top:28px">책을 통째로 외우지 않고, <b>목차를 보고 필요한 장만 펴는 것</b>과 같다.</p>
+    <p class="f big" data-s="4" style="margin-top:24px;border-top:1.5px solid var(--line);padding-top:28px">두꺼운 매뉴얼에서 필요한 장만 찾아 읽는 것과 비슷하다.</p>
   </div>
   <div class="src">이 방식을 ‘progressive disclosure’라 부른다 · <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener">anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills</a></div>
 </section>
@@ -407,11 +417,11 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
     <div class="win term"><div class="bar"><i></i><i></i><i></i><span>claude — ~/team · 실제 실행 기록 발췌</span></div>
       <div class="body mono" style="display:flex;flex-direction:column;gap:22px;font-size:26px;color:#E6E4DD;padding:30px 32px">
       <div style="color:#9a9ca3">&gt; <span class="type" data-text="어제 회의 녹취, 팀 양식으로 정리해 줘">어제 회의 녹취, 팀 양식으로 정리해 줘</span></div>
-      <div class="f" data-s="1"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> Skill("meeting-notes") <span class="cm">본문이 들어옴</span></div>
-      <div class="f" data-s="2"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Read("녹취_1110.txt")</div>
-      <div class="f" data-s="3"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> Read("template.md") <span class="cm">양식 확인</span></div>
-      <div class="f" data-s="4"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Bash("find_todos.py 녹취_1110.txt")</div>
-      <div class="f" data-s="5"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Write("회의록_1110.md")</div>
+      <div class="f" data-s="1"><span class="chip c-skill" style="font-family:Pretendard;font-size:18px">Skill</span> Skill("meeting-notes") <span class="cm">본문이 들어옴</span></div>
+      <div class="f" data-s="2"><span class="chip c-tool" style="font-family:Pretendard;font-size:18px">Tool</span> Read("녹취_1110.txt")</div>
+      <div class="f" data-s="3"><span class="chip c-skill" style="font-family:Pretendard;font-size:18px">Skill</span> Read("template.md") <span class="cm">양식 확인</span></div>
+      <div class="f" data-s="4"><span class="chip c-tool" style="font-family:Pretendard;font-size:18px">Tool</span> Bash("find_todos.py 녹취_1110.txt")</div>
+      <div class="f" data-s="5"><span class="chip c-tool" style="font-family:Pretendard;font-size:18px">Tool</span> Write("회의록_1110.md")</div>
       <div class="f" data-s="6" style="color:#8EDB9C"><svg class="icon"><use href="#i-check"/></svg> 완료 · 16초 · 담당 없는 1건 ‘미정’</div>
       </div></div>
     <div class="win f" data-s="6" style="color:var(--ink)"><div class="bar"><i></i><i></i><i></i><span>회의록_1110.md</span></div>
@@ -438,13 +448,13 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="keep" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:#9a9890;margin-left:4px"></span>
         <div class="small muted">처음부터</div><div style="font-size:46px;font-weight:700">프롬프트</div><p class="big">그때그때 말로 설명한다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>매번 다시 말해야 한다</p></div>
       <div class="f" data-s="1" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--tool);margin-left:4px"></span>
-        <div class="small muted">2023</div><div style="font-size:46px;font-weight:700" class="blue">Tool call</div><p class="big">말만 하던 모델에 <b>손</b>이 생긴다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결 방식이 앱마다 제각각</p></div>
+        <div class="small muted">2023</div><div style="font-size:46px;font-weight:700" class="blue">Tool call</div><p class="big">말만 하던 모델에 손이 생긴다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결 방식이 앱마다 제각각</p></div>
       <div class="f" data-s="2" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--mcp);margin-left:4px"></span>
-        <div class="small muted">2024.11</div><div style="font-size:46px;font-weight:700" class="violet">MCP</div><p class="big">바깥 시스템과 <b>같은 방식으로 연결</b>한다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결돼도 일하는 법은 모른다</p></div>
+        <div class="small muted">2024.11</div><div style="font-size:46px;font-weight:700" class="violet">MCP</div><p class="big">바깥 시스템과 같은 방식으로 연결한다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>연결돼도 일하는 법은 모른다</p></div>
       <div class="f" data-s="3" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span style="width:22px;height:22px;border-radius:50%;background:var(--agents);margin-left:4px"></span>
-        <div class="small muted">2025</div><div style="font-size:46px;font-weight:700" class="amber">AGENTS.md</div><p class="big">프로젝트 규칙을 <b>파일로 늘 펴 둔다</b></p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>늘 읽으니 길어질수록 무겁다</p></div>
+        <div class="small muted">2025</div><div style="font-size:46px;font-weight:700" class="amber">AGENTS.md</div><p class="big">프로젝트 규칙을 파일로 늘 펴 둔다</p><p class="mid muted" style="border-top:1.5px solid var(--line);padding-top:12px">남은 문제<br>늘 읽으니 길어질수록 무겁다</p></div>
       <div class="f" data-s="4" style="display:flex;flex-direction:column;gap:22px;align-items:flex-start"><span class="ring f keep" data-s="4" style="width:22px;height:22px;border-radius:50%;background:var(--skill);margin-left:4px"></span>
-        <div class="small muted">2025.10</div><div style="font-size:46px;font-weight:700" class="orange">Skill</div><p class="big">일하는 법을 <b>필요할 때만 펼친다</b></p><p class="mid" style="border-top:1.5px solid var(--skill);padding-top:12px;color:#C63C1A">다음 장부터<br>넷을 하나씩 본다</p></div>
+        <div class="small muted">2025.10</div><div style="font-size:46px;font-weight:700" class="orange">Skill</div><p class="big">일하는 법을 필요할 때만 펼친다</p><p class="mid" style="border-top:1.5px solid var(--skill);padding-top:12px;color:#C63C1A">다음 장부터<br>넷을 하나씩 본다</p></div>
     </div>
   </div>
   <div class="src">Tool call · <a href="https://openai.com/index/function-calling-and-other-api-updates/" target="_blank" rel="noopener">openai.com (2023.6.13)</a> &nbsp;·&nbsp; MCP · <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">anthropic.com (2024.11.25)</a> &nbsp;·&nbsp; AGENTS.md · <a href="https://agents.md/" target="_blank" rel="noopener">agents.md</a> &nbsp;·&nbsp; Skill · <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener">anthropic.com (2025.10.16)</a></div>
@@ -466,7 +476,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
 { <span class="k">"tool"</span>: <span class="s">"read_file"</span>, <span class="k">"path"</span>: <span class="s">"녹취_1110.txt"</span> }
 <span class="cm">// 앱 → 모델</span>
 <span class="a">"민지: 시안은 18일까지 세 개로…"</span></code></div></div>
-      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>녹취 파일을 여는 것, 스크립트를 돌리는 것.<br><span class="muted">무엇을 할지가 아니라 <b style="color:var(--ink)">어떻게 손을 움직일지</b>다.</span></span></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>녹취 파일을 열고, 할 일을 뽑는 스크립트를 돌린다.<br><span class="muted">어떤 순서로 할지는 Tool call이 정하지 않는다.</span></span></div>
     </div>
   </div>
 </section>
@@ -490,7 +500,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
         <div class="card center f" data-s="2" style="flex-direction:column;padding:30px 16px;text-align:center"><b class="mid">Notion</b><span class="small muted">Slack, DB…</span></div>
       </div>
       <div class="f mono" data-s="2" style="background:var(--mcp-bg);border-radius:12px;padding:20px 26px;color:#4b2bb0;font-size:23px">서버가 알려 주는 도구 → search_pages · create_page · add_comment</div>
-      <div class="example f" data-s="3"><span class="label">회의록 예에서는</span><span>완성한 회의록을 팀 Notion에 올린다.<br><span class="muted">손이 닿는 범위를 넓힐 뿐, <b style="color:var(--ink)">회의록을 어떻게 쓰는지는 모른다.</b></span></span></div>
+      <div class="example f" data-s="3"><span class="label">회의록 예에서는</span><span>완성한 회의록을 팀 Notion에 올린다.<br><span class="muted">손이 닿는 범위를 넓힐 뿐, <span style="color:var(--ink)">회의록을 어떻게 쓰는지는 모른다.</span></span></span></div>
     </div>
   </div>
   <div class="src">구조 · <a href="https://modelcontextprotocol.io/docs/learn/architecture" target="_blank" rel="noopener">modelcontextprotocol.io/docs/learn/architecture</a></div>
@@ -507,12 +517,12 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="meta">모니터 옆 메모<small>무슨 일을 하든, 대화를 시작할 때마다 읽는다</small></div>
     </div>
     <div class="cright">
-      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>~/team/AGENTS.md</span><span style="margin-left:auto;color:#FFD166;font-family:NSK">매 대화마다 읽음</span></div><div class="body" style="padding:26px 32px">
+      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>~/team/AGENTS.md</span><span style="margin-left:auto;color:#FFD166;font-family:Pretendard">매 대화마다 읽음</span></div><div class="body" style="padding:26px 32px">
       <code class="blk"><span class="a"># 이 저장소에서 일할 때</span>
 - 답과 문서는 한국어로
 - 날짜는 2026-11-10 형식
 - 외부 공유 전에는 먼저 물어볼 것</code></div></div>
-      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>회의록이든 경비 보고든 날짜 형식은 같다.<br><span class="muted">모든 일에 맞는 규칙만 둔다. 길어지면 <b style="color:var(--ink)">매번 그만큼 무겁다.</b></span></span></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>회의록이든 경비 보고든 날짜 형식은 같다.<br><span class="muted">모든 일에 맞는 규칙만 둔다. 길어지면 <span style="color:var(--ink)">매번 그만큼 무겁다.</span></span></span></div>
     </div>
   </div>
   <div class="src">형식 · <a href="https://agents.md/" target="_blank" rel="noopener">agents.md/</a></div>
@@ -529,14 +539,14 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="meta">업무 설명서<small>목차만 보고 있다가, 그 일을 할 때 펼친다</small></div>
     </div>
     <div class="cright">
-      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md</span><span style="margin-left:auto;color:#FFB39F;font-family:NSK">회의록 쓸 때만 읽음</span></div><div class="body" style="padding:26px 32px">
+      <div class="win term f" data-s="1"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md</span><span style="margin-left:auto;color:#FFB39F;font-family:Pretendard">회의록 쓸 때만 읽음</span></div><div class="body" style="padding:26px 32px">
       <code class="blk">---
 <span class="k">name:</span> meeting-notes
 <span class="k">description:</span> <span class="s">회의 메모를 팀 회의록 양식으로 정리한다.</span>
 ---
 1. 결정된 것만 뽑는다
 2. 할 일은 표로: 할 일 · 담당 · 기한 <span class="cm">…</span></code></div></div>
-      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>Tool call과 MCP가 손이라면,<br>Skill은 <b>그 손으로 무엇을, 어떤 순서로 할지</b>다.</span></div>
+      <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>회의록을 쓸 때 무엇을 어떤 순서로 할지 알려 준다.<br><span class="muted">파일을 열고 올리는 실제 동작은 Tool call과 MCP가 한다.</span></span></div>
     </div>
   </div>
   <div class="src">명세 · <a href="https://agentskills.io/specification" target="_blank" rel="noopener">agentskills.io/specification</a></div>
@@ -581,7 +591,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
     <div class="f" data-s="3" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
       <div class="card big" style="border-left:8px solid var(--mcp)"><b>바깥 시스템이 필요할 때</b></div>
       <svg class="wire f keep" data-s="3" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
-      <span class="chip c-mcp" style="font-size:30px;padding:10px 20px;justify-self:start">MCP</span><span class="mid muted">“Notion에 올리기” — 도구는 Tool call로</span></div>
+      <span class="chip c-mcp" style="font-size:30px;padding:10px 20px;justify-self:start">MCP</span><span class="mid muted">“Notion에 올리기” (실제 호출은 Tool call)</span></div>
     <div class="f" data-s="4" style="display:grid;grid-template-columns:500px 110px 300px 1fr;align-items:center">
       <div class="card big" style="background:transparent;box-shadow:none;border:2px dashed #C9C3B5"><b>이번 한 번만</b></div>
       <svg class="wire f keep" data-s="4" viewBox="0 0 110 30" width="110" height="30"><path class="ln" pathLength="1" d="M12 15H96"/><path class="hd" d="M86 6L98 15L86 24"/></svg>
@@ -638,7 +648,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
   <header><div><div class="eyebrow"><b>04</b>직접 만들기</div>
   <h2>본문에는 순서, 판단 기준, 예시를 쓴다</h2></div></header>
   <div class="stage" style="display:grid;grid-template-columns:1fr 500px;gap:72px;align-items:center">
-    <div class="win"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md — 본문</span></div>
+    <div class="win"><div class="bar"><i></i><i></i><i></i><span>meeting-notes/SKILL.md · 본문</span></div>
       <div class="body" style="padding:30px 36px;display:flex;flex-direction:column;gap:26px">
       <div class="f" data-s="1" style="border-left:6px solid var(--skill);padding-left:24px"><span class="chip c-skill">순서</span>
         <ol class="mid" style="padding-left:32px;margin-top:10px"><li>결정된 것만 뽑는다</li><li>할 일을 표로 정리한다</li><li>template.md 양식에 맞춘다</li></ol></div>
@@ -648,7 +658,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
         <p class="mono" style="margin-top:10px;font-size:25px">“민지: 시안은 18일까지” → | 시안 | @민지 | 11/18 |</p></div>
       </div></div>
     <div class="f" data-s="4" style="display:flex;flex-direction:column;gap:24px">
-      <p class="xl"><b>새로 온 동료에게<br>인수인계하듯</b> 쓴다.</p>
+      <p class="xl">새로 온 동료가<br>읽고 바로 따라 할 수 있게 쓴다.</p>
       <p class="mid muted">길어지면 양식과 예시는 따로 파일로 빼고, 본문에는 “필요하면 template.md를 볼 것”이라고만 적는다.</p>
     </div>
   </div>
@@ -658,7 +668,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
 <!-- 22 practice -->
 <section class="slide" data-act="3" data-focus>
   <header><div><div class="eyebrow"><b>04</b>직접 만들기 · 실습 10분</div>
-  <h2>실습 — 내 반복 업무 하나를 Skill로 만든다</h2></div></header>
+  <h2>내 반복 업무 하나를 Skill로 만든다</h2></div></header>
   <div class="stage" style="display:grid;grid-template-columns:1fr 640px;gap:64px;align-items:center">
     <div style="display:flex;flex-direction:column;gap:22px">
       <div class="card f" data-s="1" style="display:grid;grid-template-columns:76px 1fr auto;align-items:center"><b style="font-size:52px" class="orange">1</b><span class="big">요즘 두 번 이상 한 설명 고르기</span><span class="chip c-gray"><svg class="icon"><use href="#i-clock"/></svg>2분</span></div>
@@ -683,10 +693,10 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
   <header><div><div class="eyebrow"><b style="color:var(--skill)">정리</b>질의응답</div>
   <h2>반복하는 설명은 꺼내 두고, 필요할 때 읽게 한다</h2></div></header>
   <div class="stage" style="display:grid;grid-template-columns:1fr 1fr;gap:44px 64px;align-content:center">
-    <div class="f" data-s="1" style="border-top:3px solid #EEECE6;padding-top:24px"><div class="small" style="color:#8b8e96">01 왜 필요한가</div><p class="big">에이전트는 일을 해내지만, <b>우리 방식</b>은 모른다</p></div>
-    <div class="f" data-s="2" style="border-top:3px solid var(--skill);padding-top:24px"><div class="small" style="color:#8b8e96">02 어떻게 움직이나</div><p class="big">Skill은 평소엔 <b>한 줄</b>, 필요할 때 <b>펼친다</b></p></div>
-    <div class="f" data-s="3" style="border-top:3px solid var(--mcp);padding-top:24px"><div class="small" style="color:#8b8e96">03 무엇과 다른가</div><p class="big"><span style="color:#F2C14E">늘</span>은 AGENTS.md, <span style="color:#FF8A6B">이 일</span>은 Skill, <span style="color:#A98BFF">바깥</span>은 MCP</p></div>
-    <div class="f" data-s="4" style="border-top:3px solid var(--tool);padding-top:24px"><div class="small" style="color:#8b8e96">04 직접 만들기</div><p class="big">좋은 Skill은 <b>설명 한 줄</b>에서 시작한다</p></div>
+    <div class="f" data-s="1" style="border-top:3px solid #EEECE6;padding-top:24px"><div class="small" style="color:#8b8e96">01 왜 필요한가</div><p class="big">에이전트는 일을 해내지만, 우리 팀 방식은 모른다</p></div>
+    <div class="f" data-s="2" style="border-top:3px solid var(--skill);padding-top:24px"><div class="small" style="color:#8b8e96">02 어떻게 움직이나</div><p class="big">Skill은 평소엔 설명 한 줄만 보이고, 일이 맞을 때 본문을 펼친다</p></div>
+    <div class="f" data-s="3" style="border-top:3px solid var(--mcp);padding-top:24px"><div class="small" style="color:#8b8e96">03 무엇과 다른가</div><p class="big"><span style="color:#F2C14E">항상 지킬 규칙</span>은 AGENTS.md, <span style="color:#FF8A6B">특정한 일의 방법</span>은 Skill, <span style="color:#A98BFF">바깥 연결</span>은 MCP</p></div>
+    <div class="f" data-s="4" style="border-top:3px solid var(--tool);padding-top:24px"><div class="small" style="color:#8b8e96">04 직접 만들기</div><p class="big">설명 한 줄에 무엇을 하는지와 언제 쓰는지를 적는다</p></div>
   </div>
 </section>
 
@@ -698,7 +708,7 @@ const actCount=[0,0,0,0];slides.forEach(s=>actCount[+s.dataset.act]++);
 const params=new URLSearchParams(location.search);
 const showAll=params.has('all');
 let cur=0;
-const NOTES=[["0:00", "오늘 60분 동안 Agent Skill을 다룹니다. 에이전트를 처음 쓰시는 분도 따라오실 수 있게, ‘회의록 정리’라는 예 하나로 끝까지 가겠습니다. 끝날 때는 각자 Skill 하나를 직접 만들어 보고 가십니다."], ["1:00", "먼저 에이전트가 무엇인지부터. 챗봇은 답을 한 번 주고 끝나지만, 에이전트는 파일을 읽고, 도구로 무언가를 만들고, 결과를 다시 확인하는 순환을 일이 끝날 때까지 돌립니다. 화면의 원이 그 순서대로 켜집니다."], ["3:00", "그런데 일을 잘해도 우리 팀 방식은 모릅니다. 왼쪽은 에이전트가 알아서 쓴 회의록, 오른쪽은 우리 팀이 원하는 회의록입니다. 형광펜이 칠해지는 곳, 결정·담당·기한이 흐릿한 부분을 짚어 주세요."], ["5:00", "그래서 매번 같은 설명을 붙여 넣게 됩니다. 월요일, 수요일, 금요일. 금요일엔 기한 형식을 깜빡했죠. 이런 경험 있으신 분, 손 한번 들어 보실까요?"], ["7:00", "그 반복되는 설명을 파일로 꺼내 둔 것이 Skill입니다. 이제 요청은 ‘정리해 줘’ 한 줄이면 되고, 에이전트가 알아서 그 파일을 꺼내 읽습니다. 여기까지가 1막입니다."], ["10:00", "Skill은 특별한 프로그램이 아니라 폴더 하나입니다. 꼭 있어야 하는 건 SKILL.md 하나뿐이고, 양식 같은 참고 자료나 매번 돌릴 스크립트는 필요할 때 함께 넣습니다."], ["12:00", "핵심은 에이전트가 평소에 무엇을 보느냐입니다. 맨 위의 이름과 설명 한 줄만 목록으로 들고 있고, 본문은 읽지 않습니다. 그래서 설명 한 줄이 중요합니다. 4막에서 다시 나옵니다."], ["14:00", "요청이 들어오면 그 한 줄과 비교합니다. ‘회의’와 ‘정리’라는 말이 meeting-notes 설명과 맞으니 이 Skill을 고르고, 그때 비로소 본문을 펼칩니다."], ["16:00", "읽는 단계는 세 층입니다. 한 줄은 늘, 본문은 일이 맞을 때, 딸린 자료와 스크립트는 정말 필요할 때만. 목차를 보고 필요한 장만 펴는 것과 같습니다."], ["18:00", "이 방식 덕분에 Skill을 수십 개 깔아도 에이전트가 무거워지지 않습니다. 설명을 전부 대화에 넣으면 실제 일 할 자리가 사라집니다. 막대는 비율을 보여 주는 그림이지 실측값이 아닙니다."], ["20:00", "실제 실행 기록입니다. Claude Code에 ‘정리해 줘’라고만 했고, Skill 선택, 녹취 읽기, 양식 확인, 스크립트 실행, 저장까지 16초 걸렸습니다. 담당이 없는 공지 초안은 Skill에 적어 둔 대로 ‘미정’이 됐습니다. 여유가 있으면 이 자리에서 직접 돌려 보세요."], ["24:00", "이제 비슷해 보이는 것들과 비교합니다. 에이전트에게 일을 가르치는 방법은 하나씩 늘어 왔습니다. 각 단계가 앞의 문제를 풀고 새 문제를 남겼다는 흐름으로 보시면 됩니다."], ["26:00", "Tool call은 손입니다. 파일 열기, 명령 실행 같은 동작 하나하나입니다. 무엇을 할지가 아니라 어떻게 손을 움직일지에 해당합니다."], ["28:00", "MCP는 콘센트 규격입니다. Notion이든 Slack이든 같은 방식으로 연결해 손이 닿는 범위를 넓혀 줍니다. 하지만 회의록을 어떻게 쓰는지는 모릅니다."], ["31:00", "AGENTS.md는 모니터 옆 메모입니다. 무슨 일을 하든 대화를 시작할 때마다 읽습니다. 그래서 모든 일에 맞는 규칙만 두고, 길어지면 그만큼 매번 무겁다는 점을 기억하세요."], ["33:00", "Skill은 업무 설명서입니다. 목차만 들고 있다가 그 일을 할 때 펼칩니다. Tool call과 MCP가 손이라면, Skill은 그 손으로 무엇을 어떤 순서로 할지입니다."], ["35:00", "한 번의 요청 안에서 넷은 이렇게 함께 일합니다. AGENTS.md는 늘 붙어 있고, Skill이 순서를 알려 주고, Tool call로 녹취를 읽고, MCP로 Notion에 올립니다."], ["37:00", "그래서 고르는 기준은 하나, 언제 필요한가입니다. 매번이면 AGENTS.md, 특정한 일이면 Skill, 바깥 시스템이면 MCP, 이번 한 번이면 그냥 요청에 적으세요."], ["39:00", "Skill은 이제 한 회사의 기능이 아닙니다. 2025년 10월 소개, 12월 열린 형식 공개, 올해 10월 재단 기증 발표. 같은 폴더를 여러 앱이 읽습니다. 설치 위치는 앱마다 확인하세요."], ["40:00", "이제 직접 만듭니다. 가장 중요한 건 설명 한 줄입니다. ‘회의록 도우미’로는 언제 꺼낼지 알 수 없습니다. 무엇을 하는지와 언제 쓰는지, 두 가지를 꼭 넣으세요."], ["42:00", "본문은 새로 온 동료에게 인수인계하듯 씁니다. 순서, 애매할 때의 판단 기준, 짧은 예시. 길어지면 양식은 따로 파일로 빼세요."], ["44:00", "10분 실습입니다. 요즘 두 번 이상 한 설명을 하나 고르고, 이름과 설명 한 줄, 본문 순서를 쓴 뒤 한 번 시켜 보세요. 오른쪽 빈칸 틀을 그대로 쓰셔도 됩니다. 돌아다니며 설명 한 줄을 봐 드리겠습니다."], ["55:00", "정리하면, 반복하는 설명은 꺼내 두고 필요할 때 읽게 하는 것입니다. 늘은 AGENTS.md, 이 일은 Skill, 바깥은 MCP. 질문 받겠습니다."]];
+const NOTES=[["0:00", "오늘 60분 동안 Agent Skill을 다룹니다. 에이전트를 처음 쓰시는 분도 따라오실 수 있게, ‘회의록 정리’라는 예 하나로 끝까지 가겠습니다. 끝날 때는 각자 Skill 하나를 직접 만들어 보고 가십니다."], ["1:00", "먼저 에이전트가 무엇인지부터. 챗봇은 답을 한 번 주고 끝나지만, 에이전트는 파일을 읽고, 도구로 무언가를 만들고, 결과를 다시 확인하는 순환을 일이 끝날 때까지 돌립니다. 화면의 원이 그 순서대로 켜집니다."], ["3:00", "그런데 일을 잘해도 우리 팀 방식은 모릅니다. 왼쪽은 에이전트가 알아서 쓴 회의록, 오른쪽은 우리 팀이 원하는 회의록입니다. 형광펜이 칠해지는 곳, 결정·담당·기한이 흐릿한 부분을 짚어 주세요."], ["5:00", "그래서 매번 같은 설명을 붙여 넣게 됩니다. 월요일, 수요일, 금요일. 금요일엔 기한 형식을 깜빡했죠. 이런 경험 있으신 분, 손 한번 들어 보실까요?"], ["7:00", "그 반복되는 설명을 파일로 꺼내 둔 것이 Skill입니다. 이제 요청은 ‘정리해 줘’ 한 줄이면 되고, 에이전트가 알아서 그 파일을 꺼내 읽습니다. 여기까지가 1막입니다."], ["10:00", "Skill은 폴더 하나입니다. 꼭 있어야 하는 건 SKILL.md 하나뿐이고, 양식 같은 참고 자료나 매번 돌릴 스크립트는 필요할 때 함께 넣습니다."], ["12:00", "에이전트가 평소에 무엇을 보는지부터 보겠습니다. 맨 위의 이름과 설명 한 줄만 목록으로 들고 있고, 본문은 읽지 않습니다. 그래서 설명 한 줄이 중요합니다. 4막에서 다시 나옵니다."], ["14:00", "요청이 들어오면 그 한 줄과 비교합니다. ‘회의’와 ‘정리’라는 말이 meeting-notes 설명과 맞으니 이 Skill을 고르고, 그때 비로소 본문을 펼칩니다."], ["16:00", "읽는 단계는 세 층입니다. 한 줄은 늘, 본문은 일이 맞을 때, 딸린 자료와 스크립트는 정말 필요할 때만. 두꺼운 매뉴얼에서 필요한 장만 찾아 읽는 것과 비슷합니다."], ["18:00", "이 방식 덕분에 Skill을 수십 개 깔아도 에이전트가 무거워지지 않습니다. 설명을 전부 대화에 넣으면 실제 일 할 자리가 사라집니다. 막대는 비율을 보여 주는 그림이지 실측값이 아닙니다."], ["20:00", "실제 실행 기록입니다. Claude Code에 ‘정리해 줘’라고만 했고, Skill 선택, 녹취 읽기, 양식 확인, 스크립트 실행, 저장까지 16초 걸렸습니다. 담당이 없는 공지 초안은 Skill에 적어 둔 대로 ‘미정’이 됐습니다. 여유가 있으면 이 자리에서 직접 돌려 보세요."], ["24:00", "이제 비슷해 보이는 것들과 비교합니다. 에이전트에게 일을 가르치는 방법은 하나씩 늘어 왔습니다. 각 단계가 앞의 문제를 풀고 새 문제를 남겼다는 흐름으로 보시면 됩니다."], ["26:00", "Tool call은 손입니다. 파일 열기, 명령 실행 같은 동작 하나하나입니다. 어떤 순서로 할지는 정하지 않습니다."], ["28:00", "MCP는 콘센트 규격입니다. Notion이든 Slack이든 같은 방식으로 연결해 손이 닿는 범위를 넓혀 줍니다. 하지만 회의록을 어떻게 쓰는지는 모릅니다."], ["31:00", "AGENTS.md는 모니터 옆 메모입니다. 무슨 일을 하든 대화를 시작할 때마다 읽습니다. 그래서 모든 일에 맞는 규칙만 두고, 길어지면 그만큼 매번 무겁다는 점을 기억하세요."], ["33:00", "Skill은 업무 설명서입니다. 목차만 들고 있다가 그 일을 할 때 펼칩니다. 회의록을 쓸 때 무엇을 어떤 순서로 할지 알려 주고, 실제 동작은 Tool call과 MCP가 합니다."], ["35:00", "한 번의 요청 안에서 넷은 이렇게 함께 일합니다. AGENTS.md는 늘 붙어 있고, Skill이 순서를 알려 주고, Tool call로 녹취를 읽고, MCP로 Notion에 올립니다."], ["37:00", "그래서 고르는 기준은 하나, 언제 필요한가입니다. 매번이면 AGENTS.md, 특정한 일이면 Skill, 바깥 시스템이면 MCP, 이번 한 번이면 그냥 요청에 적으세요."], ["39:00", "Skill은 이제 한 회사의 기능이 아닙니다. 2025년 10월 소개, 12월 열린 형식 공개, 올해 10월 재단 기증 발표. 같은 폴더를 여러 앱이 읽습니다. 설치 위치는 앱마다 확인하세요."], ["40:00", "이제 직접 만듭니다. 가장 중요한 건 설명 한 줄입니다. ‘회의록 도우미’로는 언제 꺼낼지 알 수 없습니다. 무엇을 하는지와 언제 쓰는지, 두 가지를 꼭 넣으세요."], ["42:00", "본문은 새로 온 동료가 읽고 바로 따라 할 수 있게 씁니다. 순서, 애매할 때의 판단 기준, 짧은 예시. 길어지면 양식은 따로 파일로 빼세요."], ["44:00", "10분 실습입니다. 요즘 두 번 이상 한 설명을 하나 고르고, 이름과 설명 한 줄, 본문 순서를 쓴 뒤 한 번 시켜 보세요. 오른쪽 빈칸 틀을 그대로 쓰셔도 됩니다. 돌아다니며 설명 한 줄을 봐 드리겠습니다."], ["55:00", "정리하면, 반복하는 설명은 꺼내 두고 필요할 때 읽게 하는 것입니다. 항상 지킬 규칙은 AGENTS.md, 특정한 일의 방법은 Skill, 바깥 시스템 연결은 MCP에 둡니다. 질문 받겠습니다."]];
 const bc=('BroadcastChannel' in window)?new BroadcastChannel('agent-skill-lecture'):null;
 const titleOf=i=>{const s=slides[i];if(!s)return '끝';const h=s.querySelector('h2,h1');return h?h.textContent.replace(/\s+/g,' ').trim():''};
 if(params.has('presenter')){
@@ -750,7 +760,8 @@ function typeIn(s){
 function paint(){
   const s=slides[cur],m=maxStep(s);
   s.querySelectorAll('.f').forEach(e=>{const v=sOf(e);e.classList.toggle('in',v<=shown);e.classList.toggle('cur',v===focus)});
-  s.classList.toggle('stepping',s.hasAttribute('data-focus')&&focus>0&&(phase==='cycle'||focus<m));
+  s.classList.toggle('guiding',s.hasAttribute('data-focus')&&focus>0);
+  s.classList.toggle('cycling',phase==='cycle');
   document.body.classList.toggle('paused',paused);
 }
 function schedule(ms){clearTimeout(timer);if(!paused)timer=setTimeout(tick,ms)}

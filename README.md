@@ -20,8 +20,8 @@
 
 ## 파일
 
-- `index.html`: 발표 본편(스타일·스크립트 포함 단일 파일). 글꼴은 `assets/NotoSansKR-*.woff2`.
+- `index.html`: 발표 본편(스타일·스크립트 포함 단일 파일). 글꼴은 `assets/PretendardVariable.woff2`, `assets/jetbrains-mono-*.woff2`.
 - `examples/meeting-notes/`: 11장 시연에 쓴 Skill 폴더와 합성 녹취, 실제 실행 결과. 직접 따라 할 수 있습니다.
 - `legacy-sol.html` 등 그 밖의 페이지: 이전 판 자료로, 본편과 내용이 다를 수 있습니다.
 
-글꼴은 [Noto 라이선스](assets/NOTO-CJK-THIRD-PARTY-LICENSE.txt), 코드는 [MIT 라이선스](LICENSE)를 따릅니다.
+본편 글꼴은 Pretendard([OFL](assets/PRETENDARD-LICENSE.txt))와 JetBrains Mono([OFL](assets/JETBRAINS-MONO-LICENSE.txt)), 이전 판 글꼴은 [Noto 라이선스](assets/NOTO-CJK-THIRD-PARTY-LICENSE.txt), 코드는 [MIT 라이선스](LICENSE)를 따릅니다.
