@@ -35,7 +35,7 @@ header{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;
 h2{font-size:54px;line-height:1.22;font-weight:700;letter-spacing:-.028em;max-width:1460px}
 .stage{flex:1;position:relative;margin-top:44px;min-height:0}
 .src{position:absolute;left:100px;bottom:86px;font-size:17px;color:var(--mute);letter-spacing:.01em}
-.src a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
+.src a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}.src a:hover{color:var(--ink)}.dark .src{color:#8b8e96}
 /* footer */
 footer{position:absolute;left:100px;right:100px;bottom:40px;display:flex;align-items:center;gap:8px;font-size:17px;color:var(--mute)}
 footer .brand{font-weight:700;color:var(--ink2);margin-right:22px;white-space:nowrap}
@@ -68,6 +68,12 @@ footer .pz{display:none;margin-left:16px;font-weight:700;color:var(--skill)}body
 .grow{transform-origin:bottom}
 .ring.in{animation:ring 1.2s ease .5s 1}
 @keyframes ring{0%{box-shadow:0 0 0 0 rgba(240,83,45,.5)}100%{box-shadow:0 0 0 22px rgba(240,83,45,0)}}
+#notes{display:none;position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;background:rgba(14,16,20,.94);color:#EEECE6;font:400 18px/1.6 "NSK",sans-serif;padding:16px 28px;z-index:10}
+#notes b{color:#FF8A6B;margin-right:10px}body.shownotes #notes{display:block}
+#presenter{min-height:100vh;background:#0E1014;color:#EEECE6;padding:36px 48px;font-family:"NSK",sans-serif;display:flex;flex-direction:column;gap:22px}
+#presenter .ph{display:flex;justify-content:space-between;color:#9a9ca3;font-size:20px}#presenter .ph b{color:#fff;font-size:26px}
+#presenter h1{font-size:34px;line-height:1.3;letter-spacing:-.02em}#presenter .pnote{font-size:30px;line-height:1.7;color:#F5F3EE;flex:1}
+#presenter .pnext{font-size:20px;color:#FF8A6B;border-top:1px solid #2a2d35;padding-top:16px}#presenter .phelp{font-size:15px;color:#6f737d}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 /* components */
 .card{background:var(--card);border-radius:16px;border:1px solid #E6E1D6;box-shadow:0 1px 2px rgba(17,19,24,.04),0 14px 34px -20px rgba(17,19,24,.28);padding:28px 32px}
@@ -204,7 +210,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
         <table class="t small"><tr><td>할 일</td><td>담당</td><td>기한</td></tr>
           <tr><td>시안 3종</td><td class="orange">@민지</td><td>11/18</td></tr>
           <tr><td>QA 계획</td><td class="orange">@도윤</td><td>11/20</td></tr></table>
-        <div><b>다음 회의</b> &nbsp;11/19 (화) 10:00</div></div></div>
+        <div><b>다음 회의</b> &nbsp;11/17 (화) 10:00</div></div></div>
     </div>
     <div class="f mid" data-s="3" style="grid-column:1/3;display:flex;gap:40px;align-items:center;justify-content:center">
       <span class="muted">일반적인 회의록은 잘 쓴다. 그러나</span><b>결정이 흐릿하고 · 담당자가 없고 · 기한이 모호하다</b>
@@ -275,7 +281,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="f" data-s="3" style="display:grid;grid-template-columns:70px 1fr;gap:10px"><svg class="icon" style="width:52px;height:52px"><use href="#i-code"/></svg><div><div class="big"><b>스크립트</b> <span class="chip c-gray">선택</span></div><p class="mid muted">매번 똑같이 돌려야 하는 작업</p></div></div>
     </div>
   </div>
-  <div class="src">형식 기준 · <a>agentskills.io/specification</a></div>
+  <div class="src">형식 기준 · <a href="https://agentskills.io/specification" target="_blank" rel="noopener">agentskills.io/specification</a></div>
 </section>
 
 <!-- 7 -->
@@ -352,7 +358,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="mid"><b>필요할 때만</b> <span class="muted">열거나 실행한다</span></div></div>
     <p class="f big" data-s="4" style="margin-top:24px;border-top:1.5px solid var(--line);padding-top:28px">책을 통째로 외우지 않고, <b>목차를 보고 필요한 장만 펴는 것</b>과 같다.</p>
   </div>
-  <div class="src">이 방식을 ‘progressive disclosure’라 부른다 · <a>anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills</a></div>
+  <div class="src">이 방식을 ‘progressive disclosure’라 부른다 · <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener">anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills</a></div>
 </section>
 
 <!-- 10 -->
@@ -398,25 +404,26 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
   <header><div><div class="eyebrow"><b style="color:var(--skill)">02</b>어떻게 움직이나 · 시연</div>
   <h2>회의록 Skill이 실제로 움직이는 장면</h2></div></header>
   <div class="stage" style="display:grid;grid-template-columns:1fr 640px;gap:56px;align-items:center">
-    <div class="win term"><div class="bar"><i></i><i></i><i></i><span>agent — ~/team</span></div>
+    <div class="win term"><div class="bar"><i></i><i></i><i></i><span>claude — ~/team · 실제 실행 기록 발췌</span></div>
       <div class="body mono" style="display:flex;flex-direction:column;gap:22px;font-size:26px;color:#E6E4DD;padding:30px 32px">
       <div style="color:#9a9ca3">&gt; <span class="type" data-text="어제 회의 녹취, 팀 양식으로 정리해 줘">어제 회의 녹취, 팀 양식으로 정리해 줘</span></div>
-      <div class="f" data-s="1"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> meeting-notes 선택 <span class="cm">설명이 요청과 맞음</span></div>
-      <div class="f" data-s="2"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> SKILL.md 본문 읽기</div>
-      <div class="f" data-s="3"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> read_file("녹취_1110.txt")</div>
-      <div class="f" data-s="4"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> run("find_todos.py") <span class="cm">할 일 3건</span></div>
-      <div class="f" data-s="5"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> template.md 열어 양식 맞춤</div>
-      <div class="f" data-s="6" style="color:#8EDB9C"><svg class="icon"><use href="#i-check"/></svg> 회의록_1110.md 작성 · 담당 없는 1건 ‘미정’</div>
+      <div class="f" data-s="1"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> Skill("meeting-notes") <span class="cm">본문이 들어옴</span></div>
+      <div class="f" data-s="2"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Read("녹취_1110.txt")</div>
+      <div class="f" data-s="3"><span class="chip c-skill" style="font-family:NSK;font-size:18px">Skill</span> Read("template.md") <span class="cm">양식 확인</span></div>
+      <div class="f" data-s="4"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Bash("find_todos.py 녹취_1110.txt")</div>
+      <div class="f" data-s="5"><span class="chip c-tool" style="font-family:NSK;font-size:18px">Tool</span> Write("회의록_1110.md")</div>
+      <div class="f" data-s="6" style="color:#8EDB9C"><svg class="icon"><use href="#i-check"/></svg> 완료 · 16초 · 담당 없는 1건 ‘미정’</div>
       </div></div>
     <div class="win f" data-s="6" style="color:var(--ink)"><div class="bar"><i></i><i></i><i></i><span>회의록_1110.md</span></div>
       <div class="body small stagger f keep" data-s="6" style="display:flex;flex-direction:column;gap:12px;padding:26px 30px">
-        <div><b>결정</b> &nbsp;출시일 12/03 확정 · 베타는 사내만</div>
+        <div><b>결정</b> &nbsp;출시일 12/03 · 베타는 사내에서만</div>
         <table class="t small"><tr><td>할 일</td><td>담당</td><td>기한</td></tr>
           <tr><td>시안 3종</td><td class="orange">@민지</td><td>11/18</td></tr>
           <tr><td>QA 계획</td><td class="orange">@도윤</td><td>11/20</td></tr>
           <tr><td>공지 초안</td><td style="color:#B3261E;font-weight:700">미정</td><td>11/21</td></tr></table>
-        <div><b>다음 회의</b> &nbsp;11/19 (화) 10:00</div></div></div>
+        <div><b>다음 회의</b> &nbsp;11/17 (화) 10:00</div></div></div>
   </div>
+  <div class="src">Claude Code 2.1.317 · 2026-11-11 실행 · 교육용 합성 녹취 · 중간의 파일 목록 확인 단계는 생략</div>
 </section>
 
 <!-- 12 history -->
@@ -440,7 +447,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
         <div class="small muted">2025.10</div><div style="font-size:46px;font-weight:700" class="orange">Skill</div><p class="big">일하는 법을 <b>필요할 때만 펼친다</b></p><p class="mid" style="border-top:1.5px solid var(--skill);padding-top:12px;color:#C63C1A">다음 장부터<br>넷을 하나씩 본다</p></div>
     </div>
   </div>
-  <div class="src">MCP · <a>modelcontextprotocol.io</a> &nbsp;·&nbsp; AGENTS.md · <a>learn.chatgpt.com/docs/agent-configuration/agents-md</a> &nbsp;·&nbsp; Skill · <a>anthropic.com/research/equipping-agents…</a></div>
+  <div class="src">Tool call · <a href="https://openai.com/index/function-calling-and-other-api-updates/" target="_blank" rel="noopener">openai.com (2023.6.13)</a> &nbsp;·&nbsp; MCP · <a href="https://www.anthropic.com/news/model-context-protocol" target="_blank" rel="noopener">anthropic.com (2024.11.25)</a> &nbsp;·&nbsp; AGENTS.md · <a href="https://agents.md/" target="_blank" rel="noopener">agents.md</a> &nbsp;·&nbsp; Skill · <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank" rel="noopener">anthropic.com (2025.10.16)</a></div>
 </section>
 
 <!-- 13 Tool -->
@@ -486,7 +493,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="example f" data-s="3"><span class="label">회의록 예에서는</span><span>완성한 회의록을 팀 Notion에 올린다.<br><span class="muted">손이 닿는 범위를 넓힐 뿐, <b style="color:var(--ink)">회의록을 어떻게 쓰는지는 모른다.</b></span></span></div>
     </div>
   </div>
-  <div class="src">구조 · <a>modelcontextprotocol.io/docs/learn/architecture</a></div>
+  <div class="src">구조 · <a href="https://modelcontextprotocol.io/docs/learn/architecture" target="_blank" rel="noopener">modelcontextprotocol.io/docs/learn/architecture</a></div>
 </section>
 
 <!-- 15 AGENTS -->
@@ -508,7 +515,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>회의록이든 경비 보고든 날짜 형식은 같다.<br><span class="muted">모든 일에 맞는 규칙만 둔다. 길어지면 <b style="color:var(--ink)">매번 그만큼 무겁다.</b></span></span></div>
     </div>
   </div>
-  <div class="src">형식 · <a>learn.chatgpt.com/docs/agent-configuration/agents-md</a></div>
+  <div class="src">형식 · <a href="https://agents.md/" target="_blank" rel="noopener">agents.md/</a></div>
 </section>
 
 <!-- 16 Skill -->
@@ -532,7 +539,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <div class="example f" data-s="2"><span class="label">회의록 예에서는</span><span>Tool call과 MCP가 손이라면,<br>Skill은 <b>그 손으로 무엇을, 어떤 순서로 할지</b>다.</span></div>
     </div>
   </div>
-  <div class="src">명세 · <a>agentskills.io/specification</a></div>
+  <div class="src">명세 · <a href="https://agentskills.io/specification" target="_blank" rel="noopener">agentskills.io/specification</a></div>
 </section>
 
 <!-- 17 together -->
@@ -601,7 +608,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <p class="mid muted" style="text-align:center;margin-top:30px">폴더 형식은 같고, 설치 위치와 고르는 방법은 앱마다 다르다.</p>
     </div>
   </div>
-  <div class="src"><a>anthropic.com/research/equipping-agents-for-the-real-world-with-agent-skills</a> &nbsp;·&nbsp; <a>agentskills.io</a> &nbsp;·&nbsp; <a>learn.chatgpt.com/docs/build-skills</a></div>
+  <div class="src">소개 · <a href="https://claude.com/blog/skills" target="_blank" rel="noopener">claude.com/blog/skills (2025.10.16 · 12.18)</a> &nbsp;·&nbsp; 기증 · <a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">anthropic.com (2026.10.22)</a> &nbsp;·&nbsp; Codex · <a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener">learn.chatgpt.com/docs/build-skills</a></div>
 </section>
 
 <!-- 20 description -->
@@ -645,7 +652,7 @@ table.t tr:first-child td{border-top:0;color:var(--mute);font-size:19px;font-wei
       <p class="mid muted">길어지면 양식과 예시는 따로 파일로 빼고, 본문에는 “필요하면 template.md를 볼 것”이라고만 적는다.</p>
     </div>
   </div>
-  <div class="src">작성 지침 · <a>agentskills.io/specification</a> &nbsp;·&nbsp; <a>learn.chatgpt.com/docs/build-skills</a></div>
+  <div class="src">작성 지침 · <a href="https://agentskills.io/specification" target="_blank" rel="noopener">agentskills.io/specification</a> &nbsp;·&nbsp; <a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener">learn.chatgpt.com/docs/build-skills</a></div>
 </section>
 
 <!-- 22 practice -->
@@ -691,6 +698,27 @@ const actCount=[0,0,0,0];slides.forEach(s=>actCount[+s.dataset.act]++);
 const params=new URLSearchParams(location.search);
 const showAll=params.has('all');
 let cur=0;
+const NOTES=[["0:00", "오늘 60분 동안 Agent Skill을 다룹니다. 에이전트를 처음 쓰시는 분도 따라오실 수 있게, ‘회의록 정리’라는 예 하나로 끝까지 가겠습니다. 끝날 때는 각자 Skill 하나를 직접 만들어 보고 가십니다."], ["1:00", "먼저 에이전트가 무엇인지부터. 챗봇은 답을 한 번 주고 끝나지만, 에이전트는 파일을 읽고, 도구로 무언가를 만들고, 결과를 다시 확인하는 순환을 일이 끝날 때까지 돌립니다. 화면의 원이 그 순서대로 켜집니다."], ["3:00", "그런데 일을 잘해도 우리 팀 방식은 모릅니다. 왼쪽은 에이전트가 알아서 쓴 회의록, 오른쪽은 우리 팀이 원하는 회의록입니다. 형광펜이 칠해지는 곳, 결정·담당·기한이 흐릿한 부분을 짚어 주세요."], ["5:00", "그래서 매번 같은 설명을 붙여 넣게 됩니다. 월요일, 수요일, 금요일. 금요일엔 기한 형식을 깜빡했죠. 이런 경험 있으신 분, 손 한번 들어 보실까요?"], ["7:00", "그 반복되는 설명을 파일로 꺼내 둔 것이 Skill입니다. 이제 요청은 ‘정리해 줘’ 한 줄이면 되고, 에이전트가 알아서 그 파일을 꺼내 읽습니다. 여기까지가 1막입니다."], ["10:00", "Skill은 특별한 프로그램이 아니라 폴더 하나입니다. 꼭 있어야 하는 건 SKILL.md 하나뿐이고, 양식 같은 참고 자료나 매번 돌릴 스크립트는 필요할 때 함께 넣습니다."], ["12:00", "핵심은 에이전트가 평소에 무엇을 보느냐입니다. 맨 위의 이름과 설명 한 줄만 목록으로 들고 있고, 본문은 읽지 않습니다. 그래서 설명 한 줄이 중요합니다. 4막에서 다시 나옵니다."], ["14:00", "요청이 들어오면 그 한 줄과 비교합니다. ‘회의’와 ‘정리’라는 말이 meeting-notes 설명과 맞으니 이 Skill을 고르고, 그때 비로소 본문을 펼칩니다."], ["16:00", "읽는 단계는 세 층입니다. 한 줄은 늘, 본문은 일이 맞을 때, 딸린 자료와 스크립트는 정말 필요할 때만. 목차를 보고 필요한 장만 펴는 것과 같습니다."], ["18:00", "이 방식 덕분에 Skill을 수십 개 깔아도 에이전트가 무거워지지 않습니다. 설명을 전부 대화에 넣으면 실제 일 할 자리가 사라집니다. 막대는 비율을 보여 주는 그림이지 실측값이 아닙니다."], ["20:00", "실제 실행 기록입니다. Claude Code에 ‘정리해 줘’라고만 했고, Skill 선택, 녹취 읽기, 양식 확인, 스크립트 실행, 저장까지 16초 걸렸습니다. 담당이 없는 공지 초안은 Skill에 적어 둔 대로 ‘미정’이 됐습니다. 여유가 있으면 이 자리에서 직접 돌려 보세요."], ["24:00", "이제 비슷해 보이는 것들과 비교합니다. 에이전트에게 일을 가르치는 방법은 하나씩 늘어 왔습니다. 각 단계가 앞의 문제를 풀고 새 문제를 남겼다는 흐름으로 보시면 됩니다."], ["26:00", "Tool call은 손입니다. 파일 열기, 명령 실행 같은 동작 하나하나입니다. 무엇을 할지가 아니라 어떻게 손을 움직일지에 해당합니다."], ["28:00", "MCP는 콘센트 규격입니다. Notion이든 Slack이든 같은 방식으로 연결해 손이 닿는 범위를 넓혀 줍니다. 하지만 회의록을 어떻게 쓰는지는 모릅니다."], ["31:00", "AGENTS.md는 모니터 옆 메모입니다. 무슨 일을 하든 대화를 시작할 때마다 읽습니다. 그래서 모든 일에 맞는 규칙만 두고, 길어지면 그만큼 매번 무겁다는 점을 기억하세요."], ["33:00", "Skill은 업무 설명서입니다. 목차만 들고 있다가 그 일을 할 때 펼칩니다. Tool call과 MCP가 손이라면, Skill은 그 손으로 무엇을 어떤 순서로 할지입니다."], ["35:00", "한 번의 요청 안에서 넷은 이렇게 함께 일합니다. AGENTS.md는 늘 붙어 있고, Skill이 순서를 알려 주고, Tool call로 녹취를 읽고, MCP로 Notion에 올립니다."], ["37:00", "그래서 고르는 기준은 하나, 언제 필요한가입니다. 매번이면 AGENTS.md, 특정한 일이면 Skill, 바깥 시스템이면 MCP, 이번 한 번이면 그냥 요청에 적으세요."], ["39:00", "Skill은 이제 한 회사의 기능이 아닙니다. 2025년 10월 소개, 12월 열린 형식 공개, 올해 10월 재단 기증 발표. 같은 폴더를 여러 앱이 읽습니다. 설치 위치는 앱마다 확인하세요."], ["40:00", "이제 직접 만듭니다. 가장 중요한 건 설명 한 줄입니다. ‘회의록 도우미’로는 언제 꺼낼지 알 수 없습니다. 무엇을 하는지와 언제 쓰는지, 두 가지를 꼭 넣으세요."], ["42:00", "본문은 새로 온 동료에게 인수인계하듯 씁니다. 순서, 애매할 때의 판단 기준, 짧은 예시. 길어지면 양식은 따로 파일로 빼세요."], ["44:00", "10분 실습입니다. 요즘 두 번 이상 한 설명을 하나 고르고, 이름과 설명 한 줄, 본문 순서를 쓴 뒤 한 번 시켜 보세요. 오른쪽 빈칸 틀을 그대로 쓰셔도 됩니다. 돌아다니며 설명 한 줄을 봐 드리겠습니다."], ["55:00", "정리하면, 반복하는 설명은 꺼내 두고 필요할 때 읽게 하는 것입니다. 늘은 AGENTS.md, 이 일은 Skill, 바깥은 MCP. 질문 받겠습니다."]];
+const bc=('BroadcastChannel' in window)?new BroadcastChannel('agent-skill-lecture'):null;
+const titleOf=i=>{const s=slides[i];if(!s)return '끝';const h=s.querySelector('h2,h1');return h?h.textContent.replace(/\s+/g,' ').trim():''};
+if(params.has('presenter')){
+  document.getElementById('deck').remove();document.body.style.overflow='auto';
+  const P=document.createElement('div');P.id='presenter';document.body.appendChild(P);
+  const t0=Date.now();let pc=0;
+  const fmt=ms=>{const m=Math.floor(ms/60000),s=Math.floor(ms/1000)%60;return `${m}:${String(s).padStart(2,'0')}`};
+  const draw=()=>{const n=NOTES[pc]||['',''];P.innerHTML=`<div class="ph"><span class="pn">${String(pc+1).padStart(2,'0')} / ${slides.length}</span><span class="pt">경과 <b>${fmt(Date.now()-t0)}</b> · 목표 ${n[0]}</span></div><h1>${titleOf(pc)}</h1><p class="pnote">${n[1]}</p><div class="pnext">다음 · ${titleOf(pc+1)}</div><div class="phelp">→ / ← 장 이동 · 스페이스 일시정지 · R 다시 재생 (발표 화면과 연동)</div>`};
+  bc&&(bc.onmessage=e=>{if(typeof e.data.cur==='number'){pc=e.data.cur;draw()}});
+  bc&&bc.postMessage({hello:1});
+  setInterval(draw,1000);draw();
+  addEventListener('keydown',e=>{const k=e.key;let cmd=null;
+    if(['ArrowRight','PageDown','Enter','ArrowDown'].includes(k))cmd={go:1};else if(['ArrowLeft','PageUp','ArrowUp','Backspace'].includes(k))cmd={go:-1};
+    else if(k===' '||k==='p'||k==='P')cmd={pause:1};else if(k==='r'||k==='R')cmd={replay:1};
+    if(cmd){e.preventDefault();bc&&bc.postMessage(cmd)}});
+  addEventListener('error',e=>{if(String(e.message).includes('presenter-mode'))e.preventDefault()});
+  throw new Error('presenter-mode');
+}
+const drawer=document.createElement('div');drawer.id='notes';document.body.appendChild(drawer);
+function showNote(){const n=NOTES[cur]||['',''];drawer.innerHTML=`<b>${String(cur+1).padStart(2,'0')} · 목표 ${n[0]}</b> ${n[1]}`}
 const BUILD=1000, FOCUS=2000, HOLD=3000, FIRST=500;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sOf=e=>e.dataset.s===undefined?1:+e.dataset.s;
@@ -745,8 +773,8 @@ function enter(i){
   slides.forEach((s,k)=>s.classList.toggle('on',k===cur));
   const m=maxStep(slides[cur]);
   phase='build';
-  if(showAll||reduce){shown=m;focus=0;phase='done';paint();typeIn(slides[cur]);history.replaceState(null,'','#'+(cur+1));return}
-  shown=0;focus=0;paint();typeIn(slides[cur]);
+  if(showAll||reduce){shown=m;focus=0;phase='done';paint();typeIn(slides[cur]);showNote();bc&&bc.postMessage({cur});history.replaceState(null,'','#'+(cur+1));return}
+  shown=0;focus=0;paint();typeIn(slides[cur]);showNote();bc&&bc.postMessage({cur});
   history.replaceState(null,'','#'+(cur+1));
   schedule(FIRST);
 }
@@ -758,8 +786,11 @@ addEventListener('keydown',e=>{
   else if(e.key==='r'||e.key==='R'){enter(cur)}
   else if(e.key==='Home')enter(0); else if(e.key==='End')enter(slides.length-1);
   else if(e.key==='f')document.documentElement.requestFullscreen?.();
+  else if(e.key==='n'||e.key==='N')document.body.classList.toggle('shownotes');
+  else if(e.key==='s'||e.key==='S')window.open(location.pathname+'?presenter=1','asl-presenter','width=1100,height=760');
 });
-addEventListener('click',e=>{enter(cur+(e.clientX<innerWidth/3?-1:1))});
+bc&&(bc.onmessage=e=>{const d=e.data;if(d.go)enter(cur+d.go);else if(d.pause)togglePause();else if(d.replay)enter(cur);else if(d.hello)bc.postMessage({cur})});
+addEventListener('click',e=>{if(e.target.closest('a'))return;enter(cur+(e.clientX<innerWidth/3?-1:1))});
 function fit(){const k=Math.min(innerWidth/1920,innerHeight/1080);document.getElementById('deck').style.transform=`translate(-50%,-50%) scale(${k})`}
 addEventListener('resize',fit);fit();
 enter(parseInt(params.get('s')||location.hash.slice(1)||'1')-1);
